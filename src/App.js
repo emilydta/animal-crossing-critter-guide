@@ -7,7 +7,9 @@ function App() {
       <header className="App-header">
         CRITTER GUIDE
       </header>
-      <FishDisplay />
+      <div className='critter-display'>
+        <FishDisplay />
+      </div>
     </div>
   );
 }

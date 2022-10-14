@@ -15,8 +15,8 @@ function FishDisplay(props) {
         <div className="fish-display">
             {fishData ? Object.entries(fishData).map((fish) => {
                 return (
-                    <div key={fish[1].id} className='fish_icon'>
-                        <img src={fish[1].icon_uri}></img>
+                    <div key={fish[1].id} className='fish-entry'>
+                        <img className="fish-icon" src={fish[1].icon_uri}></img>
                     </div>
                 )
             }
