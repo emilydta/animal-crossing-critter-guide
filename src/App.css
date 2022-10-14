@@ -4,18 +4,29 @@ body {
 
 .critter-display {
   display: flex;
+  flex-direction: column;
+}
 
+.caught-mode-button {
+  width: 5em;
+}
+
+.caught {
+  opacity: 20%;
 }
 
 .fish-entry {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 0.3em;
 }
 
-.fish-entry:hover {
-  background-color: beige;
+.fish-entry:hover,
+.fish-icon:hover {
+  opacity: 50%;
+  background-color: white;
   cursor: pointer;
 }
 
@@ -24,7 +35,7 @@ body {
   width: 4em;
 }
 
-.fish-entry,
+.entry-border,
 .fish-display {
   border: 1.5px solid #5d2117;
 }
