@@ -25,19 +25,24 @@ function FishDisplay({ caughtMode, customMonth, customTime }) {
         async function fetchFishData() {
             const response = await fetch(`https://acnhapi.com/v1/fish/`, { mode: 'cors' });
             const fishData = await response.json();
-            //console.log(fishData)
             setFishData(fishData);
         }
         fetchFishData();
     }, [])
 
-    
+
     return (
         <div className="fish-display">
             {fishData ? Object.entries(fishData).map((fish) => {
                 return (
                     <div key={fish[1].id} className="entry-border">
-                        <div className={`fish-entry ${fish[1]['file-name']} ${checkAvailability(customMonth, customTime, fish)}`} onClick={caughtMode ? (e) => toggleCaught(e) : null}>
+                        <div
+                            className={
+                                `fish-entry ${fish[1]['file-name']} 
+                                ${caughtList.includes(fish[1]['file-name']) ? 'caught' : ''} 
+                                ${!caughtMode ? checkAvailability(customMonth, customTime, fish) : ''}`
+                            }
+                            onClick={caughtMode ? (e) => toggleCaught(e) : null}>
                             <div className="tooltip">
                                 <p className="tooltip-text">{formatString(fish[1]['file-name'])}</p>
                             </div>
