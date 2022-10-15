@@ -1,0 +1,12 @@
+.time-date-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.time-display,
+.date-display {
+    margin: 0.2em;
+    font-size: 1.5rem;
+}

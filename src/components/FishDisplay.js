@@ -14,6 +14,12 @@ function FishDisplay({ caughtMode }) {
         }
     }
 
+    const formatString = (string) => {
+        const newString = string.replace(/_/g, ' ');
+        const formattedString = newString.charAt(0).toUpperCase() + newString.slice(1);
+        return formattedString;
+    }
+
     useEffect(() => {
         async function fetchFishData() {
             const response = await fetch(`https://acnhapi.com/v1/fish/`, { mode: 'cors' });
@@ -28,7 +34,11 @@ function FishDisplay({ caughtMode }) {
             {fishData ? Object.entries(fishData).map((fish) => {
                 return (
                     <div key={fish[1].id} className="entry-border">
+                        
                         <div className={`fish-entry ${fish[1]['file-name']}`} onClick={caughtMode ? (e) => toggleCaught(e) : null}>
+                        <div className="tooltip">
+                            <p className="tooltip-text">{formatString(fish[1]['file-name'])}</p>
+                        </div>
                             <img className="fish-icon" src={fish[1].icon_uri}></img>
                         </div>
                     </div>

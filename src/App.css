@@ -8,10 +8,11 @@ body {
 }
 
 .caught-mode-button {
-  width: 5em;
+  margin: 1.5em;
+  max-width: max-content;
 }
 
-.caught {
+.caught .fish-icon {
   opacity: 20%;
 }
 
@@ -23,15 +24,13 @@ body {
   padding: 0.3em;
 }
 
-.fish-entry:hover,
-.fish-icon:hover {
-  opacity: 50%;
-  background-color: white;
+.fish-entry:hover .fish-icon{
+  opacity: 40%;
   cursor: pointer;
 }
 
 .fish-entry,
-.fish-icon {
+.fish-icon, .tooltip {
   width: 4em;
 }
 
@@ -46,4 +45,32 @@ body {
   grid-template-columns: repeat(16, 1fr);
   grid-auto-flow: column;
   width: min-content;
+}
+
+.tooltip {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 4em;
+  padding-bottom: 2.5em;
+  position: absolute;
+  color: white;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  font-size: 0.8rem;
+  width: max-content;
+  padding: 0.5em;
+  margin: 0;
+  border-radius: 1em;
+  background-color: rgb(52, 46, 46);
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  cursor: pointer;
 }
