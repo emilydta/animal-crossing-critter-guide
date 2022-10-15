@@ -16,6 +16,10 @@ body {
   opacity: 20%;
 }
 
+.unavailable {
+  visibility: hidden;
+}
+
 .fish-entry {
   display: flex;
   flex-direction: column;
