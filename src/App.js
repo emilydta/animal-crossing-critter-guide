@@ -4,6 +4,7 @@ import TimeDisplay from './components/TimeDisplay';
 import FishDisplay from './components/FishDisplay';
 
 function App() {
+  const [hemisphere, setHemisphere] = useState('southern')
   const [caughtMode, setCaughtMode] = useState(false);
   const [currentDateData, setCurrentDateData] = useState(new Date());
   const [customMonth, setCustomMonth] = useState(1);
@@ -29,9 +30,15 @@ function App() {
         setCustomTime={setCustomTime}
         times={times}
       />
+      <div className='hemisphere-buttons'>
+      Hemisphere: 
+        <button className={`southern-hemisphere-button ${hemisphere === 'southern' ? 'active' : ''}` } onClick={() => setHemisphere('southern')}>Southern</button>
+        <button className={`northern-hemisphere-button ${hemisphere === 'northern' ? 'active' : ''}` } onClick={() => setHemisphere('northern')}>Northern</button>
+      </div>
       <div className='critter-display'>
         <button type="button" className="caught-mode-button" onClick={() => toggleCaughtMode()}>{caughtMode ? 'Done' : 'Mark Caught'}</button>
         <FishDisplay
+          hemisphere={hemisphere}
           caughtMode={caughtMode}
           customMonth={customMonth}
           customTime={customTime}

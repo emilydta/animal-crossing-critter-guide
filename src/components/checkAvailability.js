@@ -1,10 +1,11 @@
 export default function checkAvailability(
+    hemisphere,
     customMonth,
     customTime,
     creatureEntry
 ) {
 
-    let creatureMonthAvailability = creatureEntry[1]['availability']['month-array-southern'];
+    let creatureMonthAvailability = creatureEntry[1]['availability'][`month-array-${hemisphere}`];
     let creatureTimeAvailability = creatureEntry[1]['availability']['time-array'];    
         if (!creatureMonthAvailability.includes(Number(customMonth))) {
             return 'unavailable';

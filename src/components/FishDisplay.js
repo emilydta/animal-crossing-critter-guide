@@ -1,8 +1,14 @@
 import { useState, useEffect } from "react";
 import checkAvailability from "./checkAvailability";
 
-function FishDisplay({ caughtMode, customMonth, customTime }) {
+function FishDisplay({
+    hemisphere,
+    caughtMode,
+    customMonth,
+    customTime
+}) {
     const [fishData, setFishData] = useState(null);
+    const [selectedFish, setSelectedFish] = useState(null);
     const [caughtList, setCaughtList] = useState([]);
 
     const toggleCaught = (e) => {
@@ -40,13 +46,12 @@ function FishDisplay({ caughtMode, customMonth, customTime }) {
                             className={
                                 `fish-entry ${fish[1]['file-name']} 
                                 ${caughtList.includes(fish[1]['file-name']) ? 'caught' : ''} 
-                                ${!caughtMode ? checkAvailability(customMonth, customTime, fish) : ''}`
+                                ${!caughtMode ? checkAvailability(hemisphere, customMonth, customTime, fish) : ''}`
                             }
-                            onClick={caughtMode ? (e) => toggleCaught(e) : null}>
+                            onClick={caughtMode ? (e) => toggleCaught(e) : () => { setSelectedFish(fish[1]) }}>
                             <div className="tooltip">
                                 <p className="tooltip-text">{formatString(fish[1]['file-name'])}</p>
                             </div>
-
                             <img className="fish-icon" src={fish[1].icon_uri}></img>
                         </div>
                     </div>
@@ -54,6 +59,10 @@ function FishDisplay({ caughtMode, customMonth, customTime }) {
                 )
             }
             ) : null}
+            {selectedFish ?
+                <div className="view-info-mode">
+                    <h1 className="creature-name">{formatString(selectedFish['file-name'])}</h1>
+                </div> : null}
         </div>
     )
 }

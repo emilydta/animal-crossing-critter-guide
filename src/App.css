@@ -2,6 +2,22 @@ body {
   background-color: blanchedalmond;
 }
 
+.active {
+  border: red solid 3px;
+}
+
+.view-info-mode {
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  background-color: blue;
+  width: 40em;
+  height: 20em;
+
+}
+
 .critter-display {
   display: flex;
   flex-direction: column;
