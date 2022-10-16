@@ -42,10 +42,6 @@ body {
   opacity: 20%;
 }
 
-.unavailable {
-  visibility: hidden;
-}
-
 .fish-entry {
   padding: 1em;
 }
@@ -99,6 +95,14 @@ body {
 .entry-border:hover .tooltip-text {
   visibility: visible;
   cursor: pointer;
+}
+
+.unavailable {
+  visibility: hidden;
+}
+
+.entry-border:hover .unavailable {
+  visibility: hidden;
 }
 
 @media screen and (max-width: 1210px) {

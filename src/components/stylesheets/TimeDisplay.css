@@ -1,4 +1,6 @@
-.time-date-container {
+.time-date-container,
+.date-display-container,
+.time-display-container {
     display: flex;
     flex-direction: column;
     justify-content: center;

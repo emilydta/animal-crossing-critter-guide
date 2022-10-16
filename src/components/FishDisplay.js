@@ -5,7 +5,10 @@ function FishDisplay({
     hemisphere,
     caughtMode,
     customMonth,
-    customTime
+    customTime,
+    allYear,
+    disableTime,
+    allDay,
 }) {
     const [fishData, setFishData] = useState(null);
     const [selectedFish, setSelectedFish] = useState(null);
@@ -27,6 +30,10 @@ function FishDisplay({
         return formattedString;
     }
 
+    const addUnavailableClassName = (critter) => {
+        return !caughtMode ? checkAvailability(hemisphere, customMonth, customTime, allYear, disableTime, allDay, critter) : '';
+    }
+
     useEffect(() => {
         async function fetchFishData() {
             const response = await fetch(`https://acnhapi.com/v1/fish/`, { mode: 'cors' });
@@ -42,21 +49,20 @@ function FishDisplay({
             {fishData ? Object.entries(fishData).map((fish) => {
                 return (
                     <div key={fish[1].id} className="entry-border">
-                    <div className="tooltip">
-                                <p className="tooltip-text">{formatString(fish[1]['file-name'])}</p>
+                    <div className='tooltip'>
+                                <p className={`tooltip-text ${addUnavailableClassName(fish)}`}>{formatString(fish[1]['file-name'])}</p>
                             </div>
                         <div
                             className={
                                 `fish-entry ${fish[1]['file-name']} 
                                 ${caughtList.includes(fish[1]['file-name']) ? 'caught' : ''} 
-                                ${!caughtMode ? checkAvailability(hemisphere, customMonth, customTime, fish) : ''}`
+                                ${addUnavailableClassName(fish)}`
                             }
                             onClick={caughtMode ? (e) => toggleCaught(e) : () => { setSelectedFish(fish[1]) }}>
                             
                             <img className="fish-icon" src={fish[1].icon_uri}></img>
                         </div>
                     </div>
-
                 )
             }
             ) : null}

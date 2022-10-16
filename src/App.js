@@ -4,13 +4,19 @@ import TimeDisplay from './components/TimeDisplay';
 import FishDisplay from './components/FishDisplay';
 
 function App() {
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+  const times = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23];
+
   const [hemisphere, setHemisphere] = useState('southern')
-  const [caughtMode, setCaughtMode] = useState(false);
   const [currentDateData, setCurrentDateData] = useState(new Date());
   const [customMonth, setCustomMonth] = useState(1);
   const [customTime, setCustomTime] = useState(1);
-  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-  const times = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23];
+  //view modes
+  const [caughtMode, setCaughtMode] = useState(false);
+  const [allYear, setAllYear] = useState(false);
+  const [disableTime, setDisableTime] = useState(false);
+  const [allDay, setAllDay] = useState(false);
+  const [viewAll, setViewAll] = useState(false);
 
   const toggleCaughtMode = () => {
     setCaughtMode(!caughtMode);
@@ -23,13 +29,20 @@ function App() {
       </header>
       <section className='settings-section'>
         <TimeDisplay
+          months={months}
+          times={times}
           currentDateData={currentDateData}
           customMonth={customMonth}
-          setCustomMonth={setCustomMonth}
-          months={months}
           customTime={customTime}
+          allYear={allYear}
+          disableTime={disableTime}
+          allDay={allDay}
+          setCustomMonth={setCustomMonth}
           setCustomTime={setCustomTime}
-          times={times}
+          setAllYear={setAllYear}
+          setDisableTime={setDisableTime}
+          setAllDay={setAllDay}
+
         />
         <div className='hemisphere-buttons'>
           Hemisphere:
@@ -44,6 +57,9 @@ function App() {
           caughtMode={caughtMode}
           customMonth={customMonth}
           customTime={customTime}
+          allYear={allYear}
+          disableTime={disableTime}
+          allDay={allDay}
         />
       </main>
     </div>
