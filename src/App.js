@@ -21,29 +21,31 @@ function App() {
       <header className="App-header">
         CRITTER GUIDE
       </header>
-      <TimeDisplay
-        currentDateData={currentDateData}
-        customMonth={customMonth}
-        setCustomMonth={setCustomMonth}
-        months={months}
-        customTime={customTime}
-        setCustomTime={setCustomTime}
-        times={times}
-      />
-      <div className='hemisphere-buttons'>
-      Hemisphere: 
-        <button className={`southern-hemisphere-button ${hemisphere === 'southern' ? 'active' : ''}` } onClick={() => setHemisphere('southern')}>Southern</button>
-        <button className={`northern-hemisphere-button ${hemisphere === 'northern' ? 'active' : ''}` } onClick={() => setHemisphere('northern')}>Northern</button>
-      </div>
-      <div className='critter-display'>
+      <section className='settings-section'>
+        <TimeDisplay
+          currentDateData={currentDateData}
+          customMonth={customMonth}
+          setCustomMonth={setCustomMonth}
+          months={months}
+          customTime={customTime}
+          setCustomTime={setCustomTime}
+          times={times}
+        />
+        <div className='hemisphere-buttons'>
+          Hemisphere:
+          <button className={`southern-hemisphere-button ${hemisphere === 'southern' ? 'active' : ''}`} onClick={() => setHemisphere('southern')}>Southern</button>
+          <button className={`northern-hemisphere-button ${hemisphere === 'northern' ? 'active' : ''}`} onClick={() => setHemisphere('northern')}>Northern</button>
+        </div>
         <button type="button" className="caught-mode-button" onClick={() => toggleCaughtMode()}>{caughtMode ? 'Done' : 'Mark Caught'}</button>
+      </section>
+      <main className='critter-display'>
         <FishDisplay
           hemisphere={hemisphere}
           caughtMode={caughtMode}
           customMonth={customMonth}
           customTime={customTime}
         />
-      </div>
+      </main>
     </div>
   );
 }

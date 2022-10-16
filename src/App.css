@@ -1,5 +1,6 @@
 body {
   background-color: blanchedalmond;
+  overflow-x: hidden;
 }
 
 .active {
@@ -15,12 +16,21 @@ body {
   background-color: blue;
   width: 40em;
   height: 20em;
+}
 
+.settings-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .critter-display {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: scroll;
 }
 
 .caught-mode-button {
@@ -37,21 +47,20 @@ body {
 }
 
 .fish-entry {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0.3em;
+  padding: 1em;
 }
 
-.fish-entry:hover .fish-icon{
+.fish-entry:hover .fish-icon {
   opacity: 40%;
   cursor: pointer;
 }
 
-.fish-entry,
-.fish-icon, .tooltip {
+.fish-icon {
   width: 4em;
+}
+
+.entry-border {
+  position: relative;
 }
 
 .entry-border,
@@ -64,33 +73,36 @@ body {
   grid-template-rows: repeat(5, 1fr);
   grid-template-columns: repeat(16, 1fr);
   grid-auto-flow: column;
-  width: min-content;
 }
 
 .tooltip {
-  position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 4em;
-  padding-bottom: 2.5em;
-  position: absolute;
-  color: white;
-  z-index: 1;
-  cursor: pointer;
+  justify-content: center;
+  width: 6em;
 }
 
 .tooltip-text {
   visibility: hidden;
+  margin-bottom: 2em;
+  position: absolute;
   font-size: 0.8rem;
   width: max-content;
   padding: 0.5em;
   margin: 0;
+  margin-bottom: 3em;
   border-radius: 1em;
+  color: white;
   background-color: rgb(52, 46, 46);
+  z-index: 1;
 }
 
-.tooltip:hover .tooltip-text {
+.entry-border:hover .tooltip-text {
   visibility: visible;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1210px) {
+  .critter-display {
+    align-items: flex-start;
+  }
 }
