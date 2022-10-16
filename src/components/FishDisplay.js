@@ -42,6 +42,9 @@ function FishDisplay({
             {fishData ? Object.entries(fishData).map((fish) => {
                 return (
                     <div key={fish[1].id} className="entry-border">
+                    <div className="tooltip">
+                                <p className="tooltip-text">{formatString(fish[1]['file-name'])}</p>
+                            </div>
                         <div
                             className={
                                 `fish-entry ${fish[1]['file-name']} 
@@ -49,9 +52,7 @@ function FishDisplay({
                                 ${!caughtMode ? checkAvailability(hemisphere, customMonth, customTime, fish) : ''}`
                             }
                             onClick={caughtMode ? (e) => toggleCaught(e) : () => { setSelectedFish(fish[1]) }}>
-                            <div className="tooltip">
-                                <p className="tooltip-text">{formatString(fish[1]['file-name'])}</p>
-                            </div>
+                            
                             <img className="fish-icon" src={fish[1].icon_uri}></img>
                         </div>
                     </div>
