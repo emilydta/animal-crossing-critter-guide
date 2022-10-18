@@ -3,19 +3,12 @@ body {
   overflow-x: hidden;
 }
 
-.active {
-  border: red solid 3px;
+.active-modal {
+  overflow-y: hidden;
 }
 
-.view-info-mode {
-  visibility: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: fixed;
-  background-color: blue;
-  width: 40em;
-  height: 20em;
+.active {
+  border: red solid 3px;
 }
 
 .settings-section {
@@ -25,7 +18,7 @@ body {
   align-items: center;
 }
 
-.critter-display {
+.critter-display-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -46,7 +39,7 @@ body {
   padding: 1em;
 }
 
-.fish-entry:hover .fish-icon {
+.entry-border:hover .fish-icon {
   opacity: 40%;
   cursor: pointer;
 }
@@ -62,13 +55,6 @@ body {
 .entry-border,
 .fish-display {
   border: 1.5px solid #5d2117;
-}
-
-.fish-display {
-  display: grid;
-  grid-template-rows: repeat(5, 1fr);
-  grid-template-columns: repeat(16, 1fr);
-  grid-auto-flow: column;
 }
 
 .tooltip {
@@ -105,8 +91,72 @@ body {
   visibility: hidden;
 }
 
+.critter-modal, .overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.422);
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: blanchedalmond;
+  z-index: 1;
+  width: 50vw;
+}
+
+.critter-name {
+  margin-bottom: 0;
+}
+
+.critter-image {
+  width: 30vw;
+}
+
+.seasonality-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+
+.time-of-year-container {
+  display: flex;
+  gap: 2em;
+}
+
+.modal-hem-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h4, p {
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+
+.time-of-year-container>p {
+  margin-bottom: 1em;
+}
+
 @media screen and (max-width: 1210px) {
-  .critter-display {
+  .critter-display-container
+ {
     align-items: flex-start;
   }
 }

@@ -51,8 +51,9 @@ function App() {
         </div>
         <button type="button" className="caught-mode-button" onClick={() => toggleCaughtMode()}>{caughtMode ? 'Done' : 'Mark Caught'}</button>
       </section>
-      <main className='critter-display'>
+      <main className='critter-display-container'>
         <FishDisplay
+          months={months}
           hemisphere={hemisphere}
           caughtMode={caughtMode}
           customMonth={customMonth}
