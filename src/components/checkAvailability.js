@@ -38,12 +38,12 @@ export default function checkAvailability(
     }
 
     if (allYear && !disableTime) {
-        //All critters available all year and at specified time
+        //All critters available all year and specified time
         if (critter[1]['availability']['isAllYear'] && critterTimeAvailability.includes(Number(customTime))) {
             return ''
         } else return 'unavailable';
     }
-    if (!allYear, !allDay, !disableTime) {
+    if (!allYear && !allDay && !disableTime) {
         //All critters available at specified month and specified time
         if (!critterMonthAvailability.includes(Number(customMonth))) {
             return 'unavailable';
