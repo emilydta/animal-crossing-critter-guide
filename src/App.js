@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import TimeDisplay from './components/TimeDisplay';
 import FishDisplay from './components/FishDisplay';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTableList, faFish } from '@fortawesome/free-solid-svg-icons'
+
 
 function App() {
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
@@ -22,12 +25,27 @@ function App() {
     setCaughtMode(!caughtMode);
   }
 
+  const toggleViewAll = () => {
+    setViewAll(!viewAll);
+  }
+
+  const viewCurrent = () => { return }
+
   return (
     <div className="App">
-      <header className="App-header">
-        CRITTER GUIDE
-      </header>
       <section className='settings-section'>
+        <div className='top-section-buttons'>
+          <button type='button'
+            className={`view-all-button ${viewAll ? 'active' : ''}`}
+            onClick={() => toggleViewAll()}>
+            {<span><FontAwesomeIcon icon={faTableList} /> All</span>}
+          </button>
+          <button type='button'
+            className={`view-current-button`}
+            onClick={() => viewCurrent()}>
+            {<span><FontAwesomeIcon icon={faFish} /> Current</span>}
+          </button>
+        </div>
         <TimeDisplay
           months={months}
           times={times}
@@ -45,16 +63,22 @@ function App() {
 
         />
         <div className='hemisphere-buttons'>
-          Hemisphere:
+          <h4>Hemisphere: </h4>
           <button className={`southern-hemisphere-button ${hemisphere === 'southern' ? 'active' : ''}`} onClick={() => setHemisphere('southern')}>Southern</button>
           <button className={`northern-hemisphere-button ${hemisphere === 'northern' ? 'active' : ''}`} onClick={() => setHemisphere('northern')}>Northern</button>
         </div>
-        <button type="button" className="caught-mode-button" onClick={() => toggleCaughtMode()}>{caughtMode ? 'Done' : 'Mark Caught'}</button>
+        <div className='mid-section-buttons'>
+          <button type="button"
+            className="caught-mode-button"
+            onClick={() => toggleCaughtMode()}>{caughtMode ? 'Done' : 'Mark Caught'}
+          </button>
+        </div>
       </section>
       <main className='critter-display-container'>
         <FishDisplay
           months={months}
           hemisphere={hemisphere}
+          viewAll={viewAll}
           caughtMode={caughtMode}
           customMonth={customMonth}
           customTime={customTime}

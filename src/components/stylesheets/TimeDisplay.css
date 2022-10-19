@@ -7,8 +7,133 @@
     align-items: center;
 }
 
+.settings-container {
+    display: flex;
+    gap: 1em;
+}
+
+.time-date-content {
+    display: flex;
+    gap: 3em;
+}
+
 .time-display,
 .date-display {
     margin: 0.2em;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#month-slider,
+#time-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20em;
+    height: 1em;
+    background: rgb(52, 46, 46);
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .1s;
+    transition: opacity .1s;
+    border-radius: 1em;
+}
+
+#month-slider:hover,
+#time-slider:hover {
+    opacity: 1;
+}
+
+#month-slider::-webkit-slider-thumb,
+#month-slider::-moz-range-thumb,
+#time-slider::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1em;
+    height: 1.5em;
+    border: 3px rgb(52, 46, 46) solid;
+    background: blanchedalmond;
+    cursor: pointer;
+    transition: transform 50ms ease-in-out;
+}
+
+
+#month-slider:hover::-webkit-slider-thumb,
+#month-slider:hover::-moz-range-thumb,
+#time-slider:hover::-moz-range-thumb {
+    transform: scale(1.2);
+    transform-origin: center;
+}
+
+#month-slider:disabled,
+#time-slider:disabled,
+#month-slider:disabled::-webkit-slider-thumb,
+#month-slider:disabled::-moz-range-thumb,
+#time-slider:disabled::-moz-range-thumb {
+    opacity: 0;
+    cursor: default;
+}
+
+.mode-buttons {
+    display: flex;
+    gap: 1em;
+    margin-top: 2em;
+    margin-bottom: 1.3em;
+}
+
+.mode-buttons>button {
+    font-size: 1.3rem;
+}
+
+.all-day-button>span>svg {
+    color: rgb(199, 119, 0);
+}
+
+.all-year-button>span>svg {
+    color: rgb(126, 34, 1);
+}
+
+.disable-time-button>span>svg {
+    color: rgb(27, 156, 91);
+}
+
+.disable-time-button,
+.all-day-button,
+.all-year-button {
+    margin: 0;
+    font-weight: 600;
+    color: rgb(52, 46, 46);
+    cursor: pointer;
+    font-size: 1rem;
+    background: none;
+    border: none;
+    border-radius: 1em;
+    transition: transform 50ms ease-in-out;
+}
+
+.all-year-button, .all-day-button {
+    width: 6.5em;
+}
+
+.disable-time-button {
+    width: 9em;
+}
+
+.disable-time-button:hover,
+.all-day-button:hover,
+.all-year-button:hover {
+    background-color: rgb(52, 46, 46);
+    color: blanchedalmond;
+    transform: scale(1.1);
+    transform-origin: center;
+}
+
+.active {
+    background-color: rgb(52, 46, 46);
+    color: blanchedalmond;
 }
