@@ -132,13 +132,12 @@
 }
 
 .time-date-container, .mode-buttons {
-    animation: bounceIn .1s ease-out;
-    animation-fill-mode: forwards;
+    animation: fadeIn .3s;
   }
   
-  @keyframes bounceIn {
-    0% {transform: scaleX(1.2);}
-    100% {transform: scaleX(1);}
+  @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
   }
 
 @media screen and (max-width: 584px) {

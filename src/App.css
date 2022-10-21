@@ -29,14 +29,23 @@ body {
   margin-top: 3em;
 }
 
-.caught-total-content, .caught-total-heading, .all-critters-heading-container, .hemisphere-buttons {
+.caught-total-content, .caught-total-heading, .all-critters-heading-container {
   animation: bounceIn .1s ease-out;
   animation-fill-mode: forwards;
+}
+
+.hemisphere-buttons {
+  animation: fadeIn .3s
 }
 
 @keyframes bounceIn {
   0% {transform: scaleX(1.1);}
   100% {transform: scaleX(1);}
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
 }
 
 .hemisphere-buttons {
