@@ -4,7 +4,12 @@ import CritterModal from "./CritterModal";
 
 function CritterDisplay({
     activeCritter,
-    setMasterCaughtList,
+    bugsCaught,
+    fishCaught,
+    seaCaught,
+    setBugsCaught,
+    setFishCaught,
+    setSeaCaught,
     months,
     hemisphere,
     showCaught,
@@ -22,17 +27,20 @@ function CritterDisplay({
 
     selectedCritter ? document.body.classList.add('active-modal') : document.body.classList.remove('active-modal');
 
-    useEffect(() => {
-        setMasterCaughtList(caughtList);
-    }, [caughtList])
-
     const toggleCaught = (e) => {
         e.currentTarget.classList.toggle('caught');
         if (e.currentTarget.classList.contains('caught')) {
             setCaughtList([...caughtList, e.currentTarget.classList[1]])
+            activeCritter === 'bugs' && setBugsCaught([...bugsCaught, e.currentTarget.classList[1]]);
+            activeCritter === 'fish' && setFishCaught([...fishCaught, e.currentTarget.classList[1]]);
+            activeCritter === 'sea' && setSeaCaught([...seaCaught, e.currentTarget.classList[1]]);
         }
         if (!e.currentTarget.classList.contains('caught')) {
             setCaughtList(caughtList.filter((critter) => { return critter !== e.currentTarget.classList[1] }));
+            activeCritter === 'bugs' && setBugsCaught(bugsCaught.filter((critter) => { return critter !== e.currentTarget.classList[1] }));
+            activeCritter === 'fish' && setFishCaught(fishCaught.filter((critter) => { return critter !== e.currentTarget.classList[1] }));
+            activeCritter === 'sea' && setSeaCaught(seaCaught.filter((critter) => { return critter !== e.currentTarget.classList[1] }));
+            
         }
     }
 

@@ -150,15 +150,19 @@ function App() {
 
           {!caughtMode && <button type="button"
             className="toggle-caught-button"
-            onClick={() => setShowCaught(!showCaught)}>{showCaught ? <><FontAwesomeIcon icon={faEye} /> Caught</> : <><FontAwesomeIcon icon={faEyeSlash} /> Caught</>}
+            onClick={() => setShowCaught(!showCaught)}>{showCaught ? <><FontAwesomeIcon icon={faEyeSlash} /> Caught</> : <><FontAwesomeIcon icon={faEye} /> Caught</>}
           </button>}
         </div>
         </div>
         <div className={`critter-display-content ${activeCritter === 'sea' ? 'sea-disp-content' : 'default-disp-content'}`}>
           <CritterDisplay
             activeCritter={activeCritter}
-            masterCaughtList={fishCaught}
-            setMasterCaughtList={setFishCaught}
+            bugsCaught={bugsCaught}
+            fishCaught={fishCaught}
+            seaCaught={seaCaught}
+            setBugsCaught={setBugsCaught}
+            setFishCaught={setFishCaught}
+            setSeaCaught={setSeaCaught}
             months={months}
             hemisphere={hemisphere}
             viewAll={viewAll}
