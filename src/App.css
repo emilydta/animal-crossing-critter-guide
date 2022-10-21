@@ -190,6 +190,7 @@ button:hover {
   width: max-content;
   padding-left: 1em;
   padding-right: 1em;
+  transition: transform 50ms ease-in-out;
 }
 
 .caught .critter-entry-icon {
