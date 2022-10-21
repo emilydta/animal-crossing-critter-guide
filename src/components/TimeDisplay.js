@@ -33,7 +33,7 @@ function TimeDisplay(
     useEffect(() => {
         setCustomMonth(currentMonth);
         setCustomTime(currentTime);
-    }, [])
+    }, [currentDateData])
 
     const toggleDisableTime = () => {
         if (allDay) {
@@ -62,45 +62,42 @@ function TimeDisplay(
     }
 
     return (
-        <div className="settings-container">
-            <div className="time-date-container">
-                <div className="time-date-content">
-                    <div className="date-display-container">
-                        <p className="date-display">
-                            {allYear ? 'All Year' : months[customMonth - 1]}
-                        </p>
-                        <div className="slider-container">
-                            <input disabled={allYear ? true : false} id='month-slider' type='range' min='1' max='12' value={customMonth} onChange={(e) => setCustomMonth(e.target.value)}></input>
-                        </div>
-                    </div>
-                    <div className="time-display-container">
-                        <p className="time-display">
-                            {timeDisplayText()}
-                        </p>
-                        <div className="slider-container">
-                            <input disabled={allDay || disableTime ? true : false} id='time-slider' type='range' min='0' max='23' value={customTime} onChange={(e) => setCustomTime(e.target.value)}></input>
-                        </div>
+        <div className="time-date-container">
+            <div className="time-date-content">
+                <div className="date-display-container">
+                    <p className="date-display">
+                        {allYear ? 'All Year' : months[customMonth - 1]}
+                    </p>
+                    <div className="slider-container">
+                        <input disabled={allYear ? true : false} id='month-slider' type='range' min='1' max='12' value={customMonth} onChange={(e) => setCustomMonth(e.target.value)}></input>
                     </div>
                 </div>
-                <div className="mode-buttons">
-                    <button type='button'
-                        className={`all-year-button ${allYear ? 'active' : ''}`}
-                        onClick={() => setAllYear(!allYear)}>
-                        {<span><FontAwesomeIcon icon={faCalendarDays} /></span>} All Year
-                    </button>
-                    <button type='button'
-                        className={`all-day-button ${allDay ? 'active' : ''}`}
-                        onClick={() => toggleAllDay()}>
-                        {<span><FontAwesomeIcon icon={faSun} /></span>} All Day
-                    </button>
-                    <button type='button'
-                        className={`disable-time-button ${disableTime ? 'active' : ''}`}
-                        onClick={() => toggleDisableTime()}>
-                        {<span><FontAwesomeIcon icon={faClock} /></span>} Disable Time
-                    </button>
+                <div className="time-display-container">
+                    <p className="time-display">
+                        {timeDisplayText()}
+                    </p>
+                    <div className="slider-container">
+                        <input disabled={allDay || disableTime ? true : false} id='time-slider' type='range' min='0' max='23' value={customTime} onChange={(e) => setCustomTime(e.target.value)}></input>
+                    </div>
                 </div>
             </div>
-
+            <div className="mode-buttons">
+                <button type='button'
+                    className={`all-year-button ${allYear ? 'active' : ''}`}
+                    onClick={() => setAllYear(!allYear)}>
+                    {<span><FontAwesomeIcon icon={faCalendarDays} /></span>} All Year
+                </button>
+                <button type='button'
+                    className={`all-day-button ${allDay ? 'active' : ''}`}
+                    onClick={() => toggleAllDay()}>
+                    {<span><FontAwesomeIcon icon={faSun} /></span>} All Day
+                </button>
+                <button type='button'
+                    className={`disable-time-button ${disableTime ? 'active' : ''}`}
+                    onClick={() => toggleDisableTime()}>
+                    {<span><FontAwesomeIcon icon={faClock} /></span>} Disable Time
+                </button>
+            </div>
         </div>
     )
 }

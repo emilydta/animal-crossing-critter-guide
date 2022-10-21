@@ -4,15 +4,39 @@ body {
   font-family: 'Nunito', 'Varela Round', 'sans-serif';
 }
 
-.active-modal {
-  overflow-y: hidden;
+.all-critters-heading-container {
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 
-.settings-section {
+.all-critters-heading {
+  margin: 0;
+}
+
+.all-current-buttons-container {
+  display: flex;
+  position: absolute;
+  top: 0;
+  gap: 1.5em;
+}
+
+.top-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 14em;
+  margin-top: 3em;
+}
+
+.caught-total-content, .caught-total-heading, .all-critters-heading-container, .hemisphere-buttons {
+  animation: bounceIn .1s ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes bounceIn {
+  0% {transform: scaleX(1.1);}
+  100% {transform: scaleX(1);}
 }
 
 .hemisphere-buttons {
@@ -22,6 +46,7 @@ body {
   gap: 1em;
   margin-bottom: 1em;
   font-size: 1.3rem;
+  transition: font-size .5s;
 }
 
 .southern-hemisphere-button,
@@ -34,25 +59,36 @@ body {
   background: none;
   font-weight: 600;
   color: rgb(52, 46, 46);
-  transition: transform 50ms ease-in-out;
+  transition: transform 50ms ease-in-out, font-size .5s;
 }
 
 .hemisphere-buttons>h4 {
   margin: 0;
   font-weight: 800;
   font-size: 1.3rem;
+  transition: font-size .5s;
 }
 
-.southern-hemisphere-button:hover,
-.northern-hemisphere-button:hover,
-.caught-mode-button:hover,
-.view-all-button:hover,
-.view-current-button:hover {
-  background-color: rgb(52, 46, 46);
+button:hover {
+  background: rgb(52, 46, 46);
   color: blanchedalmond;
   font-weight: 700;
   transform: scale(1.1);
   transform-origin: center;
+}
+
+.critter-button:hover {
+  background: rgb(255, 183, 0);
+}
+
+.critter-button:hover .critter-button-icon {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(2px, 2px) rotate(2deg)
+  }
 }
 
 .active {
@@ -60,24 +96,67 @@ body {
   color: blanchedalmond;
 }
 
+.critter-buttons-container {
+  display: flex;
+  position: relative;
+  justify-content: flex-start;
+  gap: 0.5em;
+}
+
+.sea-width-btn {
+  width: 49.5em;
+}
+
+.default-width-btn {
+  width: 98.5em;
+}
+
+.critter-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: rgb(201, 186, 162);
+  border-radius: 1em 1em 0 0;
+  transition: background-color .2s;
+}
+
+.critter-button-icon {
+  width: 4em;
+  transition: width .5s;
+}
+
 .critter-display-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.critter-display-content {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
   overflow-x: scroll;
 }
 
-.mid-section-buttons {
+.critter-active {
+  background-color: rgb(255, 183, 0);
+}
+
+.caught-buttons-container {
   display: flex;
+  position: relative;
+  justify-content: flex-end;
+  width: 100%;
   gap: 1em;
-  width: max-content;
   height: 2em;
   margin: 1em;
   margin-bottom: 0.5em;
 }
 
-.caught-mode-button {
+.caught-mode-button,
+.toggle-caught-button {
   cursor: pointer;
   font-size: 1rem;
   font-weight: 600;
@@ -87,8 +166,7 @@ body {
   background: none;
   border: 1px rgb(52, 46, 46) solid;
   border-radius: 1em;
-  transition: transform 50ms ease-in-out;
-  width: max-content;
+  transition: transform 50ms ease-in-out, font-size .5s;
 }
 
 .view-all-button,
@@ -100,27 +178,67 @@ body {
   font-size: 1rem;
   font-weight: 600;
   margin-top: 1em;
-  transition: transform 50ms ease-in-out;
   width: max-content;
   padding-left: 1em;
   padding-right: 1em;
 }
 
-.caught .fish-icon {
+.caught .critter-entry-icon {
   opacity: 20%;
 }
 
-.fish-entry {
-  padding: 1em;
+.caught-total-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0.9em;
+  margin-bottom: 1.2em;
 }
 
-.entry-border:hover .fish-icon {
-  opacity: 40%;
+.caught-total-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+
+.caught-total-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  font-size: 2rem;
+  font-weight: 600;
+  transition: font-size .5s;
+}
+
+.critter-total-icon {
+  width: 3em;
+  background-color: rgba(148, 104, 104, 0.607);
+  border-radius: 1em;
+}
+
+.critter-total {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.critter-entry {
+  padding: 1em;
   cursor: pointer;
 }
 
-.fish-icon {
+.entry-border:hover .critter-entry-icon {
+  opacity: 80%;
+  cursor: pointer;
+  transform: scale(1.3);
+  transform-origin: center;
+}
+
+.critter-entry-icon {
   width: 4em;
+  transition: transform 80ms ease-in-out;
 }
 
 .entry-border {
@@ -128,8 +246,8 @@ body {
 }
 
 .entry-border,
-.fish-display {
-  border: 1px solid #39211d51;
+.active-critter-display {
+  border: 1px solid rgb(52, 46, 46);
 }
 
 .tooltip {
@@ -181,10 +299,6 @@ body {
   position: fixed;
 }
 
-.critter-modal {
-  overflow-y: scroll;
-}
-
 .overlay {
   background-color: rgba(0, 0, 0, 0.422);
 }
@@ -200,6 +314,7 @@ body {
   width: 100vw;
   padding-bottom: 3em;
   gap: 1em;
+  overflow-y: scroll;
 }
 
 .close-modal {
@@ -225,6 +340,7 @@ body {
 }
 
 .critter-image {
+  filter: drop-shadow(0.5em 0.8em 0.4em rgba(0, 0, 0, 0.5));
   height: 30vh;
   width: 100%;
   object-fit: scale-down;
@@ -278,13 +394,96 @@ p {
   gap: 3em;
 }
 
+.active-modal {
+  overflow: hidden;
+}
 
+/* Grid sizes on screen width changes */
+@media screen and (max-width: 1576px) {
+  .default-disp-content {
+    display: flex;
+    justify-content: flex-start;
+  }
 
-@media screen and (max-width: 1210px) {
-  .critter-display-container {
-    align-items: flex-start;
+  .default-width-btn {
+    width: 100vw;
+    justify-content: flex-start;
   }
 }
+
+@media screen and (max-width: 791px) {
+  .sea-disp-content {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .sea-width-btn {
+    width: 100vw;
+    justify-content: flex-start;
+  }
+}
+
+/*------------------------------*/
+
+@media screen and (max-width: 584px) {
+
+  .hemisphere-buttons,
+  .hemisphere-buttons>h4,
+  .southern-hemisphere-button,
+  .northern-hemisphere-button {
+    font-size: 1rem;
+  }
+
+  .critter-button-icon {
+    width: 2em;
+  }
+
+  .critter-button {
+    margin-top: 1.5em;
+    height: 2em;
+    width: 5em;
+  }
+
+  .caught-mode-button,
+  .toggle-caught-button {
+    font-size: 0.8rem;
+    height: min-content;
+    margin-top: 1em;
+    white-space: nowrap;
+  }
+
+  .caught-total-content {
+    font-size: 1.6rem;
+  }
+
+  .view-all-button,
+  .view-current-button {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 340px) {
+
+  .hemisphere-buttons,
+  .hemisphere-buttons>h4,
+  .southern-hemisphere-button,
+  .northern-hemisphere-button {
+    font-size: 0.8rem;
+  }
+
+  .caught-mode-button,
+  .toggle-caught-button {
+    font-size: 0.7rem;
+    height: min-content;
+    margin-top: 1.3em;
+    white-space: nowrap;
+  }
+
+  .caught-total-content {
+    font-size: 1.3rem;
+  }
+}
+
 
 @media screen and (min-width: 100px) {
   .modal-content {
@@ -316,7 +515,6 @@ p {
     margin-left: 80%;
   }
 }
-
 
 @media screen and (min-width: 800px) {
   .modal-content {
