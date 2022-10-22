@@ -449,7 +449,21 @@ p {
 /* Grid sizes on screen width changes */
 @media screen and (max-width: 1313px) {
   .critter-entry-icon {
-    width: 2.5em;
+    width: 3.5em;
+  }
+
+  .tooltip-text {
+    font-size: 0.5rem;
+  }
+
+  .tooltip {
+    margin-bottom: 2.9em;
+  }
+}
+
+@media screen and (max-width: 1169px) {
+  .critter-entry-icon {
+    width: 3em;
   }
 
   .tooltip-text {
@@ -457,18 +471,18 @@ p {
   }
 
   .tooltip {
-    margin-bottom: 2.3em;
+    margin-bottom: 2.5em;
   }
 }
 
-@media screen and (max-width: 929px) {
+@media screen and (max-width: 1041px) {
   .default-disp-content {
     display: flex;
     justify-content: flex-start;
   }
 }
 
-@media screen and (max-width: 463px) {
+@media screen and (max-width: 521px) {
   .sea-disp-content {
     display: flex;
     justify-content: flex-start;
