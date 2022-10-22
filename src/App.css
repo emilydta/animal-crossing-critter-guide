@@ -174,7 +174,8 @@ html {
   padding-left: 1em;
   padding-right: 1em;
   background: none;
-  border: 1px rgb(52, 46, 46) solid;
+  border: 1px var(--bg-secondary) solid;
+  color: var(--bg-secondary);
   border-radius: 1em;
   transition: transform 50ms ease-in-out, font-size .5s;
 }
