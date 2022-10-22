@@ -79,14 +79,6 @@ html {
   transition: font-size .5s;
 }
 
-button:hover {
-  background: var(--bg-secondary);
-  color: var(--bg-primary);
-  font-weight: 700;
-  transform: scale(1.1);
-  transform-origin: center;
-}
-
 .critter-button:hover {
   background: rgb(255, 183, 0);
 }
@@ -410,6 +402,17 @@ p {
 .active-modal {
   overflow: hidden;
 }
+
+@media not all and (hover: none) {
+  button:hover {
+    background: var(--bg-secondary);
+    color: var(--bg-primary);
+    font-weight: 700;
+    transform: scale(1.1);
+    transform-origin: center;
+  }
+}
+
 
 /* Grid sizes on screen width changes */
 @media screen and (max-width: 1576px) {
