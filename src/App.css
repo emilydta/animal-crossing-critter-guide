@@ -282,10 +282,6 @@ html {
   visibility: hidden;
 }
 
-.entry-border:hover .unavailable {
-  visibility: hidden;
-}
-
 .critter-modal,
 .overlay {
   display: flex;
@@ -424,6 +420,10 @@ p {
   .close-modal:hover {
     opacity: 70%;
   }
+
+  .entry-border:hover .unavailable {
+    visibility: hidden;
+  }  
 }
 
 
