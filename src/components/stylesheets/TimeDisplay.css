@@ -73,6 +73,7 @@ input[type='range']:disabled {
     gap: 1em;
     margin-top: 2em;
     margin-bottom: 1.3em;
+    white-space: nowrap;
 }
 
 .mode-buttons>button {
