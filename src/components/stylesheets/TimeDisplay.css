@@ -63,21 +63,6 @@ input[type='range']::-webkit-slider-thumb {
     align-items: center;
 }
 
-input[type='range']:hover {
-    opacity: 1;
-}
-
-
-input[type='range']:hover::-webkit-slider-thumb {
-    transform: scale(1.2);
-    transform-origin: center;
-}
-
-input[type='range']:hover::-moz-range-thumb {
-    transform: scale(1.2);
-    transform-origin: center;
-}
-
 input[type='range']:disabled {
     opacity: 20%;
     pointer-events: none;
@@ -128,15 +113,6 @@ input[type='range']:disabled {
     width: 9em;
 }
 
-.disable-time-button:hover,
-.all-day-button:hover,
-.all-year-button:hover {
-    background-color: var(--bg-secondary);
-    color: var(--bg-primary);
-    transform: scale(1.1);
-    transform-origin: center;
-}
-
 .active {
     background-color: var(--bg-secondary);
     color: var(--bg-primary);
@@ -154,6 +130,32 @@ input[type='range']:disabled {
 
     100% {
         opacity: 1;
+    }
+}
+
+@media not all and (hover: none) {
+    input[type='range']:hover {
+        opacity: 1;
+    }
+
+
+    input[type='range']:hover::-webkit-slider-thumb {
+        transform: scale(1.2);
+        transform-origin: center;
+    }
+
+    input[type='range']:hover::-moz-range-thumb {
+        transform: scale(1.2);
+        transform-origin: center;
+    }
+
+    .disable-time-button:hover,
+    .all-day-button:hover,
+    .all-year-button:hover {
+        background-color: var(--bg-secondary);
+        color: var(--bg-primary);
+        transform: scale(1.1);
+        transform-origin: center;
     }
 }
 
