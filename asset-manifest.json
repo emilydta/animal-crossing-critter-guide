@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/animal-crossing-critter-guide/static/css/main.73bf3ebb.css",
+    "main.css": "/animal-crossing-critter-guide/static/css/main.56c727d2.css",
     "main.js": "/animal-crossing-critter-guide/static/js/main.fc123a0d.js",
     "index.html": "/animal-crossing-critter-guide/index.html",
-    "main.73bf3ebb.css.map": "/animal-crossing-critter-guide/static/css/main.73bf3ebb.css.map",
+    "main.56c727d2.css.map": "/animal-crossing-critter-guide/static/css/main.56c727d2.css.map",
     "main.fc123a0d.js.map": "/animal-crossing-critter-guide/static/js/main.fc123a0d.js.map"
   },
   "entrypoints": [
-    "static/css/main.73bf3ebb.css",
+    "static/css/main.56c727d2.css",
     "static/js/main.fc123a0d.js"
   ]
 }
