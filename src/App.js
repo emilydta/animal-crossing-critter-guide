@@ -117,43 +117,46 @@ function App() {
             <button className={`northern-hemisphere-button ${hemisphere === 'northern' ? 'active' : ''}`} onClick={() => setHemisphere('northern')}>Northern</button>
           </div>
         </> : null}
-      </section>     
+      </section>
       <main className='critter-display-container'>
-        <div className={`critter-buttons-container ${activeCritter === 'sea' ? 'sea-width-btn' : 'default-width-btn'}`}>
-          <div className={`critter-button ${activeCritter === 'bugs' && 'critter-active'}`}
-            onClick={() => setActiveCritter('bugs')}>
-            <img
-              className='critter-button-icon'
-              src={bugIcon}
-            >
-            </img>
-          </div>
-          <div className={`critter-button ${activeCritter === 'fish' && 'critter-active'}`}
-            onClick={() => setActiveCritter('fish')}>
-            <img
-              className='critter-button-icon'
-              src={fishIcon}>
-            </img>
-          </div>
-          <div className={`critter-button ${activeCritter === 'sea' && 'critter-active'}`}
-            onClick={() => setActiveCritter('sea')}>
-            <img
-              className='critter-button-icon'
-              src={seaCreatureIcon}>
-            </img>
+        <div className='mid-buttons-container'>
+          <div className='critter-buttons-container'>
+            <div className={`critter-button ${activeCritter === 'bugs' && 'critter-active'}`}
+              onClick={() => setActiveCritter('bugs')}>
+              <img
+                className='critter-button-icon'
+                src={bugIcon}
+              >
+              </img>
+            </div>
+            <div className={`critter-button ${activeCritter === 'fish' && 'critter-active'}`}
+              onClick={() => setActiveCritter('fish')}>
+              <img
+                className='critter-button-icon'
+                src={fishIcon}>
+              </img>
+            </div>
+            <div className={`critter-button ${activeCritter === 'sea' && 'critter-active'}`}
+              onClick={() => setActiveCritter('sea')}>
+              <img
+                className='critter-button-icon'
+                src={seaCreatureIcon}>
+              </img>
+            </div>
           </div>
           <div className='caught-buttons-container'>
-          <button type="button"
-            className="caught-mode-button"
-            onClick={() => toggleCaughtMode()}>{caughtMode ? 'Done' : <><FontAwesomeIcon icon={faMarker} /> Caught</>}
-          </button>
+            <button type="button"
+              className="caught-mode-button"
+              onClick={() => toggleCaughtMode()}>{caughtMode ? 'Done' : <><FontAwesomeIcon icon={faMarker} /> Caught</>}
+            </button>
 
-          {!caughtMode && <button type="button"
-            className="toggle-caught-button"
-            onClick={() => setShowCaught(!showCaught)}>{showCaught ? <><FontAwesomeIcon icon={faEyeSlash} /> Caught</> : <><FontAwesomeIcon icon={faEye} /> Caught</>}
-          </button>}
+            {!caughtMode && <button type="button"
+              className="toggle-caught-button"
+              onClick={() => setShowCaught(!showCaught)}>{showCaught ? <><FontAwesomeIcon icon={faEyeSlash} /> Caught</> : <><FontAwesomeIcon icon={faEye} /> Caught</>}
+            </button>}
+          </div>
         </div>
-        </div>
+        <div className='mid-line'></div>
         <div className={`critter-display-content ${activeCritter === 'sea' ? 'sea-disp-content' : 'default-disp-content'}`}>
           <CritterDisplay
             activeCritter={activeCritter}
@@ -176,7 +179,7 @@ function App() {
           />
         </div>
       </main>
-      </div>
+    </div>
   );
 }
 

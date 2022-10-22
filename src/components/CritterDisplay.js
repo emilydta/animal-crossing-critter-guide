@@ -71,7 +71,6 @@ function CritterDisplay({
                 gridTemplateRows: 'repeat(5, 1fr)',
                 gridTemplateColumns: `repeat(${critterData && Object.keys(critterData).length / 5}, 1fr)`,
                 gridAutoFlow: 'column',
-                width: activeCritter === 'sea' ? '790.333px' : '1573.97px'
             }}
         >
             {critterData && Object.entries(critterData).map((critter) => {

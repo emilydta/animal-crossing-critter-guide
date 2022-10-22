@@ -106,19 +106,23 @@ html {
   color: var(--bg-primary);
 }
 
-.critter-buttons-container {
+.mid-buttons-container {
   display: flex;
   position: relative;
+  justify-content: space-between;
+  width: 90vw;
+}
+
+.mid-line {
+  background: rgb(201, 186, 162);
+  height: 0.1em;
+  width: 100vw;
+  margin-bottom: 0.5em;
+}
+
+.critter-buttons-container {
+  display: flex;
   justify-content: flex-start;
-  gap: 0.5em;
-}
-
-.sea-width-btn {
-  width: 49.5em;
-}
-
-.default-width-btn {
-  width: 98.5em;
 }
 
 .critter-button {
@@ -128,7 +132,7 @@ html {
   cursor: pointer;
   background-color: rgb(201, 186, 162);
   border-radius: 1em 1em 0 0;
-  transition: background-color .2s;
+  transition: background-color .2s, width .5s;
 }
 
 .critter-button-icon {
@@ -147,22 +151,24 @@ html {
   display: flex;
   justify-content: center;
   width: 100vw;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 .critter-active {
   background-color: rgb(255, 183, 0);
 }
 
+
+
 .caught-buttons-container {
   display: flex;
   position: relative;
+  align-items: flex-end;
   justify-content: flex-end;
-  width: 100%;
+  width: max-content;
   gap: 1em;
   height: 2em;
-  margin: 1em;
-  margin-bottom: 0.5em;
+  margin-top: 1.8em;
 }
 
 .caught-mode-button,
@@ -170,7 +176,7 @@ html {
   cursor: pointer;
   font-size: 1rem;
   font-weight: 600;
-  max-width: max-content;
+  width: max-content;
   padding-left: 1em;
   padding-right: 1em;
   background: none;
@@ -239,43 +245,46 @@ html {
 }
 
 .critter-entry {
-  padding: 1em;
+  aspect-ratio: 1/1;
   cursor: pointer;
 }
 
 .critter-entry-icon {
   width: 4em;
-  transition: transform 80ms ease-in-out;
+  transition: transform 80ms ease-in-out, width .5s;
 }
 
 .entry-border {
+  display: flex;
+  padding: 0.5em;
+  justify-content: center;
+  align-items: center;
   position: relative;
-}
-
-.entry-border,
-.active-critter-display {
-  border: 1px solid var(--bg-secondary);
+  border: 0.1em solid rgb(201, 186, 162);
 }
 
 .tooltip {
   display: flex;
+  position: absolute;
   justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 3em;
   width: 6em;
+  transition: transform 80ms ease-in-out;
 }
 
 .tooltip-text {
   visibility: hidden;
-  margin-bottom: 2em;
-  position: absolute;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
+  font-weight: 600;
   width: max-content;
   padding: 0.5em;
-  margin: 0;
-  margin-bottom: 3em;
   border-radius: 1em;
-  color: white;
+  color: var(--bg-primary);
   background-color: var(--bg-secondary);
+  white-space: nowrap;
   z-index: 1;
+  transition: transform 80ms ease-in-out;
 }
 
 .unavailable {
@@ -406,15 +415,16 @@ p {
   }
 
   .entry-border:hover .critter-entry-icon {
-    opacity: 80%;
     cursor: pointer;
-    transform: scale(1.3);
+    transform: scale(1.2);
     transform-origin: center;
   }
 
   .entry-border:hover .tooltip-text {
     visibility: visible;
     cursor: pointer;
+    transform: scale(1.1);
+    transform-origin: center;
   }
 
   .close-modal:hover {
@@ -423,31 +433,38 @@ p {
 
   .entry-border:hover .unavailable {
     visibility: hidden;
-  }  
+  }
 }
 
 
+
+
+
 /* Grid sizes on screen width changes */
-@media screen and (max-width: 1576px) {
+@media screen and (max-width: 1313px) {
+  .critter-entry-icon {
+    width: 2.5em;
+  }
+
+  .tooltip-text {
+    font-size: 0.4rem;
+  }
+
+  .tooltip {
+    margin-bottom: 2.3em;
+  }
+}
+
+@media screen and (max-width: 929px) {
   .default-disp-content {
     display: flex;
     justify-content: flex-start;
   }
-
-  .default-width-btn {
-    width: 100vw;
-    justify-content: flex-start;
-  }
 }
 
-@media screen and (max-width: 791px) {
+@media screen and (max-width: 463px) {
   .sea-disp-content {
     display: flex;
-    justify-content: flex-start;
-  }
-
-  .sea-width-btn {
-    width: 100vw;
     justify-content: flex-start;
   }
 }
@@ -469,16 +486,18 @@ p {
 
   .critter-button {
     margin-top: 1.5em;
-    height: 2em;
-    width: 5em;
+    width: 3em;
   }
 
   .caught-mode-button,
   .toggle-caught-button {
     font-size: 0.8rem;
     height: min-content;
-    margin-top: 1em;
     white-space: nowrap;
+  }
+
+  .caught-buttons-container {
+    margin-top: 1.3em;
   }
 
   .caught-total-content {
@@ -491,7 +510,7 @@ p {
   }
 }
 
-@media screen and (max-width: 340px) {
+@media screen and (max-width: 450px) {
 
   .hemisphere-buttons,
   .hemisphere-buttons>h4,
@@ -502,14 +521,47 @@ p {
 
   .caught-mode-button,
   .toggle-caught-button {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     height: min-content;
-    margin-top: 1.3em;
     white-space: nowrap;
+  }
+
+  .caught-buttons-container {
+    margin-top: 0.9em;
+    gap: 0.5em;
   }
 
   .caught-total-content {
     font-size: 1.3rem;
+  }
+
+  .critter-button-icon {
+    width: 1.5em;
+  }
+
+  .critter-button {
+    width: 2em;
+  }
+}
+
+@media screen and (max-width: 290px) {
+
+  .hemisphere-buttons,
+  .hemisphere-buttons>h4,
+  .southern-hemisphere-button,
+  .northern-hemisphere-button {
+    font-size: 0.7rem;
+  }
+
+  .caught-mode-button,
+  .toggle-caught-button {
+    font-size: 0.5rem;
+    height: min-content;
+    white-space: nowrap;
+  }
+
+  .caught-buttons-container {
+    gap: 0.4em;
   }
 }
 
