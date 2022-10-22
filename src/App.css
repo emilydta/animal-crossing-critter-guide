@@ -254,13 +254,19 @@ html {
   transition: transform 80ms ease-in-out, width .5s;
 }
 
+.active-critter-display {
+  border-top: 0.1em solid rgb(201, 186, 162);
+  border-left: 0.1em solid rgb(201, 186, 162);
+}
+
 .entry-border {
   display: flex;
   padding: 0.5em;
   justify-content: center;
   align-items: center;
   position: relative;
-  border: 0.1em solid rgb(201, 186, 162);
+  border-bottom: 0.1em solid rgb(201, 186, 162);
+  border-right: 0.1em solid rgb(201, 186, 162);
 }
 
 .tooltip {
