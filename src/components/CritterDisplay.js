@@ -25,7 +25,8 @@ function CritterDisplay({
     const [selectedCritter, setSelectedCritter] = useState(null);
     const [caughtList, setCaughtList] = useState([]);
 
-    selectedCritter ? document.body.classList.add('active-modal') : document.body.classList.remove('active-modal');
+    const htmlTag = document.getElementsByTagName('html')[0];
+    selectedCritter ? htmlTag.classList.add('active-modal') : htmlTag.classList.remove('active-modal');
 
     const toggleCaught = (e) => {
         e.currentTarget.classList.toggle('caught');
