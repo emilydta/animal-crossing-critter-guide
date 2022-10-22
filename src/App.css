@@ -1,5 +1,5 @@
-body {
-  background-color: blanchedalmond;
+html {
+  background-color: var(--bg-primary);
   overflow-x: hidden;
   font-family: 'Nunito', 'Varela Round', 'sans-serif';
 }
@@ -35,7 +35,8 @@ body {
 }
 
 .hemisphere-buttons {
-  animation: fadeIn .3s
+  animation: fadeIn .3s;
+  color: var(--bg-secondary);
 }
 
 @keyframes bounceIn {
@@ -67,7 +68,7 @@ body {
   font-size: 1.3rem;
   background: none;
   font-weight: 600;
-  color: rgb(52, 46, 46);
+  color: var(--bg-secondary);
   transition: transform 50ms ease-in-out, font-size .5s;
 }
 
@@ -79,8 +80,8 @@ body {
 }
 
 button:hover {
-  background: rgb(52, 46, 46);
-  color: blanchedalmond;
+  background: var(--bg-secondary);
+  color: var(--bg-primary);
   font-weight: 700;
   transform: scale(1.1);
   transform-origin: center;
@@ -101,8 +102,8 @@ button:hover {
 }
 
 .active {
-  background-color: rgb(52, 46, 46);
-  color: blanchedalmond;
+  background-color: var(--bg-secondary);
+  color: var(--bg-primary);
 }
 
 .critter-buttons-container {
@@ -181,6 +182,7 @@ button:hover {
 .view-all-button,
 .view-current-button {
   cursor: pointer;
+  color: var(--bg-secondary);
   background: none;
   border: none;
   border-radius: 1em;
@@ -203,6 +205,7 @@ button:hover {
   align-items: center;
   margin-top: 0.9em;
   margin-bottom: 1.2em;
+  color: var(--bg-secondary);
 }
 
 .caught-total-heading {
@@ -257,7 +260,7 @@ button:hover {
 
 .entry-border,
 .active-critter-display {
-  border: 1px solid rgb(52, 46, 46);
+  border: 1px solid var(--bg-secondary);
 }
 
 .tooltip {
@@ -277,7 +280,7 @@ button:hover {
   margin-bottom: 3em;
   border-radius: 1em;
   color: white;
-  background-color: rgb(52, 46, 46);
+  background-color: var(--bg-secondary);
   z-index: 1;
 }
 
@@ -319,7 +322,7 @@ button:hover {
   justify-content: center;
   align-items: center;
   border-radius: 2em;
-  background-color: blanchedalmond;
+  background-color: var(--bg-primary);
   z-index: 1;
   width: 100vw;
   padding-bottom: 3em;
@@ -329,8 +332,8 @@ button:hover {
 
 .close-modal {
   border: none;
-  background: rgb(52, 46, 46);
-  color: blanchedalmond;
+  background: var(--bg-secondary);
+  color: var(--bg-primary);
   padding: 0.7em;
   padding-left: 1.5em;
   padding-right: 1.5em;
