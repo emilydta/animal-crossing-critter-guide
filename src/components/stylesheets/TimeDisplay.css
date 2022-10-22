@@ -1,3 +1,39 @@
+input[type='range'],
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+input[type='range'] {
+    width: 20em;
+    height: 1em;
+    background: rgb(52, 46, 46);
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .1s;
+    transition: opacity .1s, width .5s;
+    border-radius: 1em;
+}
+
+input[type='range']::-moz-range-thumb {
+    width: 1em;
+    height: 1.5em;
+    border: 3px rgb(52, 46, 46) solid;
+    background: blanchedalmond;
+    cursor: pointer;
+    transition: transform 50ms ease-in-out;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    width: 1.5em;
+    height: 1.9em;
+    border: 3px rgb(52, 46, 46) solid;
+    border-radius: 0.5em;
+    background: blanchedalmond;
+    cursor: pointer;
+    transition: transform 50ms ease-in-out;
+}
+
 .time-date-container,
 .date-display-container,
 .time-display-container {
@@ -26,48 +62,22 @@
     align-items: center;
 }
 
-#month-slider,
-#time-slider {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20em;
-    height: 1em;
-    background: rgb(52, 46, 46);
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: .1s;
-    transition: opacity .1s, width .5s;
-    border-radius: 1em;
-}
-
-#month-slider:hover,
-#time-slider:hover {
+input[type='range']:hover {
     opacity: 1;
 }
 
-#month-slider::-webkit-slider-thumb,
-#month-slider::-moz-range-thumb,
-#time-slider::-moz-range-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 1em;
-    height: 1.5em;
-    border: 3px rgb(52, 46, 46) solid;
-    background: blanchedalmond;
-    cursor: pointer;
-    transition: transform 50ms ease-in-out;
-}
 
-
-#month-slider:hover::-webkit-slider-thumb,
-#month-slider:hover::-moz-range-thumb,
-#time-slider:hover::-moz-range-thumb {
+input[type='range']:hover::-webkit-slider-thumb {
     transform: scale(1.2);
     transform-origin: center;
 }
 
-#month-slider:disabled,
-#time-slider:disabled {
+input[type='range']:hover::-moz-range-thumb {
+    transform: scale(1.2);
+    transform-origin: center;
+}
+
+input[type='range']:disabled {
     opacity: 20%;
     pointer-events: none;
 }
@@ -131,14 +141,20 @@
     color: blanchedalmond;
 }
 
-.time-date-container, .mode-buttons {
+.time-date-container,
+.mode-buttons {
     animation: fadeIn .3s;
-  }
-  
-  @keyframes fadeIn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-  }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
 
 @media screen and (max-width: 584px) {
     .time-date-container {
@@ -157,8 +173,7 @@
         font-weight: 700;
     }
 
-    #month-slider,
-    #time-slider {
+    input[type='range'] {
         width: 15em;
     }
 
@@ -172,6 +187,7 @@
 }
 
 @media screen and (max-width: 340px) {
+
     .time-display,
     .date-display {
         margin: 0.2em;
