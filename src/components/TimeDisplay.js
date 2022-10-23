@@ -32,7 +32,8 @@ function TimeDisplay(
 
     useEffect(() => {
         setCustomMonth(currentMonth);
-        setCustomTime(currentTime);
+        setCustomTime(`${currentTime === 24 ? 0 : currentTime}`);
+        console.log(customTime)
     }, [currentDateData])
 
     const toggleDisableTime = () => {
