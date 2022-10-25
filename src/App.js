@@ -7,8 +7,7 @@ import { faTableList, faFish, faEye, faEyeSlash, faMarker } from '@fortawesome/f
 import bugIcon from './images/Bug_Icon.png'
 import fishIcon from './images/Fish_Icon.png'
 import seaCreatureIcon from './images/Sea_Creature_Icon.png'
-
-
+import locationIcons from './images/locationIcons.js'
 
 function App() {
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
@@ -176,6 +175,7 @@ function App() {
             allYear={allYear}
             disableTime={disableTime}
             allDay={allDay}
+            locationIcons={locationIcons}
           />
         </div>
       </main>

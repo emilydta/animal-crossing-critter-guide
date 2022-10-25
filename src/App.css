@@ -247,6 +247,9 @@ html {
 .critter-entry {
   aspect-ratio: 1/1;
   cursor: pointer;
+  padding: 0.5em;
+  cursor: pointer;
+  z-index: 2;
 }
 
 .critter-entry-icon {
@@ -261,7 +264,6 @@ html {
 
 .entry-border {
   display: flex;
-  padding: 0.5em;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -289,12 +291,17 @@ html {
   color: var(--bg-primary);
   background-color: var(--bg-secondary);
   white-space: nowrap;
-  z-index: 1;
+  z-index: 5;
   transition: transform 80ms ease-in-out;
 }
 
 .unavailable {
   visibility: hidden;
+  pointer-events: none;
+}
+
+.critter-modal {
+  z-index: 5;
 }
 
 .critter-modal,
@@ -327,7 +334,7 @@ html {
   width: 100vw;
   padding-bottom: 3em;
   gap: 1em;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .close-modal {
@@ -403,8 +410,11 @@ p {
   gap: 3em;
 }
 
-.active-modal {
-  overflow: hidden;
+.location-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 @media not all and (hover: none) {
@@ -637,4 +647,12 @@ p {
   .modal-content {
     width: 50vw;
   }
+}
+
+.active-modal {
+  overflow: hidden;
+}
+
+.location-icon {
+width: 6em;
 }

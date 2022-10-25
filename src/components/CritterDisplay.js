@@ -20,6 +20,7 @@ function CritterDisplay({
     allYear,
     disableTime,
     allDay,
+    locationIcons,
 }) {
     const [critterData, setCritterData] = useState(null);
     const [selectedCritter, setSelectedCritter] = useState(null);
@@ -110,6 +111,7 @@ function CritterDisplay({
                     setSelectedCritter={setSelectedCritter}
                     months={months}
                     formatString={formatString}
+                    locationIcons={locationIcons}
                 />}
         </div>
     )

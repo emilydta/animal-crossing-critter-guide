@@ -1,0 +1,27 @@
+const locationIcons = {
+    pond: require('./pond.png'),
+    river: require('./river.png'),
+    sea: require('./sea.png'),
+    pondAndRiver: require('./pond_and_river.png'),
+    pier: require('./pier.png'),
+    flying: require('./flying.png'),
+    flyingByLight: require('./flying_by_light.png'),
+    flyingNearHybridFlowers: require('./flying_near_hybrid_flowers.png'),
+    onTrees: require('./on_trees.png'),
+    onTheGround: require('./on_the_ground.png'),
+    onFlowers: require('./on_flowers.png'),
+    onWhiteFlowers: require('./on_white_flowers.png'),
+    shakingTrees: require('./shaking_trees.png'),
+    underground: require('./underground.png'),
+    onTreeStumps: require('./on_tree_stumps.png'),
+    onPalmTrees: require('./on_palm_trees.png'),
+    onRottenFood: require('./on_rotten_food.png'),
+    onTheBeach: require('./on_the_beach.png'),
+    onBeachRocks: require('./on_beach_rocks.png'),
+    nearTrash: require('./near_trash.png'),
+    onVillagers: require('./on_villagers.png'),
+    onRocksAndBush: require('./on_rocks_and_bush.png'),
+    hittingRocks: require('./hitting_rocks.png'),
+}
+
+export default locationIcons;
