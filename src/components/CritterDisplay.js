@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
-import checkAvailability from "./checkAvailability";
+import checkAvailability from "./utils/checkAvailability";
 import CritterModal from "./CritterModal";
 
 function CritterDisplay({
     activeCritter,
+    bugsData,
+    fishData,
+    seaData,
     bugsCaught,
     fishCaught,
     seaCaught,
@@ -20,14 +23,13 @@ function CritterDisplay({
     allYear,
     disableTime,
     allDay,
-    locationIcons,
     modalIcons,
-    shadowIcons
 }) {
     const [critterData, setCritterData] = useState(null);
     const [selectedCritter, setSelectedCritter] = useState(null);
     const [caughtList, setCaughtList] = useState([]);
 
+    //remove overflow-y scroll when modal is open
     const htmlTag = document.getElementsByTagName('html')[0];
     selectedCritter ? htmlTag.classList.add('active-modal') : htmlTag.classList.remove('active-modal');
 
@@ -61,12 +63,18 @@ function CritterDisplay({
 
     useEffect(() => {
         async function fetchCritterData() {
-            const response = await fetch(`https://acnhapi.com/v1/${activeCritter}/`, { mode: 'cors' });
-            const critterData = await response.json();
-            setCritterData(critterData);
+            if (activeCritter === 'bugs') {
+                setCritterData(bugsData);
+            }
+            if (activeCritter === 'fish') {
+                setCritterData(fishData);
+            }
+            if (activeCritter === 'sea') {
+                setCritterData(seaData);
+            }
         }
         fetchCritterData();
-    }, [activeCritter])
+    }, [activeCritter, bugsData])
 
     return (
         <div className="active-critter-display"
@@ -125,9 +133,7 @@ function CritterDisplay({
                     hemisphere={hemisphere}
                     customMonth={customMonth}
                     customTime={customTime}
-                    locationIcons={locationIcons}
                     modalIcons={modalIcons}
-                    shadowIcons={shadowIcons}
                 />}
         </div>
     )

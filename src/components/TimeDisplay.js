@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 import './stylesheets/TimeDisplay.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendarDays, faClock, faSun } from '@fortawesome/free-solid-svg-icons'
@@ -33,7 +33,6 @@ function TimeDisplay(
     useEffect(() => {
         setCustomMonth(currentMonth);
         setCustomTime(`${currentTime === 24 ? 0 : currentTime}`);
-        console.log(customTime)
     }, [currentDateData])
 
     const toggleDisableTime = () => {

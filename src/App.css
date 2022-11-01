@@ -20,7 +20,7 @@ html {
   gap: 1.5em;
 }
 
-.top-section {
+.top-menu {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -359,6 +359,7 @@ html {
 
 .critter-name {
   margin: 0;
+  transition: font-size .5s;
 }
 
 .critter-image {
@@ -388,6 +389,7 @@ html {
 
 .modal-hem-content>p {
   font-size: 1.5rem;
+  transition: font-size .5s;
 }
 
 h4,
@@ -403,6 +405,10 @@ p {
 .time-of-day-container {
   font-size: 1.5rem;
   margin-bottom: 0.5em;
+}
+
+.time-of-day-container>p {
+  transition: font-size .5s;
 }
 
 .all-year-container {
@@ -496,10 +502,12 @@ p {
 
 .attributes-container>div>p {
   font-weight: bold;
+  transition: font-size .5s;
 }
 
 .attributes-container>div {
   height: 100%;
+  transition: font-size .5s;
 }
 
 .shadow-container {
@@ -523,11 +531,13 @@ p {
   color: var(--bg-primary);
   padding: 0.5em;
   font-weight: 700;
+  transition: font-size .5s;
 }
 
 .modal-availability-status {
   font-weight: 700;
   color: brown;
+  transition: font-size .5s;
 }
 
 
