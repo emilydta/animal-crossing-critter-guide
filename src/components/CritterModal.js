@@ -1,9 +1,19 @@
+import { useState } from "react";
+
 function CritterModal({
+    activeCritter,
+    caughtList,
+    setCaughtList,
+    bugsCaught,
+    fishCaught,
+    seaCaught,
+    setBugsCaught,
+    setFishCaught,
+    setSeaCaught,
     selectedCritter,
     setSelectedCritter,
     months,
     formatString,
-    caughtList,
     hemisphere,
     customMonth,
     customTime,
@@ -11,6 +21,19 @@ function CritterModal({
     modalIcons,
     shadowIcons
 }) {
+    const [modalHemisphere, setModalHemisphere] = useState(hemisphere);
+    const setModalHemisphereButton = () => {
+        if (modalHemisphere === 'southern') {
+            return setModalHemisphere('northern');
+        }
+        if (modalHemisphere === 'northern') {
+            return setModalHemisphere('southern');
+        }
+    }
+
+    const capitaliseFirstLetter = (string) => {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
 
     const displayCritterMonthAvailability = (critter) => {
         if (critter['availability']['month-southern'] === critter['availability']['month-northern']) {
@@ -20,12 +43,8 @@ function CritterModal({
             </div>
         } else return <>
             <div className="modal-hem-content">
-                <h4 className="modal-hem-heading">Southern Hemisphere</h4>
-                {monthAvailability(selectedCritter, 'southern')}
-            </div>
-            <div className="modal-hem-content">
-                <h4 className="modal-hem-heading">Northern Hemisphere</h4>
-                {monthAvailability(selectedCritter, 'northern')}
+                <button className="modal-hem-button" onClick={() => setModalHemisphereButton()}>{`${capitaliseFirstLetter(modalHemisphere)} Hemisphere`}</button>
+                {monthAvailability(selectedCritter, modalHemisphere)}
             </div>
         </>
     }
@@ -167,15 +186,32 @@ function CritterModal({
         } else return 'Uncaught'
     }
 
+    const setCaught = (critter) => {
+        if (caughtList.includes(critter)) {
+            setCaughtList(caughtList.filter((c) => { return c !== critter }));
+            activeCritter === 'bugs' && setBugsCaught(bugsCaught.filter((c) => { return c !== critter }));
+            activeCritter === 'fish' && setFishCaught(fishCaught.filter((c) => { return c !== critter }));
+            activeCritter === 'sea' && setSeaCaught(seaCaught.filter((c) => { return c !== critter }));
+            return;
+        }
+        if (!caughtList.includes(critter)) {
+            setCaughtList([...caughtList, critter]);
+            activeCritter === 'bugs' && setBugsCaught([...bugsCaught, critter]);
+            activeCritter === 'fish' && setFishCaught([...fishCaught, critter]);
+            activeCritter === 'sea' && setSeaCaught([...seaCaught, critter]);
+            return;
+        }
+    }
+
     const availabilityStatus = (critter, customMonth, customTime, hemisphere) => {
         let critterMonthAvailability = critter['availability'][`month-array-${hemisphere}`];
         let critterTimeAvailability = critter['availability']['time-array'];
 
         if (!critterMonthAvailability.includes(Number(customMonth))) {
-            return 'Unavailable';
+            return;
         }
         if (!critterTimeAvailability.includes(Number(customTime))) {
-            return 'Unavailable';
+            return;
         } else return "Available now";
     }
 
@@ -184,8 +220,10 @@ function CritterModal({
             <div className="overlay" onClick={() => { setSelectedCritter(null) }}></div>
             <div className="modal-content">
                 <button type="button" className="close-modal" onClick={() => setSelectedCritter(null)}>X</button>
-                <h4 className="modal-caught-status">{modalCaughtStatus()}</h4>
-                <h4 className="modal-availability-status">{availabilityStatus(selectedCritter, customMonth, customTime, hemisphere)}</h4>
+                <div className="collection-info">
+                    <button className="modal-caught-status" onClick={() => setCaught(selectedCritter['file-name'])}>{modalCaughtStatus()}</button>
+                    <p className="modal-availability-status">{availabilityStatus(selectedCritter, customMonth, customTime, hemisphere)}</p>
+                </div>
                 <h1 className="critter-name">{formatString(selectedCritter['file-name'])}</h1>
                 <p>{selectedCritter['availability']['rarity']}</p>
                 <img className="critter-image" src={selectedCritter.image_uri}></img>

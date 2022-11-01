@@ -44,7 +44,7 @@ function CritterDisplay({
             activeCritter === 'bugs' && setBugsCaught(bugsCaught.filter((critter) => { return critter !== e.currentTarget.classList[1] }));
             activeCritter === 'fish' && setFishCaught(fishCaught.filter((critter) => { return critter !== e.currentTarget.classList[1] }));
             activeCritter === 'sea' && setSeaCaught(seaCaught.filter((critter) => { return critter !== e.currentTarget.classList[1] }));
-            
+
         }
     }
 
@@ -90,30 +90,38 @@ function CritterDisplay({
                             <img className="critter-entry-icon" src={critter[1].icon_uri}></img>
                         </div>
                     </div> :
-                    <div key={critter[1].id} className="entry-border">
-                        <div className='tooltip'>
-                            <p className={`tooltip-text ${addUnavailableClassName(critter)}`}>{formatString(critter[1]['file-name'])}</p>
-                        </div>
-                        <div
-                            className={
-                                `critter-entry ${critter[1]['file-name']} 
+                        <div key={critter[1].id} className="entry-border">
+                            <div className='tooltip'>
+                                <p className={`tooltip-text ${addUnavailableClassName(critter)}`}>{formatString(critter[1]['file-name'])}</p>
+                            </div>
+                            <div
+                                className={
+                                    `critter-entry ${critter[1]['file-name']} 
                                 ${caughtList.includes(critter[1]['file-name']) && showCaught ? 'caught' : ''} 
                                 ${addUnavailableClassName(critter)}`
-                            }
-                            onClick={caughtMode ? (e) => toggleCaught(e) : () => { setSelectedCritter(critter[1]) }}>
-                            <img className="critter-entry-icon" src={critter[1].icon_uri}></img>
+                                }
+                                onClick={caughtMode ? (e) => toggleCaught(e) : () => { setSelectedCritter(critter[1]) }}>
+                                <img className="critter-entry-icon" src={critter[1].icon_uri}></img>
+                            </div>
                         </div>
-                    </div>
                 )
             }
             )}
             {selectedCritter &&
                 <CritterModal
+                    activeCritter={activeCritter}
+                    caughtList={caughtList}
+                    setCaughtList={setCaughtList}
+                    bugsCaught={bugsCaught}
+                    fishCaught={fishCaught}
+                    seaCaught={seaCaught}
+                    setBugsCaught={setBugsCaught}
+                    setFishCaught={setFishCaught}
+                    setSeaCaught={setSeaCaught}
                     selectedCritter={selectedCritter}
                     setSelectedCritter={setSelectedCritter}
                     months={months}
                     formatString={formatString}
-                    caughtList={caughtList}
                     hemisphere={hemisphere}
                     customMonth={customMonth}
                     customTime={customTime}
