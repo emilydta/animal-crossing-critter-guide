@@ -13,8 +13,10 @@ function MainContent({
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
   const times = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23];
 
-  const [hemisphere, setHemisphere] = useState('southern')
-
+  const [hemisphere, setHemisphere] = useState(() => {
+    const savedValue = JSON.parse(localStorage.getItem('hemisphere'));
+    return savedValue || 'southern';
+  })
   const [customMonth, setCustomMonth] = useState(1);
   const [customTime, setCustomTime] = useState(1);
   //Date and critter data
@@ -31,9 +33,25 @@ function MainContent({
   const [allDay, setAllDay] = useState(false);
   const [viewAll, setViewAll] = useState(false);
   //critter caught lists
-  const [bugsCaught, setBugsCaught] = useState([]);
-  const [fishCaught, setFishCaught] = useState([]);
-  const [seaCaught, setSeaCaught] = useState([]);
+  const [bugsCaught, setBugsCaught] = useState(() => {
+    const savedValue = JSON.parse(localStorage.getItem('bugsCaught'));
+    return savedValue || [];
+  });
+  const [fishCaught, setFishCaught] = useState(() => {
+    const savedValue = JSON.parse(localStorage.getItem('fishCaught'));
+    return savedValue || [];
+  });
+  const [seaCaught, setSeaCaught] = useState(() => {
+    const savedValue = JSON.parse(localStorage.getItem('seaCaught'));
+    return savedValue || [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('hemisphere', JSON.stringify(hemisphere));
+    localStorage.setItem('bugsCaught', JSON.stringify(bugsCaught));
+    localStorage.setItem('fishCaught', JSON.stringify(fishCaught));
+    localStorage.setItem('seaCaught', JSON.stringify(seaCaught));
+  }, [hemisphere, bugsCaught, fishCaught, seaCaught])
 
   useEffect(() => {
     async function fetchBugsData() {
@@ -101,7 +119,7 @@ function MainContent({
             <p className="all-critters-heading">All Critters</p>
           </div>
         }
-        {caughtMode && <CaughtTotalContainer 
+        {caughtMode && <CaughtTotalContainer
           critterIcons={critterIcons}
           bugsCaught={bugsCaught}
           fishCaught={fishCaught}
@@ -133,19 +151,19 @@ function MainContent({
       <main className='critter-display-container'>
         <div className='mid-buttons-container'>
           <div className='critter-buttons-container'>
-            <CritterMenuButton 
+            <CritterMenuButton
               activeCritter={activeCritter}
               setActiveCritter={setActiveCritter}
               critter={'bugs'}
               critterIcon={critterIcons.bug}
             />
-            <CritterMenuButton 
+            <CritterMenuButton
               activeCritter={activeCritter}
               setActiveCritter={setActiveCritter}
               critter={'fish'}
               critterIcon={critterIcons.fish}
             />
-            <CritterMenuButton 
+            <CritterMenuButton
               activeCritter={activeCritter}
               setActiveCritter={setActiveCritter}
               critter={'sea'}
