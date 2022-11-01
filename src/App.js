@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './App.css';
 import TimeDisplay from './components/TimeDisplay';
 import CritterDisplay from './components/CritterDisplay';
@@ -19,7 +19,7 @@ function App() {
   const [currentDateData, setCurrentDateData] = useState(new Date());
   const [customMonth, setCustomMonth] = useState(1);
   const [customTime, setCustomTime] = useState(1);
-  //view modes
+  //view modes and filters
   const [activeCritter, setActiveCritter] = useState('bugs')
   const [caughtMode, setCaughtMode] = useState(false);
   const [showCaught, setShowCaught] = useState(true)
@@ -32,31 +32,29 @@ function App() {
   const [fishCaught, setFishCaught] = useState([]);
   const [seaCaught, setSeaCaught] = useState([]);
 
-  const toggleCaughtMode = () => {
-    setViewAll(false);
+  const resetFilters = () => {
     setAllDay(false);
     setAllYear(false);
     setDisableTime(false);
     setCurrentDateData(new Date());
+  }
+
+  const toggleCaughtMode = () => {
+    resetFilters();
+    setViewAll(false);
     setShowCaught(true);
     setCaughtMode(!caughtMode);
   }
 
   const toggleViewAll = () => {
+    resetFilters();
     setCaughtMode(false);
     setViewAll(!viewAll);
-    setAllDay(false);
-    setAllYear(false);
-    setDisableTime(false);
-    setCurrentDateData(new Date());
   }
 
   const viewCurrent = () => {
+    resetFilters();
     setViewAll(false);
-    setAllDay(false);
-    setAllYear(false);
-    setDisableTime(false);
-    setCurrentDateData(new Date());
   }
 
   return (
