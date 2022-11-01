@@ -21,6 +21,8 @@ function CritterDisplay({
     disableTime,
     allDay,
     locationIcons,
+    modalIcons,
+    shadowIcons
 }) {
     const [critterData, setCritterData] = useState(null);
     const [selectedCritter, setSelectedCritter] = useState(null);
@@ -111,7 +113,13 @@ function CritterDisplay({
                     setSelectedCritter={setSelectedCritter}
                     months={months}
                     formatString={formatString}
+                    caughtList={caughtList}
+                    hemisphere={hemisphere}
+                    customMonth={customMonth}
+                    customTime={customTime}
                     locationIcons={locationIcons}
+                    modalIcons={modalIcons}
+                    shadowIcons={shadowIcons}
                 />}
         </div>
     )

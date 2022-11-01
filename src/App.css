@@ -405,9 +405,10 @@ p {
 
 .attributes-container {
   display: flex;
+  position: relative;
   justify-content: center;
-  align-items: center;
-  gap: 3em;
+  align-items: baseline;
+  gap: 1.8em;
 }
 
 .location-container {
@@ -614,10 +615,6 @@ p {
     width: min-content;
   }
 
-  .attributes-container {
-    font-size: 0.8rem;
-  }
-
   .close-modal {
     font-size: 0.8rem;
     padding: 0.5em;
@@ -654,5 +651,44 @@ p {
 }
 
 .location-icon {
-width: 6em;
+  width: 4em;
+  height: 4em;
+}
+
+.shadow-icon {
+  width: 5em;
+  
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+  gap: 1.8em;
+}
+
+.modal-icons {
+  width: 3em;
+  height: 3em;
+}
+
+.price-flick, .price-cj, .price-normal {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: bold;
+}
+
+.attributes-container>div>p {
+  font-weight: bold;
+}
+
+.attributes-container>div {
+  height: 100%;
+}
+
+.shadow-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

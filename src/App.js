@@ -4,10 +4,12 @@ import TimeDisplay from './components/TimeDisplay';
 import CritterDisplay from './components/CritterDisplay';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTableList, faFish, faEye, faEyeSlash, faMarker } from '@fortawesome/free-solid-svg-icons'
-import bugIcon from './images/Bug_Icon.png'
-import fishIcon from './images/Fish_Icon.png'
-import seaCreatureIcon from './images/Sea_Creature_Icon.png'
-import locationIcons from './images/locationIcons.js'
+import bugIcon from './images/critterIcons/Bug_Icon.png'
+import fishIcon from './images/critterIcons/Fish_Icon.png'
+import seaCreatureIcon from './images/critterIcons/Sea_Creature_Icon.png'
+import locationIcons from './images/modalIcons/locationIcons/locationIcons.js'
+import modalIcons from './images/modalIcons/modalIcons.js';
+import shadowIcons from './images/modalIcons/shadowIcons/shadowIcons';
 
 function App() {
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
@@ -176,6 +178,8 @@ function App() {
             disableTime={disableTime}
             allDay={allDay}
             locationIcons={locationIcons}
+            modalIcons={modalIcons}
+            shadowIcons={shadowIcons}
           />
         </div>
       </main>

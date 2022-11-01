@@ -3,7 +3,13 @@ function CritterModal({
     setSelectedCritter,
     months,
     formatString,
-    locationIcons
+    caughtList,
+    hemisphere,
+    customMonth,
+    customTime,
+    locationIcons,
+    modalIcons,
+    shadowIcons
 }) {
 
     const displayCritterMonthAvailability = (critter) => {
@@ -128,21 +134,94 @@ function CritterModal({
         }
     }
 
+    const shadowIconFinder = (fish) => {
+        if (fish['shadow'] === 'Smallest (1)') {
+            return shadowIcons.smallest1;
+        }
+        if (fish['shadow'] === 'Small (2)') {
+            return shadowIcons.small2;
+        }
+        if (fish['shadow'] === 'Medium (3)') {
+            return shadowIcons.medium3;
+        }
+        if (fish['shadow'] === 'Medium (4)') {
+            return shadowIcons.medium4;
+        }
+        if (fish['shadow'] === 'Large (5)') {
+            return shadowIcons.large5;
+        }
+        if (fish['shadow'] === 'Largest (6)') {
+            return shadowIcons.largest6;
+        }
+        if (fish['shadow'] === 'Largest with fin (6)') {
+            return shadowIcons.largestWithFin;
+        }
+        if (fish['shadow'] === 'Narrow') {
+            return shadowIcons.narrow;
+        }
+    }
+
+    const modalCaughtStatus = () => {
+        if (caughtList.includes(selectedCritter['file-name'])) {
+            return 'Caught'
+        } else return 'Uncaught'
+    }
+
+    const availabilityStatus = (critter, customMonth, customTime, hemisphere) => {
+        let critterMonthAvailability = critter['availability'][`month-array-${hemisphere}`];
+        let critterTimeAvailability = critter['availability']['time-array'];
+
+        if (!critterMonthAvailability.includes(Number(customMonth))) {
+            return 'Unavailable';
+        }
+        if (!critterTimeAvailability.includes(Number(customTime))) {
+            return 'Unavailable';
+        } else return "Available now";
+    }
+
     return (
         <div className="critter-modal">
             <div className="overlay" onClick={() => { setSelectedCritter(null) }}></div>
             <div className="modal-content">
                 <button type="button" className="close-modal" onClick={() => setSelectedCritter(null)}>X</button>
+                <h4 className="modal-caught-status">{modalCaughtStatus()}</h4>
+                <h4 className="modal-availability-status">{availabilityStatus(selectedCritter, customMonth, customTime, hemisphere)}</h4>
                 <h1 className="critter-name">{formatString(selectedCritter['file-name'])}</h1>
                 <p>{selectedCritter['availability']['rarity']}</p>
                 <img className="critter-image" src={selectedCritter.image_uri}></img>
-                {selectedCritter['speed'] ? null :
+                {selectedCritter['speed'] ? <div className="attributes-container">
+                    <div className="price-container">
+                        <div className="price-normal">
+                            <img className='modal-icons' src={modalIcons.bells}></img>
+                            <p>{selectedCritter['price']} Bells</p>
+                        </div>
+                    </div>
+                </div> :
                     <div className="attributes-container">
                         <div className='location-container'>
                             <img src={locationIconFinder(selectedCritter)} className='location-icon'></img>
-                            {selectedCritter['availability']['location'] ? <p>{selectedCritter['availability']['location']}</p> : null}
+                            {selectedCritter['availability']['location'] && <p>{selectedCritter['availability']['location']}</p>}
                         </div>
-                        {selectedCritter['shadow'] ? <p>{selectedCritter['shadow']}</p> : null}
+                        {selectedCritter['shadow'] && <div className="shadow-container">
+                            <img className='shadow-icon' src={shadowIconFinder(selectedCritter)}></img>
+                            <p>{selectedCritter['shadow']}</p>
+                        </div>}
+                        <div className="price-container">
+                            <div className="price-normal">
+                                <img className='modal-icons' src={modalIcons.bells}></img>
+                                <p>{selectedCritter['price']} Bells</p>
+                            </div>
+                            {selectedCritter['price-cj'] &&
+                                <div className="price-cj">
+                                    <img className='modal-icons' src={modalIcons.cj}></img>
+                                    <p>{selectedCritter['price-cj']} Bells</p>
+                                </div>}
+                            {selectedCritter['price-flick'] &&
+                                <div className="price-flick">
+                                    <img className='modal-icons' src={modalIcons.flick}></img>
+                                    <p>{selectedCritter['price-flick']} Bells</p>
+                                </div>}
+                        </div>
                     </div>}
                 <div className="seasonality-container">
                     <div className="time-of-day-container">
