@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/animal-crossing-critter-guide/static/css/main.cdd517bb.css",
-    "main.js": "/animal-crossing-critter-guide/static/js/main.9603fbe2.js",
+    "main.css": "/animal-crossing-critter-guide/static/css/main.2a84829e.css",
+    "main.js": "/animal-crossing-critter-guide/static/js/main.0cc6a925.js",
     "static/media/pond_and_river.png": "/animal-crossing-critter-guide/static/media/pond_and_river.e313de9f3cf77a98234d.png",
     "static/media/hitting_rocks.png": "/animal-crossing-critter-guide/static/media/hitting_rocks.5be8b881cdd11ddb28d8.png",
     "static/media/flying_near_hybrid_flowers.png": "/animal-crossing-critter-guide/static/media/flying_near_hybrid_flowers.e76197a10b7055aa0571.png",
@@ -29,11 +29,11 @@
     "static/media/river.png": "/animal-crossing-critter-guide/static/media/river.bbae0cf7a5df629de5bc.png",
     "static/media/flying.png": "/animal-crossing-critter-guide/static/media/flying.a4b879a8d2c4fb7babfc.png",
     "index.html": "/animal-crossing-critter-guide/index.html",
-    "main.cdd517bb.css.map": "/animal-crossing-critter-guide/static/css/main.cdd517bb.css.map",
-    "main.9603fbe2.js.map": "/animal-crossing-critter-guide/static/js/main.9603fbe2.js.map"
+    "main.2a84829e.css.map": "/animal-crossing-critter-guide/static/css/main.2a84829e.css.map",
+    "main.0cc6a925.js.map": "/animal-crossing-critter-guide/static/js/main.0cc6a925.js.map"
   },
   "entrypoints": [
-    "static/css/main.cdd517bb.css",
-    "static/js/main.9603fbe2.js"
+    "static/css/main.2a84829e.css",
+    "static/js/main.0cc6a925.js"
   ]
 }
