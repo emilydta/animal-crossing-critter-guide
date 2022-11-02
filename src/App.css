@@ -1,16 +1,16 @@
 ::-webkit-scrollbar {
-  width: 0.5em;
+  width: 0.2em;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-secondary);
+  background: rgba(201, 186, 162, 0);
   border-radius: 1em;
   margin-top: 1em;
   margin-bottom: 1em;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--bg-primary);
+  background: var(--bg-secondary);
   border-radius: 1em;
 }
 
