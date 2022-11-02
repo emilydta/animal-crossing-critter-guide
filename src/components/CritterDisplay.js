@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import checkAvailability from "./utils/checkAvailability";
-import {formatCritterFileName }from "./utils/stringFormats";
+import { formatCritterFileName } from "./utils/stringFormats";
 import CritterModal from "./CritterModal";
 
 function CritterDisplay({
@@ -83,27 +83,30 @@ function CritterDisplay({
             }}
         >
             {critterData && Object.entries(critterData).map((critter) => {
+                {/* Critter entries and tooltips must have 'critter[file-name]' as class[1] to allow for recording them in caught lists while !viewAll */}
                 return (
                     viewAll ? <div key={critter[1].id} className="entry-border">
-                        <div className='tooltip'>
+                        <div className='tooltip' onClick={() => { setSelectedCritter(critter[1]) }}>
                             <p className={`tooltip-text`}>{formatCritterFileName(critter[1]['file-name'])}</p>
                         </div>
                         <div
                             className={`critter-entry ${critter[1]['file-name']}
-                            ${caughtList.includes(critter[1]['file-name']) && showCaught ? 'caught' : ''}`}
+                                ${caughtList.includes(critter[1]['file-name']) && showCaught ? 'caught' : ''}`}
                             onClick={() => { setSelectedCritter(critter[1]) }}>
                             <img className="critter-entry-icon" src={critter[1].icon_uri}></img>
                         </div>
                     </div> :
                         <div key={critter[1].id} className="entry-border">
-                            <div className='tooltip'>
+                            <div
+                                className={`tooltip ${critter[1]['file-name']}`}
+                                onClick={caughtMode ? (e) => toggleCaught(e) : () => { setSelectedCritter(critter[1]) }}>
                                 <p className={`tooltip-text ${addUnavailableClassName(critter)}`}>{formatCritterFileName(critter[1]['file-name'])}</p>
                             </div>
                             <div
                                 className={
                                     `critter-entry ${critter[1]['file-name']} 
-                                ${caughtList.includes(critter[1]['file-name']) && showCaught ? 'caught' : ''} 
-                                ${addUnavailableClassName(critter)}`
+                                    ${caughtList.includes(critter[1]['file-name']) && showCaught ? 'caught' : ''} 
+                                    ${addUnavailableClassName(critter)}`
                                 }
                                 onClick={caughtMode ? (e) => toggleCaught(e) : () => { setSelectedCritter(critter[1]) }}>
                                 <img className="critter-entry-icon" src={critter[1].icon_uri}></img>
@@ -112,7 +115,8 @@ function CritterDisplay({
                 )
             }
             )}
-            {selectedCritter &&
+            {
+                selectedCritter &&
                 <CritterModal
                     activeCritter={activeCritter}
                     caughtList={caughtList}
@@ -129,7 +133,8 @@ function CritterDisplay({
                     hemisphere={hemisphere}
                     currentDateData={currentDateData}
                     modalIcons={modalIcons}
-                />}
+                />
+            }
         </div>
     )
 
