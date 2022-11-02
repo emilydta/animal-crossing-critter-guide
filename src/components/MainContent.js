@@ -200,6 +200,7 @@ function MainContent({
             viewAll={viewAll}
             showCaught={showCaught}
             caughtMode={caughtMode}
+            currentDateData={currentDateData}
             customMonth={customMonth}
             customTime={customTime}
             allYear={allYear}

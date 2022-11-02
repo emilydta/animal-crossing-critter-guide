@@ -18,6 +18,7 @@ function CritterDisplay({
     showCaught,
     caughtMode,
     viewAll,
+    currentDateData,
     customMonth,
     customTime,
     allYear,
@@ -138,8 +139,7 @@ function CritterDisplay({
                     months={months}
                     formatString={formatString}
                     hemisphere={hemisphere}
-                    customMonth={customMonth}
-                    customTime={customTime}
+                    currentDateData={currentDateData}
                     modalIcons={modalIcons}
                 />}
         </div>

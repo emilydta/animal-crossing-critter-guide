@@ -1,6 +1,7 @@
 import { useState } from "react";
 import locationIconFinder from "./utils/locationIconFinder";
 import shadowIconFinder from "./utils/shadowIconFinder";
+import capitaliseFirstLetter from "./utils/capitaliseFirstLetter";
 
 function CritterModal({
     activeCritter,
@@ -17,8 +18,7 @@ function CritterModal({
     months,
     formatString,
     hemisphere,
-    customMonth,
-    customTime,
+    currentDateData,
     modalIcons,
 }) {
     const [modalHemisphere, setModalHemisphere] = useState(hemisphere);
@@ -29,10 +29,6 @@ function CritterModal({
         if (modalHemisphere === 'northern') {
             return setModalHemisphere('southern');
         }
-    }
-
-    const capitaliseFirstLetter = (string) => {
-        return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
     const displayCritterMonthAvailability = (critter) => {
@@ -91,15 +87,23 @@ function CritterModal({
             return;
         }
     }
-
-    const availabilityStatus = (critter, customMonth, customTime, hemisphere) => {
+    const availabilityStatus = (critter, currentDateData, hemisphere) => {
+        let currentMonth = Number(currentDateData.toLocaleDateString('en-US',
+            {
+                month: 'numeric'
+            }))
+        let currentTime = Number(currentDateData.toLocaleString('en-US',
+            {
+                hour: 'numeric',
+                hour12: false
+            }))
         let critterMonthAvailability = critter['availability'][`month-array-${hemisphere}`];
         let critterTimeAvailability = critter['availability']['time-array'];
 
-        if (!critterMonthAvailability.includes(Number(customMonth))) {
+        if (!critterMonthAvailability.includes(Number(currentMonth))) {
             return;
         }
-        if (!critterTimeAvailability.includes(Number(customTime))) {
+        if (!critterTimeAvailability.includes(Number(currentTime))) {
             return;
         } else return "Available now";
     }
@@ -111,7 +115,7 @@ function CritterModal({
                 <button type="button" className="close-modal" onClick={() => setSelectedCritter(null)}>X</button>
                 <div className="collection-info">
                     <button className="modal-caught-status" onClick={() => setCaught(selectedCritter['file-name'])}>{modalCaughtStatus()}</button>
-                    <p className="modal-availability-status">{availabilityStatus(selectedCritter, customMonth, customTime, hemisphere)}</p>
+                    <p className="modal-availability-status">{availabilityStatus(selectedCritter, currentDateData, hemisphere)}</p>
                 </div>
                 <h1 className="critter-name">{formatString(selectedCritter['file-name'])}</h1>
                 <p>{selectedCritter['availability']['rarity']}</p>
