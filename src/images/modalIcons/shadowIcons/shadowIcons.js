@@ -1,4 +1,9 @@
 const shadowIcons = {
+    smallest: require('./smallest.png'),
+    small: require('./small.png'),
+    medium: require('./medium.png'),
+    large: require('./large.png'),
+    largest: require('./largest.png'),
     smallest1: require('./smallest_1.png'),
     small2: require('./small_2.png'),
     medium3: require('./medium_3.png'),

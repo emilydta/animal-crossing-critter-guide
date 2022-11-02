@@ -1,6 +1,24 @@
 import shadowIcons from '../../images/modalIcons/shadowIcons/shadowIcons.js'
 
 const shadowIconFinder = (critter) => {
+    //Sea
+    if (critter['shadow'] === 'Smallest') {
+        return shadowIcons.smallest;
+    }
+    if (critter['shadow'] === 'Small') {
+        return shadowIcons.small;
+    }
+    if (critter['shadow'] === 'Medium') {
+        return shadowIcons.medium;
+    }
+    if (critter['shadow'] === 'Large') {
+        return shadowIcons.large;
+    }
+    if (critter['shadow'] === 'Largest') {
+        return shadowIcons.largest;
+    }
+    
+    //Fish
     if (critter['shadow'] === 'Smallest (1)') {
         return shadowIcons.smallest1;
     }

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import locationIconFinder from "./utils/locationIconFinder";
 import shadowIconFinder from "./utils/shadowIconFinder";
+import speedIconFinder from "./utils/speedIconFinder";
+
 import { capitaliseFirstLetter, formatCritterFileName } from "./utils/stringFormats";
 
 function CritterModal({
@@ -120,6 +122,14 @@ function CritterModal({
                 <p>{selectedCritter['availability']['rarity']}</p>
                 <img className="critter-image" src={selectedCritter.image_uri}></img>
                 {selectedCritter['speed'] ? <div className="attributes-container">
+                    <div className="shadow-container">
+                        <img className='shadow-icon' src={shadowIconFinder(selectedCritter)}></img>
+                        <p>{selectedCritter['shadow']}</p>
+                    </div>
+                    <div className="speed-container">
+                        <img className='speed-icon' src={speedIconFinder(selectedCritter)}></img>
+                        <p>{selectedCritter['speed']}</p>
+                    </div>
                     <div className="price-container">
                         <div className="price-normal">
                             <img className='modal-icons' src={modalIcons.bells}></img>

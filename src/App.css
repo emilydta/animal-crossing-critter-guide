@@ -401,6 +401,7 @@ html {
 
 .modal-hem-content>p {
   font-size: 1.5rem;
+  margin: 0;
   transition: font-size .5s;
 }
 
@@ -482,13 +483,17 @@ p {
 }
 
 .location-icon {
-  width: 3.5em;
-  height: 3.5em;
+  width: 3em;
+  height: 3em;
 }
 
 .shadow-icon {
   width: 5em;
+}
 
+.speed-icon {
+  width: 3em;
+  height: 3em;
 }
 
 .price-container {
@@ -522,7 +527,7 @@ p {
   transition: font-size .5s;
 }
 
-.shadow-container {
+.shadow-container, .speed-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -535,6 +540,11 @@ p {
   gap: 0.5em;
 }
 
+.modal-caught-status {
+  display: flex;
+  align-items: center;
+}
+
 .modal-caught-status,
 .modal-hem-button {
   cursor: pointer;
@@ -543,6 +553,8 @@ p {
   border-radius: 1em;
   color: var(--bg-primary);
   padding: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
   font-weight: 700;
   transition: font-size .5s;
 }
