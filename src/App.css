@@ -159,16 +159,17 @@ html {
   background-color: rgb(255, 183, 0);
 }
 
+.clear-mark-buttons-container {
+  transition: margin .5s;
+}
 
-
-.caught-buttons-container {
+.caught-buttons-container,
+.clear-mark-buttons-container {
   display: flex;
   position: relative;
   align-items: flex-end;
   justify-content: flex-end;
-
   width: max-content;
-
   gap: 1em;
   height: 2em;
   margin-top: 1.8em;
@@ -193,8 +194,10 @@ html {
 }
 
 .caught-mode-done-button {
-  margin-right: 1.2em;
+  margin-left: 0.2em;
+  margin-right: 7em;
   height: max-content;
+  transition: margin .5s;
 }
 
 .view-all-button,
@@ -527,7 +530,8 @@ p {
   transition: font-size .5s;
 }
 
-.shadow-container, .speed-container {
+.shadow-container,
+.speed-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -565,7 +569,15 @@ p {
   transition: font-size .5s;
 }
 
+@media screen and (max-width: 1500px) {
+  .caught-mode-done-button {
+    margin-right: 0;
+  }
 
+  .clear-mark-buttons-container {
+    margin-right: 7em;
+  }
+}
 
 
 
@@ -646,8 +658,9 @@ p {
     margin-top: 1.3em;
   }
 
-  .caught-mode-done-button {
-    margin: 0;
+  .clear-mark-buttons-container {
+    margin-right: 5em;
+    gap: 0.5em;
   }
 
   .caught-total-content {
@@ -684,8 +697,8 @@ p {
     gap: 0.5em;
   }
 
-  .caught-mode-done-button {
-    margin-left: 1em;
+  .clear-mark-buttons-container {
+    margin-right: 3em;
   }
 
   .caught-total-content {
@@ -698,6 +711,12 @@ p {
 
   .critter-button {
     width: 2em;
+  }
+}
+
+@media screen and (max-width: 345px) {
+  .clear-mark-buttons-container {
+    margin: 0;
   }
 }
 
@@ -721,7 +740,10 @@ p {
   }
 
   .caught-buttons-container {
-    gap: 0.4em;
+    gap: 0.1em;
+  }
+  .clear-mark-buttons-container {
+    gap: 0.1em;
   }
 }
 

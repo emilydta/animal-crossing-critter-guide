@@ -209,12 +209,7 @@ function MainContent({
               critterIcon={critterIcons.sea}
             />
           </div>
-          {caughtMode && <button type="button"
-            className="caught-mode-done-button"
-            onClick={() => toggleCaughtMode()}>
-            Done
-          </button>}
-          <div className='caught-buttons-container'>
+          <div className='clear-mark-buttons-container'>
             {caughtMode && <>
               <button type="button"
                 className="mark-all-caught"
@@ -224,8 +219,14 @@ function MainContent({
                 className="clear-all-caught"
                 onClick={() => clearAllCaught()}>{<><FontAwesomeIcon icon={faEraser} /> All</>}
               </button>
-            </>
-            }
+            </>}
+          </div>
+          <div className='caught-buttons-container'>
+            {caughtMode && <button type="button"
+              className="caught-mode-done-button"
+              onClick={() => toggleCaughtMode()}>
+              Done
+            </button>}
             {!caughtMode && <button type="button"
               className="caught-mode-button"
               onClick={() => toggleCaughtMode()}>{<><FontAwesomeIcon icon={faMarker} /> Caught</>}
