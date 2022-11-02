@@ -1,7 +1,7 @@
 import { useState } from "react";
 import locationIconFinder from "./utils/locationIconFinder";
 import shadowIconFinder from "./utils/shadowIconFinder";
-import capitaliseFirstLetter from "./utils/capitaliseFirstLetter";
+import { capitaliseFirstLetter, formatCritterFileName } from "./utils/stringFormats";
 
 function CritterModal({
     activeCritter,
@@ -16,7 +16,6 @@ function CritterModal({
     selectedCritter,
     setSelectedCritter,
     months,
-    formatString,
     hemisphere,
     currentDateData,
     modalIcons,
@@ -117,7 +116,7 @@ function CritterModal({
                     <button className="modal-caught-status" onClick={() => setCaught(selectedCritter['file-name'])}>{modalCaughtStatus()}</button>
                     <p className="modal-availability-status">{availabilityStatus(selectedCritter, currentDateData, hemisphere)}</p>
                 </div>
-                <h1 className="critter-name">{formatString(selectedCritter['file-name'])}</h1>
+                <h1 className="critter-name">{formatCritterFileName(selectedCritter['file-name'])}</h1>
                 <p>{selectedCritter['availability']['rarity']}</p>
                 <img className="critter-image" src={selectedCritter.image_uri}></img>
                 {selectedCritter['speed'] ? <div className="attributes-container">

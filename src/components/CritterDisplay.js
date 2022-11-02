@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import checkAvailability from "./utils/checkAvailability";
-import formatCritterFileName from "./utils/formatCritterFileName";
+import {formatCritterFileName }from "./utils/stringFormats";
 import CritterModal from "./CritterModal";
 
 function CritterDisplay({
@@ -132,7 +132,6 @@ function CritterDisplay({
                     selectedCritter={selectedCritter}
                     setSelectedCritter={setSelectedCritter}
                     months={months}
-                    formatCritterFileName={formatCritterFileName}
                     hemisphere={hemisphere}
                     currentDateData={currentDateData}
                     modalIcons={modalIcons}
