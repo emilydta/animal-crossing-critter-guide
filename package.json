@@ -1,7 +1,7 @@
 {
   "name": "animal-crossing-critter-guide",
   "version": "0.1.0",
-  "homepage": "https://emilydta.github.io/animal-crossing-critter-guide",
+  "homepage": "https://acnhcritterguide.com",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
