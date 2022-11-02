@@ -158,6 +158,7 @@ function MainContent({
           </div>
         }
         {caughtMode && <CaughtTotalContainer
+          setActiveCritter={setActiveCritter}
           critterIcons={critterIcons}
           bugsCaught={bugsCaught}
           fishCaught={fishCaught}

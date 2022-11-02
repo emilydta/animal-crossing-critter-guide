@@ -244,6 +244,7 @@ html {
 }
 
 .critter-total-icon {
+  cursor: pointer;
   width: 3em;
   background-color: rgba(148, 104, 104, 0.607);
   border-radius: 1em;
