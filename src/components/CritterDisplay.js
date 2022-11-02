@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import checkAvailability from "./utils/checkAvailability";
+import formatCritterFileName from "./utils/formatCritterFileName";
 import CritterModal from "./CritterModal";
 
 function CritterDisplay({
@@ -58,12 +59,6 @@ function CritterDisplay({
         }
     }
 
-    const formatString = (string) => {
-        const newString = string.replace(/_/g, ' ');
-        const formattedString = newString.charAt(0).toUpperCase() + newString.slice(1);
-        return formattedString;
-    }
-
     const addUnavailableClassName = (critter) => {
         return !caughtMode ? checkAvailability(hemisphere, customMonth, customTime, allYear, disableTime, allDay, critter) : '';
     }
@@ -97,7 +92,7 @@ function CritterDisplay({
                 return (
                     viewAll ? <div key={critter[1].id} className="entry-border">
                         <div className='tooltip'>
-                            <p className={`tooltip-text`}>{formatString(critter[1]['file-name'])}</p>
+                            <p className={`tooltip-text`}>{formatCritterFileName(critter[1]['file-name'])}</p>
                         </div>
                         <div
                             className={`critter-entry ${critter[1]['file-name']}
@@ -108,7 +103,7 @@ function CritterDisplay({
                     </div> :
                         <div key={critter[1].id} className="entry-border">
                             <div className='tooltip'>
-                                <p className={`tooltip-text ${addUnavailableClassName(critter)}`}>{formatString(critter[1]['file-name'])}</p>
+                                <p className={`tooltip-text ${addUnavailableClassName(critter)}`}>{formatCritterFileName(critter[1]['file-name'])}</p>
                             </div>
                             <div
                                 className={
@@ -137,7 +132,7 @@ function CritterDisplay({
                     selectedCritter={selectedCritter}
                     setSelectedCritter={setSelectedCritter}
                     months={months}
-                    formatString={formatString}
+                    formatCritterFileName={formatCritterFileName}
                     hemisphere={hemisphere}
                     currentDateData={currentDateData}
                     modalIcons={modalIcons}
