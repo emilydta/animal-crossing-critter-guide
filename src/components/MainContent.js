@@ -4,7 +4,7 @@ import CaughtTotalContainer from './CaughtTotalContainer';
 import CritterMenuButton from './CritterMenuButton';
 import CritterDisplay from './CritterDisplay';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTableList, faFish, faEye, faEyeSlash, faMarker } from '@fortawesome/free-solid-svg-icons'
+import { faTableList, faFish, faEye, faEyeSlash, faMarker, faPlus, faEraser } from '@fortawesome/free-solid-svg-icons'
 
 function MainContent({
   critterIcons,
@@ -33,6 +33,10 @@ function MainContent({
   const [allDay, setAllDay] = useState(false);
   const [viewAll, setViewAll] = useState(false);
   //critter caught lists
+  const [caughtList, setCaughtList] = useState(() => {
+    const savedValue = JSON.parse(localStorage.getItem('caughtList'));
+    return savedValue || [];
+  });
   const [bugsCaught, setBugsCaught] = useState(() => {
     const savedValue = JSON.parse(localStorage.getItem('bugsCaught'));
     return savedValue || [];
@@ -48,10 +52,11 @@ function MainContent({
 
   useEffect(() => {
     localStorage.setItem('hemisphere', JSON.stringify(hemisphere));
+    localStorage.setItem('caughtList', JSON.stringify(caughtList));
     localStorage.setItem('bugsCaught', JSON.stringify(bugsCaught));
     localStorage.setItem('fishCaught', JSON.stringify(fishCaught));
     localStorage.setItem('seaCaught', JSON.stringify(seaCaught));
-  }, [hemisphere, bugsCaught, fishCaught, seaCaught])
+  }, [hemisphere, caughtList, bugsCaught, fishCaught, seaCaught])
 
   useEffect(() => {
     async function fetchBugsData() {
@@ -86,6 +91,39 @@ function MainContent({
     setViewAll(false);
     setShowCaught(true);
     setCaughtMode(!caughtMode);
+  }
+
+  const markAllCaught = () => {
+    if (activeCritter === 'bugs') {
+      const allBugs = Object.entries(bugsData).map((bug) => bug[1]['file-name']);
+      setBugsCaught(allBugs);
+      setCaughtList([...fishCaught, ...seaCaught, ...allBugs])
+    }
+    if (activeCritter === 'fish') {
+      const allFish = Object.entries(fishData).map((fish) => fish[1]['file-name']);
+      setFishCaught(allFish);
+      setCaughtList([...bugsCaught, ...seaCaught, ...allFish])
+    }
+    if (activeCritter === 'sea') {
+      const allSea = Object.entries(seaData).map((sea) => sea[1]['file-name']);
+      setSeaCaught(allSea);
+      setCaughtList([...bugsCaught, ...fishCaught, ...allSea])
+    }
+  }
+
+  const clearAllCaught = () => {
+    if (activeCritter === 'bugs') {
+      setBugsCaught([]);
+      setCaughtList([...fishCaught, ...seaCaught])
+    }
+    if (activeCritter === 'fish') {
+      setFishCaught([]);
+      setCaughtList([...bugsCaught, ...seaCaught])
+    }
+    if (activeCritter === 'sea') {
+      setSeaCaught([]);
+      setCaughtList([...bugsCaught, ...fishCaught])
+    }
   }
 
   const toggleViewAll = () => {
@@ -170,11 +208,27 @@ function MainContent({
               critterIcon={critterIcons.sea}
             />
           </div>
+          {caughtMode && <button type="button"
+            className="caught-mode-done-button"
+            onClick={() => toggleCaughtMode()}>
+            Done
+          </button>}
           <div className='caught-buttons-container'>
-            <button type="button"
+            {caughtMode && <>
+              <button type="button"
+                className="mark-all-caught"
+                onClick={() => markAllCaught()}>{<><FontAwesomeIcon icon={faPlus} /> All</>}
+              </button>
+              <button type="button"
+                className="clear-all-caught"
+                onClick={() => clearAllCaught()}>{<><FontAwesomeIcon icon={faEraser} /> All</>}
+              </button>
+            </>
+            }
+            {!caughtMode && <button type="button"
               className="caught-mode-button"
-              onClick={() => toggleCaughtMode()}>{caughtMode ? 'Done' : <><FontAwesomeIcon icon={faMarker} /> Caught</>}
-            </button>
+              onClick={() => toggleCaughtMode()}>{<><FontAwesomeIcon icon={faMarker} /> Caught</>}
+            </button>}
 
             {!caughtMode && <button type="button"
               className="toggle-caught-button"
@@ -189,9 +243,11 @@ function MainContent({
             bugsData={bugsData}
             fishData={fishData}
             seaData={seaData}
+            caughtList={caughtList}
             bugsCaught={bugsCaught}
             fishCaught={fishCaught}
             seaCaught={seaCaught}
+            setCaughtList={setCaughtList}
             setBugsCaught={setBugsCaught}
             setFishCaught={setFishCaught}
             setSeaCaught={setSeaCaught}

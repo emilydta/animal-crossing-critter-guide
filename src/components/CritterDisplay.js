@@ -8,9 +8,11 @@ function CritterDisplay({
     bugsData,
     fishData,
     seaData,
+    caughtList,
     bugsCaught,
     fishCaught,
     seaCaught,
+    setCaughtList,
     setBugsCaught,
     setFishCaught,
     setSeaCaught,
@@ -29,14 +31,6 @@ function CritterDisplay({
 }) {
     const [critterData, setCritterData] = useState(null);
     const [selectedCritter, setSelectedCritter] = useState(null);
-    const [caughtList, setCaughtList] = useState(() => {
-        const savedValue = JSON.parse(localStorage.getItem('caughtList'));
-        return savedValue || [];
-      });
-
-    useEffect(() => {
-        localStorage.setItem('caughtList', JSON.stringify(caughtList));
-    }, [caughtList])
 
     //remove overflow-y scroll when modal is open
     const htmlTag = document.getElementsByTagName('html')[0];

@@ -110,6 +110,7 @@ html {
   display: flex;
   position: relative;
   justify-content: space-between;
+  align-items: flex-end;
   width: 90vw;
 }
 
@@ -165,14 +166,19 @@ html {
   position: relative;
   align-items: flex-end;
   justify-content: flex-end;
+
   width: max-content;
+
   gap: 1em;
   height: 2em;
   margin-top: 1.8em;
 }
 
 .caught-mode-button,
-.toggle-caught-button {
+.caught-mode-done-button,
+.toggle-caught-button,
+.mark-all-caught,
+.clear-all-caught {
   cursor: pointer;
   font-size: 1rem;
   font-weight: 600;
@@ -184,6 +190,11 @@ html {
   color: var(--bg-secondary);
   border-radius: 1em;
   transition: transform 50ms ease-in-out, font-size .5s;
+}
+
+.caught-mode-done-button {
+  margin-right: 1.2em;
+  height: max-content;
 }
 
 .view-all-button,
@@ -523,7 +534,8 @@ p {
   gap: 0.5em;
 }
 
-.modal-caught-status, .modal-hem-button {
+.modal-caught-status,
+.modal-hem-button {
   cursor: pointer;
   background: var(--bg-secondary);
   border: none;
@@ -608,7 +620,10 @@ p {
   }
 
   .caught-mode-button,
-  .toggle-caught-button {
+  .caught-mode-done-button,
+  .toggle-caught-button,
+  .mark-all-caught,
+  .clear-all-caught {
     font-size: 0.8rem;
     height: min-content;
     white-space: nowrap;
@@ -616,6 +631,10 @@ p {
 
   .caught-buttons-container {
     margin-top: 1.3em;
+  }
+
+  .caught-mode-done-button {
+    margin: 0;
   }
 
   .caught-total-content {
@@ -638,7 +657,10 @@ p {
   }
 
   .caught-mode-button,
-  .toggle-caught-button {
+  .caught-mode-done-button,
+  .toggle-caught-button,
+  .mark-all-caught,
+  .clear-all-caught {
     font-size: 0.6rem;
     height: min-content;
     white-space: nowrap;
@@ -647,6 +669,10 @@ p {
   .caught-buttons-container {
     margin-top: 0.9em;
     gap: 0.5em;
+  }
+
+  .caught-mode-done-button {
+    margin-left: 1em;
   }
 
   .caught-total-content {
@@ -672,7 +698,10 @@ p {
   }
 
   .caught-mode-button,
-  .toggle-caught-button {
+  .caught-mode-done-button,
+  .toggle-caught-button,
+  .mark-all-caught,
+  .clear-all-caught {
     font-size: 0.5rem;
     height: min-content;
     white-space: nowrap;
@@ -688,11 +717,13 @@ p {
   .modal-content {
     padding: 0;
   }
+
   .critter-name {
     font-size: 1.2rem;
   }
 
-  .collection-info>button, .collection-info>p {
+  .collection-info>button,
+  .collection-info>p {
     font-size: 0.5rem;
   }
 
