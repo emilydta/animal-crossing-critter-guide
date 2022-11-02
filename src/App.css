@@ -1,19 +1,17 @@
 ::-webkit-scrollbar {
-  width: 1em;
+  width: 0.5em;
 }
 
 ::-webkit-scrollbar-track {
-  background: #F2F2F2;
+  background: var(--bg-secondary);
   border-radius: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #BDBDBD;
+  background: var(--bg-primary);
   border-radius: 1em;
-}
-
-::-webkit-scrollbar-hover {
-  background-color: #6e6e6e;
 }
 
 html {
@@ -367,7 +365,7 @@ html {
   width: 100vw;
   padding-bottom: 3em;
   gap: 1em;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .close-modal {
