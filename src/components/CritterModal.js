@@ -122,7 +122,7 @@ function CritterModal({
             <div className="modal-content">
                 <div className={`critter-image-container ${critterImageVisible && 'show-critter-image'}`} onClick={() => setCritterImageVisible(false)}>
                     <div className="critter-image-background">
-                        <img className="critter-image" src={selectedCritter.image_uri} alt='critter-image'></img>
+                        <img className="critter-image" src={selectedCritter.image_uri} alt='critter'></img>
                     </div>
                 </div>
                 <div className="close-modal-container">
@@ -132,7 +132,7 @@ function CritterModal({
                     <button className="modal-caught-status" onClick={() => setCaught(selectedCritter['file-name'])}>{modalCaughtStatus()}</button>
                     <p className="modal-availability-status">{availabilityStatus(selectedCritter, currentDateData, hemisphere)}</p>
                 </div>
-                <img className="critter-modal-icon" alt='critter icon' src={selectedCritter.icon_uri} onClick={() => setCritterImageVisible(true)}></img>
+                <img className="critter-modal-icon" alt='critter' src={selectedCritter.icon_uri} onClick={() => setCritterImageVisible(true)}></img>
                 <h1 className="critter-name">{formatCritterFileName(selectedCritter['file-name'])}</h1>
                 <p className="critter-rarity">{selectedCritter['availability']['rarity']}</p>
                 {selectedCritter['speed'] ? <div className="attributes-container">
@@ -146,33 +146,33 @@ function CritterModal({
                     </div>
                     <div className="price-container">
                         <div className="price-normal">
-                            <img className='modal-icons' alt='price-icon' src={modalIcons.bells}></img>
+                            <img className='modal-icons' alt='price' src={modalIcons.bells}></img>
                             <p>{selectedCritter['price']} Bells</p>
                         </div>
                     </div>
                 </div> :
                     <div className="attributes-container">
                         <div className='location-container'>
-                            <img src={locationIconFinder(selectedCritter)} alt='location-icon' className='location-icon'></img>
+                            <img src={locationIconFinder(selectedCritter)} alt='location' className='location-icon'></img>
                             {selectedCritter['availability']['location'] && <p>{selectedCritter['availability']['location']}</p>}
                         </div>
                         {selectedCritter['shadow'] && <div className="shadow-container">
-                            <img className='shadow-icon' src={shadowIconFinder(selectedCritter)} alt='shadow-icon'></img>
+                            <img className='shadow-icon' src={shadowIconFinder(selectedCritter)} alt='shadow-size'></img>
                             <p>{selectedCritter['shadow']}</p>
                         </div>}
                         <div className="price-container">
                             <div className="price-normal">
-                                <img className='modal-icons' src={modalIcons.bells} alt='price-icon'></img>
+                                <img className='modal-icons' src={modalIcons.bells} alt='price'></img>
                                 <p>{selectedCritter['price']} Bells</p>
                             </div>
                             {selectedCritter['price-cj'] &&
                                 <div className="price-cj">
-                                    <img className='modal-icons' src={modalIcons.cj} alt='cj-icon'></img>
+                                    <img className='modal-icons' src={modalIcons.cj} alt='cj'></img>
                                     <p>{selectedCritter['price-cj']} Bells</p>
                                 </div>}
                             {selectedCritter['price-flick'] &&
                                 <div className="price-flick">
-                                    <img className='modal-icons' src={modalIcons.flick} alt='flick-icon'></img>
+                                    <img className='modal-icons' src={modalIcons.flick} alt='flick'></img>
                                     <p>{selectedCritter['price-flick']} Bells</p>
                                 </div>}
                         </div>
