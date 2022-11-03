@@ -37,7 +37,7 @@ const shadowIconFinder = (critter) => {
     if (critter['shadow'] === 'Largest (6)') {
         return shadowIcons.largest6;
     }
-    if (critter['shadow'] === 'Largest with fin (6)') {
+    if (critter['shadow'] === 'Medium with fin (4)' || critter['shadow'] === 'Largest with fin (6)') {
         return shadowIcons.largestWithFin;
     }
     if (critter['shadow'] === 'Narrow') {
