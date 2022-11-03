@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.d0d76e66.css",
-    "main.js": "/static/js/main.362345db.js",
+    "main.css": "/static/css/main.6274560d.css",
+    "main.js": "/static/js/main.e00ae0e6.js",
     "static/media/pond_and_river.png": "/static/media/pond_and_river.e313de9f3cf77a98234d.png",
     "static/media/hitting_rocks.png": "/static/media/hitting_rocks.5be8b881cdd11ddb28d8.png",
     "static/media/flying_near_hybrid_flowers.png": "/static/media/flying_near_hybrid_flowers.e76197a10b7055aa0571.png",
@@ -35,11 +35,11 @@
     "static/media/flying.png": "/static/media/flying.a4b879a8d2c4fb7babfc.png",
     "static/media/stationary.png": "/static/media/stationary.152b2cadfe32e12b9e48.png",
     "index.html": "/index.html",
-    "main.d0d76e66.css.map": "/static/css/main.d0d76e66.css.map",
-    "main.362345db.js.map": "/static/js/main.362345db.js.map"
+    "main.6274560d.css.map": "/static/css/main.6274560d.css.map",
+    "main.e00ae0e6.js.map": "/static/js/main.e00ae0e6.js.map"
   },
   "entrypoints": [
-    "static/css/main.d0d76e66.css",
-    "static/js/main.362345db.js"
+    "static/css/main.6274560d.css",
+    "static/js/main.e00ae0e6.js"
   ]
 }
