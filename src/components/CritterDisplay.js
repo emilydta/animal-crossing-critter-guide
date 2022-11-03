@@ -32,10 +32,6 @@ function CritterDisplay({
     const [critterData, setCritterData] = useState(null);
     const [selectedCritter, setSelectedCritter] = useState(null);
 
-    //remove overflow-y scroll when modal is open
-    const htmlTag = document.getElementsByTagName('html')[0];
-    selectedCritter ? htmlTag.classList.add('active-modal') : htmlTag.classList.remove('active-modal');
-
     const toggleCaught = (e) => {
         e.currentTarget.classList.toggle('caught');
         if (e.currentTarget.classList.contains('caught')) {
@@ -83,33 +79,40 @@ function CritterDisplay({
             }}
         >
             {critterData && Object.entries(critterData).map((critter) => {
-                {/* Critter entries and tooltips must have 'critter[file-name]' as class[1] to allow for recording them in caught lists while !viewAll */}
+                {/* Critter entries and tooltips must have 'critter[file-name]' as class[1] to allow for recording them in caught lists while !viewAll */ }
                 return (
                     viewAll ? <div key={critter[1].id} className="entry-border">
                         <div className='tooltip' onClick={() => { setSelectedCritter(critter[1]) }}>
                             <p className={`tooltip-text`}>{formatCritterFileName(critter[1]['file-name'])}</p>
                         </div>
                         <div
-                            className={`critter-entry ${critter[1]['file-name']}
-                                ${caughtList.includes(critter[1]['file-name']) && showCaught ? 'caught' : ''}`}
+                            className={
+                                `critter-entry 
+                                ${critter[1]['file-name']}
+                                ${caughtList.includes(critter[1]['file-name']) && showCaught ? 'caught' : ''}`
+                            }
                             onClick={() => { setSelectedCritter(critter[1]) }}>
-                            <img className="critter-entry-icon" src={critter[1].icon_uri}></img>
+                            <img className="critter-entry-icon" src={critter[1].icon_uri} alt='critter-entry'></img>
                         </div>
                     </div> :
                         <div key={critter[1].id} className="entry-border">
                             <div
-                                className={`tooltip ${critter[1]['file-name']}`}
+                                className={
+                                    `tooltip 
+                                    ${critter[1]['file-name']}
+                                    ${caughtList.includes(critter[1]['file-name']) && showCaught ? 'caught' : ''}`}
                                 onClick={caughtMode ? (e) => toggleCaught(e) : () => { setSelectedCritter(critter[1]) }}>
                                 <p className={`tooltip-text ${addUnavailableClassName(critter)}`}>{formatCritterFileName(critter[1]['file-name'])}</p>
                             </div>
                             <div
                                 className={
-                                    `critter-entry ${critter[1]['file-name']} 
+                                    `critter-entry 
+                                    ${critter[1]['file-name']} 
                                     ${caughtList.includes(critter[1]['file-name']) && showCaught ? 'caught' : ''} 
                                     ${addUnavailableClassName(critter)}`
                                 }
                                 onClick={caughtMode ? (e) => toggleCaught(e) : () => { setSelectedCritter(critter[1]) }}>
-                                <img className="critter-entry-icon" src={critter[1].icon_uri}></img>
+                                <img className="critter-entry-icon" src={critter[1].icon_uri} alt='critter-entry'></img>
                             </div>
                         </div>
                 )
