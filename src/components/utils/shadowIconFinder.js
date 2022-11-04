@@ -1,4 +1,4 @@
-import shadowIcons from '../../images/modalIcons/shadowIcons/shadowIcons.js'
+import shadowIcons from '../../icons/modalIcons/shadowIcons/shadowIcons.js'
 
 const shadowIconFinder = (critter) => {
     //Sea

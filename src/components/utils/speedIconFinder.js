@@ -1,4 +1,4 @@
-import speedIcons from '../../images/modalIcons/speedIcons/speedIcons.js'
+import speedIcons from '../../icons/modalIcons/speedIcons/speedIcons.js'
 
 const speedIconFinder = (critter) => {
     if (critter['speed'] === 'Stationary') {
