@@ -34,6 +34,10 @@ function CritterDisplay({
     const [critterData, setCritterData] = useState(null);
     const [selectedCritter, setSelectedCritter] = useState(null);
 
+    //remove overflow-y scroll when modal is open
+    const htmlTag = document.getElementsByTagName('html')[0];
+    selectedCritter ? htmlTag.classList.add('active-modal') : htmlTag.classList.remove('active-modal');
+
     const toggleCaught = (e) => {
         e.currentTarget.classList.toggle('caught');
         if (e.currentTarget.classList.contains('caught')) {
