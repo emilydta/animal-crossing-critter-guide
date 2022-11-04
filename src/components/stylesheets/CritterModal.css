@@ -92,7 +92,7 @@
     padding-right: 1em;
     overflow-y: auto;
     width: 40em;
-    animation: scaleIn .1s, fade .1s;
+    animation: fade .1s;
 }
 
 .critter-image-container {
@@ -121,8 +121,8 @@
 }
 
 .critter-image {
-    width: 40vw;
-    filter: drop-shadow(0.5em 0em 0.5em rgba(0, 0, 0, 0.48));
+    width: 20vw;
+    height: auto;
 }
 
 .collection-info {
@@ -191,7 +191,7 @@
     transition: font-size .5s;
 }
 
-.shadow-container {
+.shadow-container, .speed-container {
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -1,0 +1,29 @@
+.loading-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-primary);
+}
+
+.loading-icon {
+    width: 20vw;
+    height: 20vh;
+    color: var(--bg-secondary);
+    animation: spinner 3s linear infinite, fadeIn 1s linear;
+}
+
+.loading {
+    animation: spinner .8s linear infinite;
+    filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+}
+
+@keyframes spinner {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+}

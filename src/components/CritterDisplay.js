@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import checkAvailability from "./utils/checkAvailability";
 import { formatCritterFileName } from "./utils/stringFormats";
 import CritterModal from "./CritterModal";
+import ProgressiveImage from "./ProgressiveImage";
+import loadingIconSrc from '../icons/circle-notch-solid.png';
 
 function CritterDisplay({
     activeCritter,
@@ -53,7 +55,6 @@ function CritterDisplay({
         return !caughtMode ? checkAvailability(hemisphere, customMonth, customTime, allYear, disableTime, allDay, critter) : '';
     }
 
-
     useEffect(() => {
         async function fetchCritterData() {
             if (activeCritter === 'bugs') {
@@ -92,7 +93,13 @@ function CritterDisplay({
                                 ${caughtList.includes(critter[1]['file-name']) && showCaught ? 'caught' : ''}`
                             }
                             onClick={() => { setSelectedCritter(critter[1]) }}>
-                            <img className="critter-entry-icon" src={critter[1].icon_uri} alt='critter-entry'></img>
+                            <ProgressiveImage 
+                                src={critter[1].icon_uri}
+                                loadingIconSrc={loadingIconSrc}
+                                imgClass="critter-entry-icon"
+                                alt='critter-entry'
+                            />
+                           {/* { <img className="critter-entry-icon" src={loaded ? critter[1].icon_uri : ''} alt='critter-entry' onLoad={onLoad}></img>} */}
                         </div>
                     </div> :
                         <div key={critter[1].id} className="entry-border">
@@ -112,7 +119,12 @@ function CritterDisplay({
                                     ${addUnavailableClassName(critter)}`
                                 }
                                 onClick={caughtMode ? (e) => toggleCaught(e) : () => { setSelectedCritter(critter[1]) }}>
-                                <img className="critter-entry-icon" src={critter[1].icon_uri} alt='critter-entry'></img>
+                                <ProgressiveImage 
+                                src={critter[1].icon_uri}
+                                loadingIconSrc={loadingIconSrc}
+                                imgClass="critter-entry-icon"
+                                alt='critter-entry'
+                            />
                             </div>
                         </div>
                 )

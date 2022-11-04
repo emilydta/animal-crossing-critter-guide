@@ -2,6 +2,8 @@ import { useState } from "react";
 import locationIconFinder from "./utils/locationIconFinder";
 import shadowIconFinder from "./utils/shadowIconFinder";
 import speedIconFinder from "./utils/speedIconFinder";
+import ProgressiveImage from "./ProgressiveImage";
+import loadingIconSrc from '../icons/circle-notch-solid.png';
 import './stylesheets/CritterModal.css'
 
 import { capitaliseFirstLetter, formatCritterFileName } from "./utils/stringFormats";
@@ -122,7 +124,12 @@ function CritterModal({
             <div className="modal-content">
                 <div className={`critter-image-container ${critterImageVisible && 'show-critter-image'}`} onClick={() => setCritterImageVisible(false)}>
                     <div className="critter-image-background">
-                        <img className="critter-image" src={selectedCritter.image_uri} alt='critter'></img>
+                        <ProgressiveImage
+                            src={selectedCritter.image_uri}
+                            loadingIconSrc={loadingIconSrc}
+                            imgClass="critter-image"
+                            alt='critter'
+                        />
                     </div>
                 </div>
                 <div className="close-modal-container">
@@ -132,47 +139,93 @@ function CritterModal({
                     <button className="modal-caught-status" onClick={() => setCaught(selectedCritter['file-name'])}>{modalCaughtStatus()}</button>
                     <p className="modal-availability-status">{availabilityStatus(selectedCritter, currentDateData, hemisphere)}</p>
                 </div>
-                <img className="critter-modal-icon" alt='critter' src={selectedCritter.icon_uri} onClick={() => setCritterImageVisible(true)}></img>
+                <ProgressiveImage
+                    src={selectedCritter.icon_uri}
+                    loadingIconSrc={loadingIconSrc}
+                    imgClass="critter-modal-icon"
+                    alt='critter'
+                    onClick={() => setCritterImageVisible(true)}
+                />
                 <h1 className="critter-name">{formatCritterFileName(selectedCritter['file-name'])}</h1>
                 <p className="critter-rarity">{selectedCritter['availability']['rarity']}</p>
                 {selectedCritter['speed'] ? <div className="attributes-container">
                     <div className="shadow-container">
-                        <img className='shadow-icon' alt='critter-shadow-size' src={shadowIconFinder(selectedCritter)}></img>
+                        <ProgressiveImage
+                            src={shadowIconFinder(selectedCritter)}
+                            loadingIconSrc={loadingIconSrc}
+                            imgClass="shadow-icon"
+                            alt='critter-shadow-size'
+                        />
                         <p>{selectedCritter['shadow']}</p>
                     </div>
                     <div className="speed-container">
-                        <img className='speed-icon' alt='critter-speed-level' src={speedIconFinder(selectedCritter)}></img>
+                        <ProgressiveImage
+                            src={speedIconFinder(selectedCritter)}
+                            loadingIconSrc={loadingIconSrc}
+                            imgClass="speed-icon"
+                            alt='critter-speed-level'
+                        />
                         <p>{selectedCritter['speed']}</p>
                     </div>
                     <div className="price-container">
                         <div className="price-normal">
-                            <img className='modal-icons' alt='price' src={modalIcons.bells}></img>
+                            <ProgressiveImage
+                                src={modalIcons.bells}
+                                loadingIconSrc={loadingIconSrc}
+                                imgClass="modal-icons"
+                                alt='price'
+                            />
                             <p>{selectedCritter['price']} Bells</p>
                         </div>
                     </div>
                 </div> :
                     <div className="attributes-container">
                         <div className='location-container'>
-                            <img src={locationIconFinder(selectedCritter)} alt='location' className='location-icon'></img>
+                            <ProgressiveImage
+                                src={locationIconFinder(selectedCritter)}
+                                loadingIconSrc={loadingIconSrc}
+                                imgClass="location-icon"
+                                alt='location'
+                            />
                             {selectedCritter['availability']['location'] && <p>{selectedCritter['availability']['location']}</p>}
                         </div>
                         {selectedCritter['shadow'] && <div className="shadow-container">
-                            <img className='shadow-icon' src={shadowIconFinder(selectedCritter)} alt='shadow-size'></img>
+                            <ProgressiveImage
+                                src={shadowIconFinder(selectedCritter)}
+                                loadingIconSrc={loadingIconSrc}
+                                imgClass="shadow-icon"
+                                alt='shadow-size'
+                            />
                             <p>{selectedCritter['shadow']}</p>
                         </div>}
                         <div className="price-container">
                             <div className="price-normal">
-                                <img className='modal-icons' src={modalIcons.bells} alt='price'></img>
+                                <ProgressiveImage
+                                    src={modalIcons.bells}
+                                    loadingIconSrc={loadingIconSrc}
+                                    imgClass="modal-icons"
+                                    alt='price'
+                                />
                                 <p>{selectedCritter['price']} Bells</p>
                             </div>
                             {selectedCritter['price-cj'] &&
                                 <div className="price-cj">
-                                    <img className='modal-icons' src={modalIcons.cj} alt='cj'></img>
+                                    <ProgressiveImage
+                                        src={modalIcons.cj}
+                                        loadingIconSrc={loadingIconSrc}
+                                        imgClass="modal-icons"
+                                        alt='cj'
+                                    />
                                     <p>{selectedCritter['price-cj']} Bells</p>
                                 </div>}
                             {selectedCritter['price-flick'] &&
                                 <div className="price-flick">
-                                    <img className='modal-icons' src={modalIcons.flick} alt='flick'></img>
+                                    <ProgressiveImage
+                                        src={modalIcons.flick}
+                                        loadingIconSrc={loadingIconSrc}
+                                        imgClass="modal-icons"
+                                        alt='flick'
+                                    />
                                     <p>{selectedCritter['price-flick']} Bells</p>
                                 </div>}
                         </div>
