@@ -121,7 +121,7 @@
 }
 
 .critter-image {
-    width: 20vw;
+    width: 30em;
     height: auto;
 }
 
@@ -324,92 +324,8 @@
     .modal-content {
         width: 95vw;
     }
-}
 
-/* @media screen and (max-width: 415px) {
-
-    .modal-icons,
-    .shadow-icon,
-    .location-icon {
-        width: 2em;
-        height: auto;
-    }
-
-    .attributes-container>div>p,
-    .price-container {
-        font-size: 0.7rem;
-    }
-
-    .modal-hem-content>p {
-        font-size: 1rem;
+    .critter-image {
+        width: 70vw;
     }
 }
-
-@media screen and (max-height: 400px) {
-    .critter-name {
-        font-size: 1.2rem;
-    }
-
-    .collection-info>button,
-    .collection-info>p {
-        font-size: 0.8rem;
-    }
-
-    .close-modal {
-        font-size: 0.9rem;
-    }
-
-    .modal-icons,
-    .shadow-icon,
-    .location-icon {
-        width: 2em;
-        height: auto;
-    }
-
-    .attributes-container>div>p,
-    .price-container {
-        font-size: 0.7rem;
-    }
-
-    .modal-hem-content>p {
-        font-size: 1rem;
-    }
-
-    .seasonality-container {
-        padding-bottom: 1em;
-    }
-
-    .seasonality-container>div>p {
-        font-size: 1rem;
-    }
-} */
-
-/* @media screen and (min-width: 100px) {
-
-    .all-year-container,
-    .time-of-day-container {
-        font-size: 1.2rem;
-    }
-} */
-
-/* @media screen and (min-width: 800px) {
-    .modal-content {
-        width: 80vw;
-    }
-
-    .modal-hem-heading {
-        width: max-content;
-    }
-}
-
-@media screen and (min-width: 1100px) {
-    .modal-content {
-        width: 60vw;
-    }
-} */
-
-/* @media screen and (min-width: 1450px) {
-    .modal-content {
-        width: 50vw;
-    }
-} */
