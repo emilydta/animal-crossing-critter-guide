@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.4ca77b38.css",
-    "main.js": "/static/js/main.d1790104.js",
+    "main.js": "/static/js/main.408349d6.js",
     "static/media/pond_and_river.png": "/static/media/pond_and_river.be69d7a6cba021732c04.png",
     "static/media/hitting_rocks.png": "/static/media/hitting_rocks.753ed9b644f463ef0db1.png",
     "static/media/sea.png": "/static/media/sea.f6c1efe220f32ec7b2b2.png",
@@ -20,17 +20,16 @@
     "static/media/on_palm_trees.png": "/static/media/on_palm_trees.93279dcd68e40ce15684.png",
     "static/media/flying_by_light.png": "/static/media/flying_by_light.7980449e86be8bbc1b35.png",
     "static/media/on_the_ground.png": "/static/media/on_the_ground.f5dbf3dcaf578a5c7236.png",
-    "static/media/circle-notch-solid.png": "/static/media/circle-notch-solid.32e6b09d8893b70b1e34.png",
     "static/media/on_trees.png": "/static/media/on_trees.4c1079998c3c6601e016.png",
     "static/media/cj.png": "/static/media/cj.4261a3e01b669d57ddae.png",
     "static/media/on_white_flowers.png": "/static/media/on_white_flowers.992f5260fa2cd825e423.png",
     "static/media/near_trash.png": "/static/media/near_trash.fbf6e906a3cc45ee3829.png",
     "index.html": "/index.html",
     "main.4ca77b38.css.map": "/static/css/main.4ca77b38.css.map",
-    "main.d1790104.js.map": "/static/js/main.d1790104.js.map"
+    "main.408349d6.js.map": "/static/js/main.408349d6.js.map"
   },
   "entrypoints": [
     "static/css/main.4ca77b38.css",
-    "static/js/main.d1790104.js"
+    "static/js/main.408349d6.js"
   ]
 }
