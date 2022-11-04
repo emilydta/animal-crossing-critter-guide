@@ -1,4 +1,4 @@
-import locationIcons from '../../images/modalIcons/locationIcons/locationIcons.js'
+import locationIcons from '../../icons/modalIcons/locationIcons/locationIcons.js'
 
 const locationIconFinder = (critter) => {
     //BUGS
