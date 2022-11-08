@@ -26,7 +26,8 @@ html {
 }
 
 .all-critters-heading {
-  margin: 0;
+  margin-bottom: 0;
+  margin-top: 1em;
 }
 
 .all-current-buttons-container {
@@ -34,6 +35,10 @@ html {
   margin-bottom: 1em;
   gap: 1.5em;
   transition: margin .5s;
+}
+
+.all-current-buttons-container>button {
+  transition: font-size .5s;
 }
 
 .menu-container {
@@ -170,7 +175,9 @@ html {
   display: flex;
   justify-content: center;
   width: 100vw;
+  height: 436px;
   overflow-x: auto;
+  transition: height .5s;
 }
 
 .critter-active {
@@ -421,6 +428,10 @@ p {
   .tooltip {
     margin-bottom: 2.9em;
   }
+
+  .critter-display-content {
+    height: 396px;
+  }
 }
 
 @media screen and (max-width: 1169px) {
@@ -434,6 +445,10 @@ p {
 
   .tooltip {
     margin-bottom: 2.5em;
+  }
+
+  .critter-display-content {
+    height: 356px;
   }
 }
 
@@ -544,8 +559,9 @@ p {
     width: 2em;
   }
 
-  .all-current-buttons-container {
+  .all-current-buttons-container>button {
     margin: 0;
+    font-size: 0.6rem;
   }
 }
 
