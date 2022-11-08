@@ -34,11 +34,7 @@ html {
 .all-current-buttons-container {
   display: flex;
   gap: 1.5em;
-  transition: margin .5s;
-}
-
-.all-current-buttons-container>button {
-  transition: font-size .5s;
+  transition: margin .5s, font-size .5s;
 }
 
 .menu-container {
@@ -53,11 +49,6 @@ html {
 .all-critters-heading-container {
   animation: bounceIn .1s ease-out;
   animation-fill-mode: forwards;
-}
-
-.hemisphere-buttons {
-  animation: fadeIn .3s;
-  color: var(--bg-secondary);
 }
 
 @keyframes bounceIn {
@@ -84,11 +75,13 @@ html {
 
 .hemisphere-buttons {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   gap: 1em;
   margin-bottom: 1em;
   font-size: 1.3rem;
+  animation: fadeIn .3s;
+  color: var(--bg-secondary);
   transition: font-size .5s;
 }
 
@@ -547,17 +540,14 @@ p {
     font-size: 1.3rem;
   }
 
-  .critter-button-icon {
-    width: 1.5em;
-  }
+
 
   .critter-button {
-    width: 2em;
+    width: 2.5em;
   }
 
   .all-current-buttons-container>button {
     margin: 0;
-    font-size: 0.6rem;
   }
 }
 

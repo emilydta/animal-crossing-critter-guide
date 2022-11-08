@@ -220,6 +220,10 @@ input[type='range']:disabled {
     .mode-buttons {
         margin: 1.2em;
     }
+
+    .time-date-content {
+        gap: 1em;
+    }
 }
 
 @media screen and (max-width: 316px) {
@@ -235,9 +239,5 @@ input[type='range']:disabled {
     .date-display {
         font-size: 1rem;
         margin-top: 1em;   
-    }
-
-    .time-date-content {
-        gap: 1em;
     }
 }
