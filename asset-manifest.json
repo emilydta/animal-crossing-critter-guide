@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.b5aa0abc.css",
-    "main.js": "/static/js/main.ad67dde3.js",
+    "main.css": "/static/css/main.5b3e1526.css",
+    "main.js": "/static/js/main.47cec373.js",
     "static/media/pond_and_river.png": "/static/media/pond_and_river.be69d7a6cba021732c04.png",
     "static/media/hitting_rocks.png": "/static/media/hitting_rocks.753ed9b644f463ef0db1.png",
     "static/media/sea.png": "/static/media/sea.f6c1efe220f32ec7b2b2.png",
@@ -24,13 +24,12 @@
     "static/media/cj.png": "/static/media/cj.4261a3e01b669d57ddae.png",
     "static/media/on_white_flowers.png": "/static/media/on_white_flowers.992f5260fa2cd825e423.png",
     "static/media/near_trash.png": "/static/media/near_trash.fbf6e906a3cc45ee3829.png",
-    "static/media/circle-notch-solid.png": "/static/media/circle-notch-solid.280dc191d214376c626f.png",
     "index.html": "/index.html",
-    "main.b5aa0abc.css.map": "/static/css/main.b5aa0abc.css.map",
-    "main.ad67dde3.js.map": "/static/js/main.ad67dde3.js.map"
+    "main.5b3e1526.css.map": "/static/css/main.5b3e1526.css.map",
+    "main.47cec373.js.map": "/static/js/main.47cec373.js.map"
   },
   "entrypoints": [
-    "static/css/main.b5aa0abc.css",
-    "static/js/main.ad67dde3.js"
+    "static/css/main.5b3e1526.css",
+    "static/js/main.47cec373.js"
   ]
 }
