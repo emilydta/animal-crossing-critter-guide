@@ -25,7 +25,7 @@ function InfoCard({
 
                     <div className="info-card-links">The data for this site is sourced from:
                         <a href='https://acnhapi.com/' target='_blank'><span> ACNH API</span></a>
-                        <p className="info-card-description">If you feel like buying me a coffee, you can do so here: </p>
+                        <p className="info-card-description ko-fi">If you feel like buying me a coffee, you can do so <a href='https://ko-fi.com/emilydta' target='_blank'>here</a></p>
                     </div>
                     <p className="info-card-disclaimer">Animal Crossing is the property of Nintendo and I do not claim to own any of the data pertaining to the franchise. This is an entirely free, fan-made project. </p>
                     <p className="info-card-happy-hunting">Happy hunting! 🎣 🐞</p>
