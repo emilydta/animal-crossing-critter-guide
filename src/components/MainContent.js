@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-import TimeDisplay from './TimeDisplay';
-import CaughtTotalContainer from './CaughtTotalContainer';
-import CritterMenuButton from './CritterMenuButton';
+import InfoCard from './InfoCard';
 import CritterDisplay from './CritterDisplay';
+import CritterMenuButton from './CritterMenuButton';
+import CaughtTotalContainer from './CaughtTotalContainer';
+import TimeDisplay from './TimeDisplay';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTableList, faFish, faEye, faEyeSlash, faMarker, faPlus, faEraser } from '@fortawesome/free-solid-svg-icons'
+import { faCircleInfo, faTableList, faFish, faEye, faEyeSlash, faMarker, faPlus, faEraser } from '@fortawesome/free-solid-svg-icons'
 
 function MainContent({
   critterIcons,
@@ -25,6 +26,7 @@ function MainContent({
   const [currentDateData, setCurrentDateData] = useState(new Date());
 
   //view modes and filters
+  const [infoCardActive, setInfoCardActive] = useState(false);
   const [activeCritter, setActiveCritter] = useState('bugs')
   const [caughtMode, setCaughtMode] = useState(false);
   const [showCaught, setShowCaught] = useState(true)
@@ -49,6 +51,11 @@ function MainContent({
     const savedValue = JSON.parse(localStorage.getItem('seaCaught'));
     return savedValue || [];
   });
+
+  useEffect(() => {
+    const htmlTag = document.getElementsByTagName('html')[0];
+    infoCardActive ? htmlTag.classList.add('active-modal') : htmlTag.classList.remove('active-modal');
+  }, [infoCardActive]);
 
   useEffect(() => {
     localStorage.setItem('hemisphere', JSON.stringify(hemisphere));
@@ -118,6 +125,15 @@ function MainContent({
 
   return (
     <div className="main-content">
+    <div className='info-card-button-container'>
+      <button className='info-card-button' onClick={() => setInfoCardActive(true)}>{<><FontAwesomeIcon icon={faCircleInfo} /></>}</button>
+    </div>
+      {
+        infoCardActive && <InfoCard
+          infoCardActive={infoCardActive}
+          setInfoCardActive={setInfoCardActive}
+        />
+      }
       <main className='critter-display-container'>
         <div className={`critter-display-content ${activeCritter === 'sea' ? 'sea-disp-content' : 'default-disp-content'}`}>
           <CritterDisplay

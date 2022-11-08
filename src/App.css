@@ -1,3 +1,7 @@
+.active-modal {
+  overflow: hidden;
+}
+
 ::-webkit-scrollbar {
   width: 0.2em;
   height: 0.2em;
@@ -342,17 +346,21 @@ html {
   pointer-events: none;
 }
 
-
-
 h4,
 p {
   margin: 0;
   margin-bottom: 0.5em;
 }
 
-
-
-
+.info-card-button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--bg-secondary);
+  margin-left: 0.1em;
+  transition: font-size .5s;
+}
 
 @media not all and (hover: none) {
   button:hover {
@@ -362,6 +370,11 @@ p {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
     transform-origin: center;
+  }
+
+  .info-card-button:hover {
+    background: none;
+    color: var(--bg-secondary);
   }
 
   .critter-total-icon:hover {
@@ -393,9 +406,6 @@ p {
     visibility: hidden;
   }
 }
-
-
-
 
 @media screen and (max-width: 1500px) {
   .caught-mode-done-button {
@@ -456,6 +466,10 @@ p {
 
 @media screen and (max-width: 584px) {
 
+  .info-card-button {
+    font-size: 1rem;
+    margin: 0;
+  }
   .critter-display-content {
     margin-top: 0;
   }
@@ -496,11 +510,6 @@ p {
 
   .caught-total-content {
     font-size: 1.6rem;
-  }
-
-  .view-all-button,
-  .view-current-button {
-    font-size: 0.8rem;
   }
 
   .mid-buttons-container {
@@ -574,6 +583,11 @@ p {
     font-size: 0.5rem;
     height: min-content;
     white-space: nowrap;
+  }
+
+  .view-all-button,
+  .view-current-button {
+    font-size: 0.8rem;
   }
 
   .caught-buttons-container {
