@@ -1,5 +1,6 @@
 ::-webkit-scrollbar {
   width: 0.2em;
+  height: 0.2em;
 }
 
 ::-webkit-scrollbar-track {
@@ -32,7 +33,6 @@ html {
 
 .all-current-buttons-container {
   display: flex;
-  margin-bottom: 1em;
   gap: 1.5em;
   transition: margin .5s;
 }
@@ -167,7 +167,7 @@ html {
 .critter-display-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -175,7 +175,6 @@ html {
   display: flex;
   justify-content: center;
   width: 100vw;
-  height: 437px;
   overflow-x: auto;
   transition: height .5s;
 }
@@ -240,7 +239,7 @@ html {
   border-radius: 1em;
   font-size: 1rem;
   font-weight: 600;
-  margin-top: 1em;
+  margin-top: 0.5em;
   width: max-content;
   padding-left: 1em;
   padding-right: 1em;
@@ -428,10 +427,6 @@ p {
   .tooltip {
     margin-bottom: 2.9em;
   }
-
-  .critter-display-content {
-    height: 397px;
-  }
 }
 
 @media screen and (max-width: 1169px) {
@@ -445,10 +440,6 @@ p {
 
   .tooltip {
     margin-bottom: 2.5em;
-  }
-
-  .critter-display-content {
-    height: 357px;
   }
 }
 
