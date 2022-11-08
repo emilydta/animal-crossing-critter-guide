@@ -14,17 +14,17 @@ function App() {
 
   useEffect(() => {
     async function fetchBugsData() {
-      const response = await fetch(`https://acnhapi.com/v1/bugs/`, { mode: 'cors' });
+      const response = await fetch(`https://api.acnhcritterguide.com/v1a/bugs.json`, { mode: 'cors' });
       const critterData = await response.json();
       setBugsData(critterData);
     }
     async function fetchFishData() {
-      const response = await fetch(`https://acnhapi.com/v1/fish/`, { mode: 'cors' });
+      const response = await fetch(`https://api.acnhcritterguide.com/v1a/fish.json`, { mode: 'cors' });
       const critterData = await response.json();
       setFishData(critterData);
     }
     async function fetchSeaData() {
-      const response = await fetch(`https://acnhapi.com/v1/sea/`, { mode: 'cors' });
+      const response = await fetch(`https://api.acnhcritterguide.com/v1a/sea.json`, { mode: 'cors' });
       const critterData = await response.json();
       setSeaData(critterData);
     }

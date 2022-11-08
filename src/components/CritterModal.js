@@ -10,6 +10,8 @@ import { capitaliseFirstLetter, formatCritterFileName } from "./utils/stringForm
 
 function CritterModal({
     activeCritter,
+    iconUrl,
+    imageUrl,
     caughtList,
     setCaughtList,
     bugsCaught,
@@ -121,7 +123,7 @@ function CritterModal({
                 <div className={`critter-image-container ${critterImageVisible && 'show-critter-image'}`} onClick={() => setCritterImageVisible(false)}>
                     <div className="critter-image-background">
                         <ProgressiveImage
-                            src={selectedCritter.image_uri}
+                            src={`${imageUrl}${selectedCritter['file-name']}.png`}
                             loadingIconSrc={loadingIconSrc}
                             imgClass="critter-image"
                             alt='critter'
@@ -136,7 +138,7 @@ function CritterModal({
                     <p className="modal-availability-status">{availabilityStatus(selectedCritter, currentDateData, hemisphere)}</p>
                 </div>
                 <ProgressiveImage
-                    src={selectedCritter.icon_uri}
+                    src={`${iconUrl}${selectedCritter['file-name']}.png`}
                     loadingIconSrc={loadingIconSrc}
                     imgClass="critter-modal-icon"
                     alt='critter'
