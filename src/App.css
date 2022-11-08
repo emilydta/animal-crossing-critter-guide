@@ -175,7 +175,7 @@ html {
   display: flex;
   justify-content: center;
   width: 100vw;
-  height: 436px;
+  height: 437px;
   overflow-x: auto;
   transition: height .5s;
 }
@@ -430,7 +430,7 @@ p {
   }
 
   .critter-display-content {
-    height: 396px;
+    height: 397px;
   }
 }
 
@@ -448,7 +448,7 @@ p {
   }
 
   .critter-display-content {
-    height: 356px;
+    height: 357px;
   }
 }
 
