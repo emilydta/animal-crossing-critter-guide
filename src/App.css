@@ -414,8 +414,6 @@ p {
   }
 }
 
-
-
 /* Grid sizes on screen width changes */
 @media screen and (max-width: 1313px) {
   .critter-entry-icon {
@@ -594,5 +592,11 @@ p {
 
   .clear-mark-buttons-container {
     gap: 0.1em;
+  }
+}
+
+@media screen and (max-height: 795px) {
+  .critter-display-content {
+    margin-top: 0;
   }
 }
