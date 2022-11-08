@@ -470,9 +470,11 @@ p {
     font-size: 1rem;
     margin: 0;
   }
+
   .critter-display-content {
     margin-top: 0;
   }
+
   .hemisphere-buttons,
   .hemisphere-buttons>h4,
   .southern-hemisphere-button,
@@ -549,7 +551,9 @@ p {
     font-size: 1.3rem;
   }
 
-
+  .all-current-buttons-container {
+    margin-bottom: 0.5em;
+  }
 
   .critter-button {
     width: 2.5em;
