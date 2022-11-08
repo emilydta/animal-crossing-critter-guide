@@ -176,7 +176,8 @@ html {
   justify-content: center;
   width: 100vw;
   overflow-x: auto;
-  transition: height .5s;
+  margin-top: 3em;
+  transition: height .5s, margin .5s;
 }
 
 .critter-active {
@@ -301,7 +302,8 @@ html {
 
 .critter-entry-icon {
   width: 4em;
-  transition: transform 80ms ease-in-out, width .5s;
+  height: 4em;
+  transition: transform 80ms ease-in-out, width .5s, height .5s;
 }
 
 .active-critter-display {
@@ -418,6 +420,7 @@ p {
 @media screen and (max-width: 1313px) {
   .critter-entry-icon {
     width: 3.5em;
+    height: 3.5em;
   }
 
   .tooltip-text {
@@ -432,6 +435,7 @@ p {
 @media screen and (max-width: 1169px) {
   .critter-entry-icon {
     width: 3em;
+    height: 3em;
   }
 
   .tooltip-text {
@@ -461,6 +465,9 @@ p {
 
 @media screen and (max-width: 584px) {
 
+  .critter-display-content {
+    margin-top: 0;
+  }
   .hemisphere-buttons,
   .hemisphere-buttons>h4,
   .southern-hemisphere-button,

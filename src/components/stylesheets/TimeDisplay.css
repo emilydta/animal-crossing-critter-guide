@@ -194,7 +194,7 @@ input[type='range']:disabled {
     .time-display,
     .date-display {
         margin: 0.2em;
-        font-size: 1rem;
+        font-size: 1.4rem;
         font-weight: 700;
     }
 
@@ -228,6 +228,16 @@ input[type='range']:disabled {
     }
 
     input[type='range'] {
-        width: 5em;
+        width: 7em;
+    }
+
+    .time-display,
+    .date-display {
+        font-size: 1rem;
+        margin-top: 1em;   
+    }
+
+    .time-date-content {
+        gap: 1em;
     }
 }
