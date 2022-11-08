@@ -114,7 +114,7 @@
 .critter-image-background {
     background-color: var(--bg-primary);
     border-radius: 2em; 
-    padding: 1em;  
+    padding: 1em; 
 }
 
 .show-critter-image {

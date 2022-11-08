@@ -1,6 +1,6 @@
 import './stylesheets/LoadingStyles.css';
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function ProgressiveImage({
     loadingIconSrc,
@@ -17,15 +17,20 @@ function ProgressiveImage({
             setImgSrc(src);
         };
     }, [src])
+
+    const isLoading = loadingIconSrc && imgSrc === loadingIconSrc;
     const loadingClass = loadingIconSrc && imgSrc === loadingIconSrc ? "loading" : "loaded";
+    const WrapComponent = isLoading ? 'div' : React.Fragment;
 
     return (
-        <img
-            {...{ src: imgSrc, ...props }}
-            alt={props.alt || ""}
-            className={`${imgClass} ${loadingClass}`}
-            style={{ filter: `${imgSrc.includes('images') ? 'drop-shadow(0.5em 0em 0.5em rgba(0, 0, 0, 0.48))' : 'none'}` }}
-        />
+        <WrapComponent>
+            <img
+                {...{ src: imgSrc, ...props }}
+                alt={props.alt || ""}
+                className={`${imgClass} ${loadingClass}`}
+                style={{ filter: `${imgSrc.includes('images') ? 'drop-shadow(0.5em 0em 0.5em rgba(0, 0, 0, 0.48))' : 'none'}` }}
+            />
+        </WrapComponent>
     )
 }
 
