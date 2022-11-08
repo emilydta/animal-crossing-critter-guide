@@ -28,11 +28,6 @@ function CritterModal({
     const [modalHemisphere, setModalHemisphere] = useState(hemisphere);
     const [critterImageVisible, setCritterImageVisible] = useState(false);
 
-    //remove overflow-y scroll when modal is open
-    const htmlTag = document.getElementsByTagName('html')[0];
-    selectedCritter ? htmlTag.classList.add('active-modal') : htmlTag.classList.remove('active-modal');
-    console.log(htmlTag.classList[0])
-
     const setModalHemisphereButton = () => {
         if (modalHemisphere === 'southern') {
             return setModalHemisphere('northern');

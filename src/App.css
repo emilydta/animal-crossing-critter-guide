@@ -31,18 +31,16 @@ html {
 
 .all-current-buttons-container {
   display: flex;
-  position: absolute;
-  top: 0;
+  margin-bottom: 1em;
   gap: 1.5em;
+  transition: margin .5s;
 }
 
-.top-menu {
+.menu-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 14em;
-  margin-top: 3em;
 }
 
 .caught-total-content,
@@ -131,6 +129,7 @@ html {
   justify-content: space-between;
   align-items: flex-end;
   width: 90vw;
+  margin-top: 1em;
 }
 
 .mid-line {
@@ -283,6 +282,7 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 4em;
 }
 
 .critter-entry {
@@ -498,6 +498,10 @@ p {
   .view-current-button {
     font-size: 0.8rem;
   }
+
+  .mid-buttons-container {
+    margin: 0;
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -539,6 +543,10 @@ p {
   .critter-button {
     width: 2em;
   }
+
+  .all-current-buttons-container {
+    margin: 0;
+  }
 }
 
 @media screen and (max-width: 345px) {
@@ -547,7 +555,7 @@ p {
   }
 }
 
-@media screen and (max-width: 290px) {
+@media screen and (max-width: 316px) {
 
   .hemisphere-buttons,
   .hemisphere-buttons>h4,

@@ -56,7 +56,7 @@ input[type='range']::-webkit-slider-thumb {
 .time-display,
 .date-display {
     margin: 0.2em;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 700;
     transition: font-size .5s;
 }
@@ -169,11 +169,6 @@ input[type='range']:disabled {
         width: 0em;
     }
 
-    .time-date-content {
-        flex-direction: column;
-        gap: 1em;
-    }
-
     .time-display,
     .date-display {
         margin: 0.2em;
@@ -199,8 +194,23 @@ input[type='range']:disabled {
     .time-display,
     .date-display {
         margin: 0.2em;
-        font-size: 1.8rem;
+        font-size: 1rem;
         font-weight: 700;
+    }
+
+    input[type='range'] {
+        width: 10em;
+        height: 0.5em;
+    }
+
+    input[type='range']::-moz-range-thumb {
+        height: 0.8em;
+        width: 0.7em;
+    }
+
+    input[type='range']::-webkit-slider-thumb {
+        height: 1.2em;
+        width: 1.1em;
     }
 
     .mode-buttons>button {
@@ -212,8 +222,12 @@ input[type='range']:disabled {
     }
 }
 
-@media screen and (max-width: 290px) {
+@media screen and (max-width: 316px) {
     .mode-buttons>button {
         font-size: 0.6rem;
+    }
+
+    input[type='range'] {
+        width: 5em;
     }
 }
