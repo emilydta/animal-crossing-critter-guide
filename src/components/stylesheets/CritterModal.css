@@ -108,19 +108,19 @@
     height: 100vh;
     width: 100vw;
     visibility: hidden;
-    z-index: 5;  
+    z-index: 5;
 }
 
 .critter-image-background {
     background-color: var(--bg-primary);
-    border-radius: 2em; 
-    padding: 1em; 
+    border-radius: 2em;
+    padding: 1em;
 }
 
 .show-critter-image {
     visibility: visible;
     opacity: 1;
-    animation: scaleIn .2s; 
+    animation: scaleIn .2s;
 }
 
 .critter-image {
@@ -194,7 +194,9 @@
     transition: font-size .5s;
 }
 
-.shadow-container, .speed-container {
+.shadow-container,
+.speed-container,
+.location-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -209,8 +211,8 @@
 }
 
 .location-icon {
-    width: 3em;
-    height: 3em;
+    width: 3.5em;
+    height: 3.5em;
 }
 
 .shadow-icon {
@@ -283,11 +285,11 @@
 
 @media screen and (max-height: 584px) {
     .modal-content {
-       justify-content: flex-start;
+        justify-content: flex-start;
     }
-    
+
 }
-    
+
 @media screen and (max-width: 284px) {
     .attributes-container>div {
         font-size: 0.5rem;
