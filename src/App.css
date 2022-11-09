@@ -173,7 +173,6 @@ html {
   justify-content: center;
   width: 100vw;
   overflow-x: auto;
-  margin-top: 3em;
   transition: height .5s, margin .5s;
 }
 
@@ -471,10 +470,6 @@ p {
     margin: 0;
   }
 
-  .critter-display-content {
-    margin-top: 0;
-  }
-
   .hemisphere-buttons,
   .hemisphere-buttons>h4,
   .southern-hemisphere-button,
@@ -552,7 +547,7 @@ p {
   }
 
   .all-current-buttons-container {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.8em;
   }
 
   .critter-button {
@@ -564,7 +559,7 @@ p {
   }
 }
 
-@media screen and (max-width: 345px) {
+@media screen and (max-width: 364px) {
   .clear-mark-buttons-container {
     margin: 0;
   }
@@ -600,11 +595,5 @@ p {
 
   .clear-mark-buttons-container {
     gap: 0.1em;
-  }
-}
-
-@media screen and (max-height: 795px) {
-  .critter-display-content {
-    margin-top: 0;
   }
 }

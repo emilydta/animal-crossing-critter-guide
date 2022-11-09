@@ -1,5 +1,11 @@
-.overlay {
+.info-card-overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    position: absolute;
     z-index: 5;
+    animation: fade .1s;
+    background-color: rgba(0, 0, 0, 0.816);
 }
 
 .info-card-container {

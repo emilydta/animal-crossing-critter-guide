@@ -8,8 +8,8 @@ function InfoCard({
 
     return (
         <>
-            <div className='overlay' onClick={() => setInfoCardActive(false)}></div>
             <div className="info-card-container">
+                <div className='info-card-overlay' onClick={() => setInfoCardActive(false)}></div>
                 <div className='content-wrapper'>
                     <div className='info-card-content'>
                         <div className="close-info-card-container">
@@ -33,7 +33,6 @@ function InfoCard({
                         <p className="info-card-happy-hunting">Happy hunting! 🎣 🐞</p>
                     </div>
                 </div>
-
             </div>
         </>
     )

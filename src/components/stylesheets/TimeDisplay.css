@@ -194,12 +194,12 @@ input[type='range']:disabled {
     .time-display,
     .date-display {
         margin: 0.2em;
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         font-weight: 700;
     }
 
     input[type='range'] {
-        width: 10em;
+        width: 11em;
         height: 0.5em;
     }
 
