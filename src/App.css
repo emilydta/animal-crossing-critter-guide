@@ -317,6 +317,7 @@ html {
 }
 
 .tooltip {
+  pointer-events: none;
   display: flex;
   position: absolute;
   justify-content: center;
