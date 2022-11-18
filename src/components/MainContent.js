@@ -125,9 +125,9 @@ function MainContent({
 
   return (
     <div className="main-content">
-    <div className='info-card-button-container'>
-      <button ariaLabel='info-card' className='info-card-button' onClick={() => setInfoCardActive(true)}>{<><FontAwesomeIcon icon={faCircleInfo} /></>}</button>
-    </div>
+      <div className='info-card-button-container'>
+        <button aria-label='info-card' className='info-card-button' onClick={() => setInfoCardActive(true)}>{<><FontAwesomeIcon icon={faCircleInfo} /></>}</button>
+      </div>
       {
         infoCardActive && <InfoCard
           infoCardActive={infoCardActive}

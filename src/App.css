@@ -4,7 +4,7 @@
 
 ::-webkit-scrollbar {
   width: 0.2em;
-  height: 0.2em;
+  height: 0.5em;
 }
 
 ::-webkit-scrollbar-track {
@@ -427,7 +427,7 @@ p {
   }
 
   .tooltip-text {
-    font-size: 0.5rem;
+    font-size: 0.8rem;
   }
 
   .tooltip {
