@@ -158,6 +158,7 @@ html {
 
 .critter-button-icon {
   width: 4em;
+  height: auto;
   transition: width .5s;
 }
 

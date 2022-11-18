@@ -5,7 +5,7 @@ import CritterMenuButton from './CritterMenuButton';
 import CaughtTotalContainer from './CaughtTotalContainer';
 import TimeDisplay from './TimeDisplay';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleInfo, faTableList, faFish, faEye, faEyeSlash, faMarker, faPlus, faEraser } from '@fortawesome/free-solid-svg-icons'
+import { faCircleInfo, faTableList, faFish, faEye, faEyeSlash, faMarker } from '@fortawesome/free-solid-svg-icons'
 
 function MainContent({
   critterIcons,
@@ -126,7 +126,7 @@ function MainContent({
   return (
     <div className="main-content">
     <div className='info-card-button-container'>
-      <button className='info-card-button' onClick={() => setInfoCardActive(true)}>{<><FontAwesomeIcon icon={faCircleInfo} /></>}</button>
+      <button ariaLabel='info-card' className='info-card-button' onClick={() => setInfoCardActive(true)}>{<><FontAwesomeIcon icon={faCircleInfo} /></>}</button>
     </div>
       {
         infoCardActive && <InfoCard
@@ -170,29 +170,32 @@ function MainContent({
               setActiveCritter={setActiveCritter}
               critter={'bugs'}
               critterIcon={critterIcons.bug}
+              alt='bugs'
             />
             <CritterMenuButton
               activeCritter={activeCritter}
               setActiveCritter={setActiveCritter}
               critter={'fish'}
               critterIcon={critterIcons.fish}
+              alt='fish'
             />
             <CritterMenuButton
               activeCritter={activeCritter}
               setActiveCritter={setActiveCritter}
               critter={'sea'}
               critterIcon={critterIcons.sea}
+              alt='sea-creatures'
             />
           </div>
           <div className='clear-mark-buttons-container'>
             {caughtMode && <>
               <button type="button"
                 className="mark-all-caught"
-                onClick={() => markAllCaught()}>{<><FontAwesomeIcon icon={faPlus} /> All</>}
+                onClick={() => markAllCaught()}>+ All
               </button>
               <button type="button"
                 className="clear-all-caught"
-                onClick={() => clearAllCaught()}>{<><FontAwesomeIcon icon={faEraser} /> All</>}
+                onClick={() => clearAllCaught()}>-- All
               </button>
             </>}
           </div>

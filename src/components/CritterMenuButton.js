@@ -1,19 +1,19 @@
 function CritterMenuButton({
-    activeCritter,
-    setActiveCritter,
-    critter,
-    critterIcon
+  activeCritter,
+  setActiveCritter,
+  critter,
+  critterIcon
 }) {
-return (
+  return (
     <div className={`critter-button ${activeCritter === critter && 'critter-active'}`}
-              onClick={() => setActiveCritter(critter)}>
-              <img
-                className='critter-button-icon'
-                src={critterIcon}
-              >
-              </img>
-            </div>
-)
+      onClick={() => setActiveCritter(critter)}>
+      <img
+        className='critter-button-icon'
+        src={critterIcon} 
+      >
+      </img>
+    </div>
+  )
 }
 
 export default CritterMenuButton;
