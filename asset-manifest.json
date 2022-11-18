@@ -1,8 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.92a8752b.css",
-    "main.js": "/static/js/main.17e2778a.js",
+    "main.css": "/static/css/main.474e0162.css",
+    "main.js": "/static/js/main.1728a761.js",
     "static/media/flying.png": "/static/media/flying.1dced2f70320f69c6323.png",
+    "static/media/nunito-all-900-normal.woff": "/static/media/nunito-all-900-normal.2168dc080751203b22e6.woff",
+    "static/media/nunito-all-800-normal.woff": "/static/media/nunito-all-800-normal.ddbd5c5e63da59bd0cd0.woff",
+    "static/media/nunito-all-600-normal.woff": "/static/media/nunito-all-600-normal.527eb32071d73ffd0829.woff",
+    "static/media/nunito-all-400-normal.woff": "/static/media/nunito-all-400-normal.0c07f750f73ac5437580.woff",
+    "static/media/nunito-all-700-normal.woff": "/static/media/nunito-all-700-normal.91e2d8503d40ed436968.woff",
     "static/media/pond_and_river.png": "/static/media/pond_and_river.a58c5cb42283b4e89b3d.png",
     "static/media/flying_near_hybrid_flowers.png": "/static/media/flying_near_hybrid_flowers.8c8576f222f4f182ea29.png",
     "static/media/hitting_rocks.png": "/static/media/hitting_rocks.0fd3df6d4be9641ecaca.png",
@@ -24,13 +29,38 @@
     "static/media/on_palm_trees.png": "/static/media/on_palm_trees.93279dcd68e40ce15684.png",
     "static/media/near_trash.png": "/static/media/near_trash.27bdf7fd64536610adcb.png",
     "static/media/on_the_ground.png": "/static/media/on_the_ground.3bff656bc95d3236cc67.png",
+    "static/media/nunito-latin-900-normal.woff2": "/static/media/nunito-latin-900-normal.f2ab67edd8a725dc5b4e.woff2",
+    "static/media/nunito-latin-600-normal.woff2": "/static/media/nunito-latin-600-normal.2b48b7fe12163661f95a.woff2",
+    "static/media/nunito-latin-800-normal.woff2": "/static/media/nunito-latin-800-normal.de4064435bf0f21e8110.woff2",
+    "static/media/nunito-latin-400-normal.woff2": "/static/media/nunito-latin-400-normal.b8644b6e04ecda1cf98b.woff2",
+    "static/media/nunito-latin-700-normal.woff2": "/static/media/nunito-latin-700-normal.adfd120897fcd366e78e.woff2",
     "static/media/cj.png": "/static/media/cj.4261a3e01b669d57ddae.png",
+    "static/media/nunito-latin-ext-900-normal.woff2": "/static/media/nunito-latin-ext-900-normal.1c7fabec871773c67e6e.woff2",
+    "static/media/nunito-latin-ext-800-normal.woff2": "/static/media/nunito-latin-ext-800-normal.612cd00048b57f272c00.woff2",
+    "static/media/nunito-latin-ext-600-normal.woff2": "/static/media/nunito-latin-ext-600-normal.9704ee910d46b3c17e69.woff2",
+    "static/media/nunito-latin-ext-400-normal.woff2": "/static/media/nunito-latin-ext-400-normal.e8049e65c49ce687cff1.woff2",
+    "static/media/nunito-latin-ext-700-normal.woff2": "/static/media/nunito-latin-ext-700-normal.4bcdf80378aecff12c8d.woff2",
+    "static/media/nunito-cyrillic-ext-900-normal.woff2": "/static/media/nunito-cyrillic-ext-900-normal.7bc9458e890632eaaed7.woff2",
+    "static/media/nunito-cyrillic-ext-800-normal.woff2": "/static/media/nunito-cyrillic-ext-800-normal.7931b4451e85184334d5.woff2",
+    "static/media/nunito-cyrillic-ext-600-normal.woff2": "/static/media/nunito-cyrillic-ext-600-normal.a966a96b5f86c1790d61.woff2",
+    "static/media/nunito-cyrillic-ext-400-normal.woff2": "/static/media/nunito-cyrillic-ext-400-normal.f21ac09511c6fa4f9463.woff2",
+    "static/media/nunito-cyrillic-ext-700-normal.woff2": "/static/media/nunito-cyrillic-ext-700-normal.6f62b8277e1be35439a6.woff2",
+    "static/media/nunito-cyrillic-900-normal.woff2": "/static/media/nunito-cyrillic-900-normal.e097b179de3e670a89e4.woff2",
+    "static/media/nunito-cyrillic-600-normal.woff2": "/static/media/nunito-cyrillic-600-normal.0b4aff50b25779a95353.woff2",
+    "static/media/nunito-cyrillic-800-normal.woff2": "/static/media/nunito-cyrillic-800-normal.702daf5528266e2302cb.woff2",
+    "static/media/nunito-cyrillic-700-normal.woff2": "/static/media/nunito-cyrillic-700-normal.b36f165a6079a29ea02b.woff2",
+    "static/media/nunito-cyrillic-400-normal.woff2": "/static/media/nunito-cyrillic-400-normal.166e8e87ae0b6f3deed3.woff2",
+    "static/media/nunito-vietnamese-900-normal.woff2": "/static/media/nunito-vietnamese-900-normal.08a0a5a486bde518ef93.woff2",
+    "static/media/nunito-vietnamese-800-normal.woff2": "/static/media/nunito-vietnamese-800-normal.1911355e3ea73b1cce95.woff2",
+    "static/media/nunito-vietnamese-600-normal.woff2": "/static/media/nunito-vietnamese-600-normal.73867bf9b4b837f997c4.woff2",
+    "static/media/nunito-vietnamese-400-normal.woff2": "/static/media/nunito-vietnamese-400-normal.6a8bc7acd205391fb71a.woff2",
+    "static/media/nunito-vietnamese-700-normal.woff2": "/static/media/nunito-vietnamese-700-normal.8862ea6993677ed0a88f.woff2",
     "index.html": "/index.html",
-    "main.92a8752b.css.map": "/static/css/main.92a8752b.css.map",
-    "main.17e2778a.js.map": "/static/js/main.17e2778a.js.map"
+    "main.474e0162.css.map": "/static/css/main.474e0162.css.map",
+    "main.1728a761.js.map": "/static/js/main.1728a761.js.map"
   },
   "entrypoints": [
-    "static/css/main.92a8752b.css",
-    "static/js/main.17e2778a.js"
+    "static/css/main.474e0162.css",
+    "static/js/main.1728a761.js"
   ]
 }
