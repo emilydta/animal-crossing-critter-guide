@@ -38,6 +38,7 @@ html {
 .all-current-buttons-container {
   display: flex;
   gap: 1.5em;
+  margin-top: 1em;
   transition: margin .5s, font-size .5s;
 }
 
