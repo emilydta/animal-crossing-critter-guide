@@ -69,8 +69,7 @@ function TimeDisplay(
                         {allYear ? 'All Year' : months[customMonth - 1]}
                     </p>
                     <div className="slider-container">
-                        <label htmlFor='month-slider' className="slider-label">Month slider: </label>
-                        <input disabled={allYear ? true : false} id='month-slider' type='range' min='1' max='12' value={customMonth} onChange={(e) => setCustomMonth(e.target.value)}></input>
+                        <input disabled={allYear ? true : false} id='month-slider' aria-label='month-slider' type='range' min='1' max='12' value={customMonth} onChange={(e) => setCustomMonth(e.target.value)}></input>
                     </div>
                 </div>
                 <div className="time-display-container">
@@ -78,8 +77,7 @@ function TimeDisplay(
                         {timeDisplayText()}
                     </p>
                     <div className="slider-container">
-                        <label htmlFor='time-slider' className="slider-label">Time slider: </label>
-                        <input disabled={allDay || disableTime ? true : false} id='time-slider' type='range' min='0' max='23' value={customTime} onChange={(e) => setCustomTime(e.target.value)}></input>
+                        <input disabled={allDay || disableTime ? true : false} id='time-slider' aria-label='time-slider' type='range' min='0' max='23' value={customTime} onChange={(e) => setCustomTime(e.target.value)}></input>
                     </div>
                 </div>
             </div>

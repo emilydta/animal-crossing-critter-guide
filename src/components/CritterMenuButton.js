@@ -2,7 +2,8 @@ function CritterMenuButton({
   activeCritter,
   setActiveCritter,
   critter,
-  critterIcon
+  critterIcon,
+  ...props
 }) {
   return (
     <div className={`critter-button ${activeCritter === critter && 'critter-active'}`}
@@ -10,6 +11,7 @@ function CritterMenuButton({
       <img
         className='critter-button-icon'
         src={critterIcon} 
+        alt={props.alt}
       >
       </img>
     </div>
