@@ -65,6 +65,24 @@ function MainContent({
     localStorage.setItem('seaCaught', JSON.stringify(seaCaught));
   }, [hemisphere, caughtList, bugsCaught, fishCaught, seaCaught])
 
+
+  const addActiveClassToCurrentButton = () => {
+    let currentMonth = Number(currentDateData.toLocaleDateString('en-US',
+      {
+        month: 'numeric'
+      }))
+    let currentTime = Number(currentDateData.toLocaleString('en-US',
+      {
+        hour: 'numeric',
+        hour12: false
+      }))
+
+    if (!viewAll && currentTime == customTime && currentMonth == customMonth) {
+      console.log('bop')
+      return 'active';
+    } else return '';
+  }
+
   const resetStates = () => {
     setAllDay(false);
     setAllYear(false);
@@ -211,8 +229,8 @@ function MainContent({
             </button>}
 
             {!caughtMode && <button type="button"
-              className="toggle-caught-button"
-              onClick={() => setShowCaught(!showCaught)}>{showCaught ? <><FontAwesomeIcon icon={faEyeSlash} /> Caught</> : <><FontAwesomeIcon icon={faEye} /> Caught</>}
+              className={`toggle-caught-button ${!showCaught ? 'active' : ''}`}
+              onClick={() => setShowCaught(!showCaught)}>{<><FontAwesomeIcon icon={faEyeSlash} /> Caught</>}
             </button>}
           </div>
         </div>
@@ -225,7 +243,7 @@ function MainContent({
               {<span><FontAwesomeIcon icon={faTableList} /> All</span>}
             </button>
             <button type='button'
-              className={`view-current-button`}
+              className={`view-current-button ${addActiveClassToCurrentButton()}`}
               onClick={() => viewCurrent()}>
               {<span><FontAwesomeIcon icon={faFish} /> Current</span>}
             </button>
