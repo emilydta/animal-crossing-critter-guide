@@ -4,6 +4,8 @@ import shadowIconFinder from "./utils/shadowIconFinder";
 import speedIconFinder from "./utils/speedIconFinder";
 import ProgressiveImage from "./ProgressiveImage";
 import loadingIconSrc from '../icons/circle-notch-solid.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import './stylesheets/CritterModal.css'
 
 import { capitaliseFirstLetter, formatCritterFileName } from "./utils/stringFormats";
@@ -131,7 +133,7 @@ function CritterModal({
                     </div>
                 </div>
                 <div className="top-modal-buttons-container">
-                    <a href={`https://animalcrossing.fandom.com/wiki/${selectedCritter['file-name']}`} target='_blank'><button type="button" target='_blank' className="view-wiki">View Wiki</button></a>
+                    <a href={`https://animalcrossing.fandom.com/wiki/${selectedCritter['file-name']}`} target='_blank'><button type="button" target='_blank' className="view-wiki">{<><FontAwesomeIcon icon={faUpRightFromSquare} /> Wiki</>}</button></a>
                     <button type="button" className="close-modal" onClick={() => setSelectedCritter(null)}>X</button>
                 </div>
                 <div className="collection-info">
