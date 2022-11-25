@@ -77,7 +77,7 @@ function MainContent({
         hour12: false
       }))
 
-    if (!viewAll && currentTime == customTime && currentMonth == customMonth) {
+    if (!viewAll && !allDay && !disableTime && !allYear && currentTime == customTime && currentMonth == customMonth) {
       return 'active';
     } else return '';
   }
