@@ -78,7 +78,6 @@ function MainContent({
       }))
 
     if (!viewAll && currentTime == customTime && currentMonth == customMonth) {
-      console.log('bop')
       return 'active';
     } else return '';
   }

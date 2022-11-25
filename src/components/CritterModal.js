@@ -130,7 +130,8 @@ function CritterModal({
                         />
                     </div>
                 </div>
-                <div className="close-modal-container">
+                <div className="top-modal-buttons-container">
+                    <a href={`https://animalcrossing.fandom.com/wiki/${selectedCritter['file-name']}`} target='_blank'><button type="button" target='_blank' className="view-wiki">View Wiki</button></a>
                     <button type="button" className="close-modal" onClick={() => setSelectedCritter(null)}>X</button>
                 </div>
                 <div className="collection-info">

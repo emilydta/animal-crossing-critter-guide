@@ -21,7 +21,7 @@
 }
 
 @media not all and (hover: none) {
-    .close-modal:hover {
+    .close-modal:hover, .view-wiki:hover {
         font-weight: 800;
     }
 
@@ -60,15 +60,16 @@
     background-color: rgba(0, 0, 0, 0.816);
 }
 
-.close-modal-container {
+.top-modal-buttons-container {
     display: flex;
     width: 100%;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: flex-start;
     padding-top: 1em;
 }
 
 .close-modal {
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -80,7 +81,21 @@
     height: 2em;
     border-radius: 0.9em;
     font-weight: 900;
+}
+
+.view-wiki {
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
+    padding: 0.3em;
+    color: var(--bg-secondary);
+    font-size: 0.9rem;
+    font-weight: 900;
+    border-radius: 0.5em;
+    transition: transform .1s;
 }
 
 .modal-content {
@@ -146,7 +161,7 @@
     padding-left: 1em;
     padding-right: 1em;
     font-weight: 700;
-    transition: font-size .5s;
+    transition: font-size .5s
 }
 
 .modal-availability-status {
