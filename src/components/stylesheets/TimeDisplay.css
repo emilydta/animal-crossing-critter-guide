@@ -212,7 +212,7 @@ input[type='range']:disabled {
     }
 }
 
-@media screen and (max-width: 364px) {
+@media screen and (max-width: 370px) {
 
     .time-display,
     .date-display {
