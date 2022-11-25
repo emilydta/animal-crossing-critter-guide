@@ -199,12 +199,35 @@ input[type='range']:disabled {
     }
 
     input[type='range'] {
+        width: 13em;
+        height: 0.8em;
+    }
+
+    .mode-buttons {
+        margin: 1.2em;
+    }
+
+    .time-date-content {
+        gap: 1em;
+    }
+}
+
+@media screen and (max-width: 364px) {
+
+    .time-display,
+    .date-display {
+        margin: 0.2em;
+        font-size: 1.6rem;
+        font-weight: 700;
+    }
+
+    input[type='range'] {
         width: 11em;
-        height: 0.5em;
+        height: 0.8em;
     }
 
     input[type='range']::-moz-range-thumb {
-        height: 0.8em;
+        height: 1em;
         width: 0.7em;
     }
 
@@ -238,6 +261,6 @@ input[type='range']:disabled {
     .time-display,
     .date-display {
         font-size: 1rem;
-        margin-top: 1em;   
+        margin-top: 1em;
     }
 }
