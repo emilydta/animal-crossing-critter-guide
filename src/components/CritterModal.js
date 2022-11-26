@@ -174,7 +174,7 @@ function CritterModal({
                             <ProgressiveImage
                                 src={modalIcons.bells}
                                 loadingIconSrc={loadingIconSrc}
-                                imgClass={`modal-icons ${theme === 'dark' && 'border'}`}
+                                imgClass='modal-icons'
                                 alt='price'
                             />
                             <p>{selectedCritter['price']} Bells</p>

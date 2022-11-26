@@ -36,6 +36,10 @@
     overflow: hidden;
 }
 
+.drop-shadow {
+    filter: drop-shadow(0.5em 0em 0.5em rgba(0, 0, 0, 0.48));
+}
+
 .critter-modal,
 .overlay {
     display: flex;
