@@ -5,7 +5,7 @@ import CritterMenuButton from './CritterMenuButton';
 import CaughtTotalContainer from './CaughtTotalContainer';
 import TimeDisplay from './TimeDisplay';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleInfo, faTableList, faFish, faEye, faEyeSlash, faMarker } from '@fortawesome/free-solid-svg-icons'
+import { faCircleInfo, faTableList, faFish, faEyeSlash, faMarker } from '@fortawesome/free-solid-svg-icons'
 
 function MainContent({
   critterIcons,
