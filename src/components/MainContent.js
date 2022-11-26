@@ -77,8 +77,11 @@ function MainContent({
         hour12: false
       }))
 
-    if (!viewAll && !allDay && !disableTime && !allYear && currentTime == customTime && currentMonth == customMonth) {
-      return 'active';
+    if (!viewAll && !allDay && !disableTime && !allYear) {
+      if (currentTime == 24 && customTime == 0 && currentMonth == customMonth ||
+        currentTime == customTime && currentMonth == customMonth) {
+        return 'active';
+      }
     } else return '';
   }
 
