@@ -5,7 +5,7 @@ import CritterMenuButton from './CritterMenuButton';
 import CaughtTotalContainer from './CaughtTotalContainer';
 import TimeDisplay from './TimeDisplay';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleInfo, faTableList, faFish, faEyeSlash, faMarker, faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
+import { faCircleInfo, faTableList, faFish, faEyeSlash, faMarker, faMoon, faLightbulb } from '@fortawesome/free-solid-svg-icons'
 
 function MainContent({
   theme,
@@ -151,7 +151,7 @@ function MainContent({
     <div className="main-content">
       <div className='top-buttons-container'>
         <button aria-label='info-card' className='info-card-button' onClick={() => setInfoCardActive(true)}>{<><FontAwesomeIcon icon={faCircleInfo} /></>}</button>
-        <button aria-label={theme === 'light' ? 'toggle-dark-mode' : 'toggle-light-mode'} className='theme-button active' onClick={() => setTheme((prev) => prev === 'light' ? 'dark' : 'light')}>{theme === 'light' ? <><FontAwesomeIcon icon={faMoon} /></> : <><FontAwesomeIcon icon={faSun} /></>}</button>
+        <button aria-label={theme === 'light' ? 'toggle-dark-mode' : 'toggle-light-mode'} className='theme-button active' onClick={() => setTheme((prev) => prev === 'light' ? 'dark' : 'light')}>{theme === 'light' ? <><FontAwesomeIcon icon={faMoon} /></> : <><FontAwesomeIcon icon={faLightbulb} /></>}</button>
       </div>
       {
         infoCardActive && <InfoCard
