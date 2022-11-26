@@ -3,7 +3,7 @@
 }
 
 ::-webkit-scrollbar {
-  width: 0.2em;
+  width: 0.5em;
   height: 0.5em;
 }
 
@@ -23,6 +23,7 @@ html {
   background-color: var(--bg-primary);
   overflow-x: hidden;
   font-family: 'Nunito', 'Varela Round', 'sans-serif';
+  scrollbar-color: var(--bg-secondary) var(--bg-primary);
 }
 
 .all-critters-heading-container {
