@@ -365,7 +365,8 @@ p {
   margin-bottom: 0.5em;
 }
 
-.info-card-button, .theme-button {
+.info-card-button,
+.theme-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -495,15 +496,15 @@ p {
 @media screen and (max-width: 584px) {
 
   .info-card-button {
-    font-size: 1rem;
+    font-size: 1.3rem;
     margin: 0;
   }
 
   .theme-button {
-    font-size: 0.7rem;
-    padding: 0.2em;
-    padding-left: 0.3em;
-    padding-right: 0.3em;
+    font-size: 0.8rem;
+    padding: 0.3em;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
   }
 
   .hemisphere-buttons,
@@ -552,13 +553,6 @@ p {
 
 @media screen and (max-width: 450px) {
 
-  .hemisphere-buttons,
-  .hemisphere-buttons>h4,
-  .southern-hemisphere-button,
-  .northern-hemisphere-button {
-    font-size: 0.8rem;
-  }
-
   .caught-mode-button,
   .caught-mode-done-button,
   .toggle-caught-button,
@@ -595,13 +589,23 @@ p {
   }
 }
 
+@media screen and (max-width: 404px) {
+
+  .hemisphere-buttons,
+  .hemisphere-buttons>h4,
+  .southern-hemisphere-button,
+  .northern-hemisphere-button {
+    font-size: 0.8rem;
+  }
+}
+
 @media screen and (max-width: 364px) {
   .clear-mark-buttons-container {
     margin: 0;
   }
 }
 
-@media screen and (max-width: 316px) {
+@media screen and (max-width: 320px) {
 
   .hemisphere-buttons,
   .hemisphere-buttons>h4,
