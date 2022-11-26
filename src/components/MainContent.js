@@ -162,6 +162,7 @@ function MainContent({
       <main className='critter-display-container'>
         <div className={`critter-display-content ${activeCritter === 'sea' ? 'sea-disp-content' : 'default-disp-content'}`}>
           <CritterDisplay
+            theme={theme}
             activeCritter={activeCritter}
             bugsData={bugsData}
             fishData={fishData}

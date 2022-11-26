@@ -27,8 +27,7 @@ function ProgressiveImage({
             <img
                 {...{ src: imgSrc, ...props }}
                 alt={props.alt || ""}
-                className={`${imgClass} ${loadingClass}`}
-                style={{ filter: `${imgSrc.includes('images') ? 'drop-shadow(0.5em 0em 0.5em rgba(0, 0, 0, 0.48))' : 'none'}` }}
+                className={`${imgClass} ${loadingClass} ${imgSrc.includes('images') ? 'drop-shadow' : ''}`}
             />
         </WrapComponent>
     )

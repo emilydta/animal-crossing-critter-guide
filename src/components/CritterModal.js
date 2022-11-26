@@ -11,6 +11,7 @@ import './stylesheets/CritterModal.css'
 import { capitaliseFirstLetter, formatCritterFileName } from "./utils/stringFormats";
 
 function CritterModal({
+    theme,
     activeCritter,
     iconUrl,
     imageUrl,
@@ -143,7 +144,7 @@ function CritterModal({
                 <ProgressiveImage
                     src={`${iconUrl}${selectedCritter['file-name']}.png`}
                     loadingIconSrc={loadingIconSrc}
-                    imgClass="critter-modal-icon"
+                    imgClass={`critter-modal-icon ${theme === 'dark' && 'border'}`}
                     alt='critter'
                     onClick={() => setCritterImageVisible(true)}
                 />
@@ -154,7 +155,7 @@ function CritterModal({
                         <ProgressiveImage
                             src={shadowIconFinder(selectedCritter)}
                             loadingIconSrc={loadingIconSrc}
-                            imgClass="shadow-icon"
+                            imgClass={`shadow-icon ${theme === 'dark' && 'border'}`}
                             alt='critter-shadow-size'
                         />
                         <p>{selectedCritter['shadow']}</p>
@@ -163,7 +164,7 @@ function CritterModal({
                         <ProgressiveImage
                             src={speedIconFinder(selectedCritter)}
                             loadingIconSrc={loadingIconSrc}
-                            imgClass="speed-icon"
+                            imgClass={`speed-icon ${theme === 'dark' && 'border'}`}
                             alt='critter-speed-level'
                         />
                         <p>{selectedCritter['speed']}</p>
@@ -173,7 +174,7 @@ function CritterModal({
                             <ProgressiveImage
                                 src={modalIcons.bells}
                                 loadingIconSrc={loadingIconSrc}
-                                imgClass="modal-icons"
+                                imgClass={`modal-icons ${theme === 'dark' && 'border'}`}
                                 alt='price'
                             />
                             <p>{selectedCritter['price']} Bells</p>
@@ -185,7 +186,7 @@ function CritterModal({
                             <ProgressiveImage
                                 src={locationIconFinder(selectedCritter)}
                                 loadingIconSrc={loadingIconSrc}
-                                imgClass="location-icon"
+                                imgClass={`location-icon ${theme === 'dark' && 'border'}`}
                                 alt='location'
                             />
                             {selectedCritter['availability']['location'] && <p>{selectedCritter['availability']['location']}</p>}
@@ -194,7 +195,7 @@ function CritterModal({
                             <ProgressiveImage
                                 src={shadowIconFinder(selectedCritter)}
                                 loadingIconSrc={loadingIconSrc}
-                                imgClass="shadow-icon"
+                                imgClass={`shadow-icon ${theme === 'dark' && 'border'}`}
                                 alt='shadow-size'
                             />
                             <p>{selectedCritter['shadow']}</p>

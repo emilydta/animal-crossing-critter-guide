@@ -26,6 +26,11 @@ html {
   scrollbar-color: var(--bg-secondary) var(--bg-primary);
   transition: background-color .2s;
 }
+/* for dark mode */
+.border {
+  filter: drop-shadow(0em 0.1em var(--bg-secondary));
+}
+/*---*/
 
 .top-buttons-container {
   display: flex;

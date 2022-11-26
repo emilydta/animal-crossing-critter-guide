@@ -25,7 +25,7 @@ function App() {
 
     if (theme === 'dark') {
       document.documentElement.style.setProperty('--bg-primary', '#342e2e');
-      document.documentElement.style.setProperty('--bg-secondary', '#ffebcd');
+      document.documentElement.style.setProperty('--bg-secondary', '#e5d4ba');
     }
   }, [theme]);
 

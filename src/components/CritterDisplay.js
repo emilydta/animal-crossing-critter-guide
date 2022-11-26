@@ -30,6 +30,7 @@ function CritterDisplay({
     disableTime,
     allDay,
     modalIcons,
+    theme
 }) {
     const [critterData, setCritterData] = useState(null);
     const [selectedCritter, setSelectedCritter] = useState(null);
@@ -105,13 +106,13 @@ function CritterDisplay({
                                 ${caughtList.includes(critter[1]['file-name']) && showCaught ? 'caught' : ''}`
                             }
                             onClick={() => { setSelectedCritter(critter[1]) }}>
-                            <ProgressiveImage 
+                            <ProgressiveImage
                                 src={`${iconUrl}${critter[1]['file-name']}.png`}
                                 loadingIconSrc={loadingIconSrc}
-                                imgClass="critter-entry-icon"
+                                imgClass={`critter-entry-icon ${theme === 'dark' && 'border'}`}
                                 alt='critter-entry'
                             />
-                           {/* { <img className="critter-entry-icon" src={loaded ? critter[1].icon_uri : ''} alt='critter-entry' onLoad={onLoad}></img>} */}
+                            {/* { <img className="critter-entry-icon" src={loaded ? critter[1].icon_uri : ''} alt='critter-entry' onLoad={onLoad}></img>} */}
                         </div>
                     </div> :
                         <div key={critter[1].id} className="entry-border">
@@ -131,12 +132,12 @@ function CritterDisplay({
                                     ${addUnavailableClassName(critter)}`
                                 }
                                 onClick={caughtMode ? (e) => toggleCaught(e) : () => { setSelectedCritter(critter[1]) }}>
-                                <ProgressiveImage 
-                                src={`${iconUrl}${critter[1]['file-name']}.png`}
-                                loadingIconSrc={loadingIconSrc}
-                                imgClass="critter-entry-icon"
-                                alt='critter-entry'
-                            />
+                                <ProgressiveImage
+                                    src={`${iconUrl}${critter[1]['file-name']}.png`}
+                                    loadingIconSrc={loadingIconSrc}
+                                    imgClass={`critter-entry-icon ${theme === 'dark' && 'border'}`}
+                                    alt='critter-entry'
+                                />
                             </div>
                         </div>
                 )
@@ -145,6 +146,7 @@ function CritterDisplay({
             {
                 selectedCritter &&
                 <CritterModal
+                    theme={theme}
                     activeCritter={activeCritter}
                     iconUrl={iconUrl}
                     imageUrl={imageUrl}
