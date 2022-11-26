@@ -8,9 +8,26 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
+  const [theme, setTheme] = useState(() => {
+    const savedValue = JSON.parse(localStorage.getItem('theme'));
+    return savedValue || 'light';
+  });
   const [bugsData, setBugsData] = useState();
   const [fishData, setFishData] = useState();
   const [seaData, setSeaData] = useState();
+
+  //Light mode/dark mode CSS color variables
+  useEffect(() => {
+    if (theme === 'light') {
+      document.documentElement.style.setProperty('--bg-primary', '#ffebcd');
+      document.documentElement.style.setProperty('--bg-secondary', '#342e2e');
+    }
+
+    if (theme === 'dark') {
+      document.documentElement.style.setProperty('--bg-primary', '#342e2e');
+      document.documentElement.style.setProperty('--bg-secondary', '#ffebcd');
+    }
+  }, [theme]);
 
   useEffect(() => {
     async function fetchBugsData() {
@@ -42,12 +59,15 @@ function App() {
       )
     } else {
       return <MainContent
-      critterIcons={critterIcons}
-      modalIcons={modalIcons}
-      bugsData={bugsData}
-      fishData={fishData}
-      seaData={seaData}
-    />}
+        theme={theme}
+        setTheme={setTheme}
+        critterIcons={critterIcons}
+        modalIcons={modalIcons}
+        bugsData={bugsData}
+        fishData={fishData}
+        seaData={seaData}
+      />
+    }
   }
 
   return (

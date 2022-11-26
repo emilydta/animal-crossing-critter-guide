@@ -100,6 +100,7 @@
 
 .modal-content {
     display: flex;
+    color: var(--bg-secondary);
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -166,7 +167,7 @@
 
 .modal-availability-status {
     font-weight: 700;
-    color: brown;
+    color: #c54141;
     transition: font-size .5s;
 }
 

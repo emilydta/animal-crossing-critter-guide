@@ -5,9 +5,11 @@ import CritterMenuButton from './CritterMenuButton';
 import CaughtTotalContainer from './CaughtTotalContainer';
 import TimeDisplay from './TimeDisplay';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleInfo, faTableList, faFish, faEyeSlash, faMarker } from '@fortawesome/free-solid-svg-icons'
+import { faCircleInfo, faTableList, faFish, faEyeSlash, faMarker, faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
 
 function MainContent({
+  theme,
+  setTheme,
   critterIcons,
   modalIcons,
   bugsData,
@@ -52,19 +54,21 @@ function MainContent({
     return savedValue || [];
   });
 
+  //Add overflow-y: none on body when infoCard is active
   useEffect(() => {
     const htmlTag = document.getElementsByTagName('html')[0];
     infoCardActive ? htmlTag.classList.add('active-modal') : htmlTag.classList.remove('active-modal');
   }, [infoCardActive]);
 
+  //Save data to local storage
   useEffect(() => {
+    localStorage.setItem('theme', JSON.stringify(theme));
     localStorage.setItem('hemisphere', JSON.stringify(hemisphere));
     localStorage.setItem('caughtList', JSON.stringify(caughtList));
     localStorage.setItem('bugsCaught', JSON.stringify(bugsCaught));
     localStorage.setItem('fishCaught', JSON.stringify(fishCaught));
     localStorage.setItem('seaCaught', JSON.stringify(seaCaught));
-  }, [hemisphere, caughtList, bugsCaught, fishCaught, seaCaught])
-
+  }, [hemisphere, caughtList, bugsCaught, fishCaught, seaCaught, theme])
 
   const addActiveClassToCurrentButton = () => {
     let currentMonth = Number(currentDateData.toLocaleDateString('en-US',
@@ -145,8 +149,9 @@ function MainContent({
 
   return (
     <div className="main-content">
-      <div className='info-card-button-container'>
+      <div className='top-buttons-container'>
         <button aria-label='info-card' className='info-card-button' onClick={() => setInfoCardActive(true)}>{<><FontAwesomeIcon icon={faCircleInfo} /></>}</button>
+        <button aria-label={theme === 'light' ? 'toggle-dark-mode' : 'toggle-light-mode'} className='theme-button active' onClick={() => setTheme((prev) => prev === 'light' ? 'dark' : 'light')}>{theme === 'light' ? <><FontAwesomeIcon icon={faMoon} /></> : <><FontAwesomeIcon icon={faSun} /></>}</button>
       </div>
       {
         infoCardActive && <InfoCard

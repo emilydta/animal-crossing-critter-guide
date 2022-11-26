@@ -8,7 +8,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(201, 186, 162, 0);
+  background: var(--bg-secondary);
   border-radius: 1em;
   margin-top: 1em;
   margin-bottom: 1em;
@@ -24,11 +24,21 @@ html {
   overflow-x: hidden;
   font-family: 'Nunito', 'Varela Round', 'sans-serif';
   scrollbar-color: var(--bg-secondary) var(--bg-primary);
+  transition: background-color .2s;
+}
+
+.top-buttons-container {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 .all-critters-heading-container {
   font-size: 2.5rem;
   font-weight: 700;
+  color: var(--bg-secondary);
 }
 
 .all-critters-heading {
@@ -355,13 +365,28 @@ p {
   margin-bottom: 0.5em;
 }
 
-.info-card-button {
+.info-card-button, .theme-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  background: none;
   border: none;
-  font-size: 2rem;
   color: var(--bg-secondary);
+}
+
+.info-card-button {
+  background: none;
+  font-size: 2rem;
   margin-left: 0.1em;
+  transition: font-size .5s;
+}
+
+.theme-button {
+  border-radius: 3em;
+  font-size: 1rem;
+  padding: 0.5em;
+  padding-right: 0.6em;
+  padding-left: 0.6em;
   transition: font-size .5s;
 }
 
@@ -472,6 +497,13 @@ p {
   .info-card-button {
     font-size: 1rem;
     margin: 0;
+  }
+
+  .theme-button {
+    font-size: 0.7rem;
+    padding: 0.2em;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
   }
 
   .hemisphere-buttons,
