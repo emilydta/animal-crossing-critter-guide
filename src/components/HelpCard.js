@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import './stylesheets/Card.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleInfo, faCircleQuestion, faTableList, faFish, faEyeSlash, faMarker, faMoon, faLightbulb, faCalendarDays, faClock, faSun } from '@fortawesome/free-solid-svg-icons';
@@ -8,15 +9,30 @@ function HelpCard({
     setHelpCardActive
 }) {
 
+    useEffect(() => {
+        const exitModalWithEscapeKey = (e) => {
+            if (helpCardActive) {
+                if (e.key === 'Escape') {
+                    setHelpCardActive(false);
+                }
+            }
+        }
+
+        document.addEventListener('keydown', exitModalWithEscapeKey);
+        return () => {
+            document.removeEventListener('keydown', exitModalWithEscapeKey);
+        }
+    }, []);
+
     return (
         <>
             <div className="card-container">
                 <div className='card-overlay' onClick={() => setHelpCardActive(false)}></div>
                 <div className='help-card-content-wrapper'>
+                    <div className="close-card-container">
+                        <button type="button" className="close-card" onClick={() => setHelpCardActive(false)}>X</button>
+                    </div>
                     <div className='help-card-content'>
-                        <div className="close-card-container">
-                            <button type="button" className="close-card" onClick={() => setHelpCardActive(false)}>X</button>
-                        </div>
                         <h1 className="card-heading"> 🛠️ User Guide </h1>
                         <p className="icon-heading">{<><FontAwesomeIcon icon={faLightbulb} />/<FontAwesomeIcon icon={faMoon} /></>}</p>
                         <p className="explanation">

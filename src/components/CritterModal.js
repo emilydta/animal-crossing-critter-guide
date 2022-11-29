@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import locationIconFinder from "./utils/locationIconFinder";
 import shadowIconFinder from "./utils/shadowIconFinder";
 import speedIconFinder from "./utils/speedIconFinder";
@@ -32,6 +32,21 @@ function CritterModal({
 }) {
     const [modalHemisphere, setModalHemisphere] = useState(hemisphere);
     const [critterImageVisible, setCritterImageVisible] = useState(false);
+
+    useEffect(() => {
+        const exitModalWithEscapeKey = (e) => {
+            if (selectedCritter) {
+                if (e.key === 'Escape') {
+                    setSelectedCritter(null);
+                }
+            }
+        }
+
+        document.addEventListener('keydown', exitModalWithEscapeKey);
+        return () => {
+            document.removeEventListener('keydown', exitModalWithEscapeKey);
+        }
+    }, []);
 
     const setModalHemisphereButton = () => {
         if (modalHemisphere === 'southern') {

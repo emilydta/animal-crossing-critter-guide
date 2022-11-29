@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import './stylesheets/Card.css'
 
 function InfoCard({
@@ -5,15 +6,30 @@ function InfoCard({
     setInfoCardActive
 }) {
 
+    useEffect(() => {
+        const exitModalWithEscapeKey = (e) => {
+            if (infoCardActive) {
+                if (e.key === 'Escape') {
+                    setInfoCardActive(false);
+                }
+            }
+        }
+
+        document.addEventListener('keydown', exitModalWithEscapeKey);
+        return () => {
+            document.removeEventListener('keydown', exitModalWithEscapeKey);
+        }
+    }, []);
+
     return (
         <>
             <div className="card-container">
                 <div className='card-overlay' onClick={() => setInfoCardActive(false)}></div>
                 <div className='info-card-content-wrapper'>
+                    <div className="close-card-container">
+                        <button type="button" className="close-card" onClick={() => setInfoCardActive(false)}>X</button>
+                    </div>
                     <div className='info-card-content'>
-                        <div className="close-card-container">
-                            <button type="button" className="close-card" onClick={() => setInfoCardActive(false)}>X</button>
-                        </div>
                         <h1 className="card-heading">Hello! 🌱</h1>
                         <p className="card-main-description-line">Thanks for checking out my ACNH Critter Guide!</p>
                         <p className="card-main-description">
