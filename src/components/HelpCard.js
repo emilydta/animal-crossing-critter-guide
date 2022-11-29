@@ -18,10 +18,6 @@ function HelpCard({
                             <button type="button" className="close-card" onClick={() => setHelpCardActive(false)}>X</button>
                         </div>
                         <h1 className="card-heading"> 🛠️ User Guide </h1>
-                        <p className="icon-heading">Month and Time Sliders</p>
-                        <p className="explanation">
-                            The sliders display critters available in months from January to December, and times from 12am to 11pm. The time is displayed using {<a href='https://simple.wikipedia.org/wiki/24-hour_clock' target='_blank'><span> military time.</span></a>}
-                        </p>
                         <p className="icon-heading">{<><FontAwesomeIcon icon={faLightbulb} />/<FontAwesomeIcon icon={faMoon} /></>}</p>
                         <p className="explanation">
                             Light Mode and Dark Mode (respectively).
@@ -33,6 +29,10 @@ function HelpCard({
                         <p className="icon-heading">{<><FontAwesomeIcon icon={faFish} /> Current</>}</p>
                         <p className="explanation">
                             Displays critters that are currently available according to your device's time/date.
+                        </p>
+                        <p className="icon-heading">Month and Time Sliders</p>
+                        <p className="explanation">
+                            The sliders display critters available from January to December, and from 12am to 11pm. The time is displayed using {<a href='https://simple.wikipedia.org/wiki/24-hour_clock' target='_blank'><span> military time.</span></a>}
                         </p>
                         <p className="icon-heading">{<><FontAwesomeIcon icon={faCalendarDays} /> All Year</>}</p>
                         <p className="explanation">
