@@ -26,18 +26,21 @@ html {
   scrollbar-color: var(--bg-secondary) var(--bg-primary);
   transition: background-color .2s;
 }
+
 /* for dark mode */
 .border {
   filter: drop-shadow(0em 0.1em var(--bg-secondary));
 }
+
 /*---*/
 
 .top-buttons-container {
   display: flex;
-  gap: 1em;
+  gap: 0.1em;
   align-items: center;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
+  margin-left: 0.1em;
 }
 
 .all-critters-heading-container {
@@ -371,6 +374,7 @@ p {
 }
 
 .info-card-button,
+.help-card-button,
 .theme-button {
   display: flex;
   align-items: center;
@@ -380,10 +384,10 @@ p {
   color: var(--bg-secondary);
 }
 
-.info-card-button {
+.info-card-button,
+.help-card-button {
   background: none;
   font-size: 2rem;
-  margin-left: 0.1em;
   transition: font-size .5s;
 }
 
@@ -394,6 +398,7 @@ p {
   padding-right: 0.6em;
   padding-left: 0.6em;
   transition: font-size .5s;
+  margin-left: 2em;
 }
 
 @media not all and (hover: none) {
@@ -406,7 +411,8 @@ p {
     transform-origin: center;
   }
 
-  .info-card-button:hover {
+  .info-card-button:hover,
+  .help-card-button:hover {
     background: none;
     color: var(--bg-secondary);
   }
@@ -500,9 +506,9 @@ p {
 
 @media screen and (max-width: 584px) {
 
-  .info-card-button {
+  .info-card-button,
+  .help-card-button {
     font-size: 1.3rem;
-    margin: 0;
   }
 
   .theme-button {

@@ -1,0 +1,239 @@
+.card-overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    position: absolute;
+    z-index: 5;
+    animation: fade .1s;
+    background-color: rgba(0, 0, 0, 0.816);
+}
+
+.card-container {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    z-index: 11;
+}
+
+.info-card-content-wrapper,
+.help-card-content-wrapper {
+    background-color: var(--bg-primary);
+    color: var(--bg-secondary);
+    z-index: 10;
+    border-radius: 2em;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+}
+
+.info-card-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30em;
+    height: min-content;
+}
+
+.info-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2em;
+    width: 26em;
+    transition: width .5s;
+}
+
+.help-card-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 34em;
+    height: 40em;
+}
+
+.help-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: flex-start;
+    padding: 2em;
+    width: 30em;
+    height: 40em;
+    overflow-y: scroll;
+    transition: width .5s;
+}
+
+.close-card-container {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.close-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: var(--bg-secondary);
+    color: var(--bg-primary);
+    font-size: 1rem;
+    width: 2em;
+    height: 2em;
+    border-radius: 0.9em;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.card-main-description-line {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.icon-heading {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.explanation {
+    margin-bottom: 2em;
+}
+
+a {
+    text-decoration: none;
+}
+
+.card-links {
+    margin: 1em;
+    margin-left: 0;
+}
+
+.ko-fi {
+    font-weight: 700;
+}
+
+.card-disclaimer {
+    font-size: 0.8rem;
+    margin-bottom: 1em;
+}
+
+.card-happy-hunting {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+@media not all and (hover: none) {
+    .close-card:hover {
+        font-weight: 800;
+    }
+}
+
+@media screen and (max-width: 480px) and (max-height: 670px) {
+    .card-container {
+        align-items: flex-start;
+        height: 100vh;
+    }
+
+    .info-card-content-wrapper {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .info-card-content {
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-content: flex-start;
+        width: 15em;
+        height: 100vh;
+    }
+}
+
+@media screen and (max-height: 640px) {
+    .card-container {
+        align-items: flex-start;
+        height: 100vh;
+    }
+
+    .info-card-content-wrapper,
+    .help-card-content-wrapper {
+        height: 100vh;
+    }
+
+    .info-card-content {
+        overflow-y: scroll;
+        align-items: flex-start;
+        justify-content: flex-start;
+        height: 100vh;
+    }
+}
+
+@media screen and (max-width: 542px) {
+
+    .help-card-content-wrapper {
+        width: 100vw;
+    }
+
+    .help-card-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-content: flex-start;
+        width: 19em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .info-card-content-wrapper {
+        width: 100vw;
+    }
+
+    .info-card-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-content: flex-start;
+        width: 20em;
+    }
+}
+
+@media screen and (max-width: 348px) {
+    .help-card-content {
+        width: 18em;
+    }
+}
+
+@media screen and (max-width: 320px) {
+
+    .info-card-content-wrapper {
+        height: 100vh;
+    }
+
+    .info-card-content {
+        overflow-y: scroll;
+        align-items: flex-start;
+        justify-content: flex-start;
+        height: 100vh;
+    }
+
+    .info-card-content,
+    .help-card-content {
+        width: 15em;
+    }
+}

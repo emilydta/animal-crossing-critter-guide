@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import InfoCard from './InfoCard';
+import HelpCard from './HelpCard';
 import CritterDisplay from './CritterDisplay';
 import CritterMenuButton from './CritterMenuButton';
 import CaughtTotalContainer from './CaughtTotalContainer';
 import TimeDisplay from './TimeDisplay';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleInfo, faTableList, faFish, faEyeSlash, faMarker, faMoon, faLightbulb } from '@fortawesome/free-solid-svg-icons'
+import { faCircleInfo, faCircleQuestion, faTableList, faFish, faEyeSlash, faMarker, faMoon, faLightbulb } from '@fortawesome/free-solid-svg-icons'
 
 function MainContent({
   theme,
@@ -29,6 +30,7 @@ function MainContent({
 
   //view modes and filters
   const [infoCardActive, setInfoCardActive] = useState(false);
+  const [helpCardActive, setHelpCardActive] = useState(false);
   const [activeCritter, setActiveCritter] = useState('bugs')
   const [caughtMode, setCaughtMode] = useState(false);
   const [showCaught, setShowCaught] = useState(true)
@@ -57,8 +59,8 @@ function MainContent({
   //Add overflow-y: none on body when infoCard is active
   useEffect(() => {
     const htmlTag = document.getElementsByTagName('html')[0];
-    infoCardActive ? htmlTag.classList.add('active-modal') : htmlTag.classList.remove('active-modal');
-  }, [infoCardActive]);
+    infoCardActive || helpCardActive ? htmlTag.classList.add('active-modal') : htmlTag.classList.remove('active-modal');
+  }, [infoCardActive, helpCardActive]);
 
   //Save data to local storage
   useEffect(() => {
@@ -151,12 +153,19 @@ function MainContent({
     <div className="main-content">
       <div className='top-buttons-container'>
         <button aria-label='info-card' className='info-card-button' onClick={() => setInfoCardActive(true)}>{<><FontAwesomeIcon icon={faCircleInfo} /></>}</button>
+        <button aria-label='help-card' className='help-card-button' onClick={() => setHelpCardActive(true)}>{<><FontAwesomeIcon icon={faCircleQuestion} /></>}</button>
         <button aria-label={theme === 'light' ? 'toggle-dark-mode' : 'toggle-light-mode'} className='theme-button active' onClick={() => setTheme((prev) => prev === 'light' ? 'dark' : 'light')}>{theme === 'light' ? <><FontAwesomeIcon icon={faMoon} /></> : <><FontAwesomeIcon icon={faLightbulb} /></>}</button>
       </div>
       {
         infoCardActive && <InfoCard
           infoCardActive={infoCardActive}
           setInfoCardActive={setInfoCardActive}
+        />
+      }
+      {
+        helpCardActive && <HelpCard
+          helpCardActive={helpCardActive}
+          setHelpCardActive={setHelpCardActive}
         />
       }
       <main className='critter-display-container'>
