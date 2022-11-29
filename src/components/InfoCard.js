@@ -18,7 +18,7 @@ function InfoCard({
                         <p className="card-main-description-line">Thanks for checking out my ACNH Critter Guide!</p>
                         <p className="card-main-description">
                             I initially built this site to display which critters are available at the current moment, but I thought why stop there!
-                            Now it's a fully fledged tool that will hopefully meet all of your critter-catching needs! I also drew (with help from in-game sprites) icons for critter locations, shadow sizes, and speed levels to make it as visual as possible!
+                            Now it's a fully fledged tool that will hopefully meet all of your critter-catching needs! I also included icons for critter locations, shadow sizes, speed levels, and prices to make it as visual as possible!
                         </p>
                         <p className="card-main-description">
                             I hope you find it useful!
