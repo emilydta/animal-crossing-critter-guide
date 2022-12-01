@@ -34,6 +34,12 @@ function HelpCard({
                     </div>
                     <div className='help-card-content'>
                         <h1 className="card-heading"> 🛠️ User Guide </h1>
+                        <p className="explanation">
+                            This site is installable! In the browser settings there should be an option to install this as an app onto your device.
+                        </p>
+                        <p className="explanation">
+                        The record of caught critters is saved in local storage.
+                        </p>
                         <p className="icon-heading">{<><FontAwesomeIcon icon={faLightbulb} />/<FontAwesomeIcon icon={faMoon} /></>}</p>
                         <p className="explanation">
                             Light Mode and Dark Mode (respectively).
