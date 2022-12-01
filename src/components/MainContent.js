@@ -148,13 +148,13 @@ function MainContent({
     resetStates();
     setViewAll(false);
   }
-
+  
   return (
     <div className="main-content">
       <div className='top-buttons-container'>
         <button aria-label='info-card' className='info-card-button' onClick={() => setInfoCardActive(true)}>{<><FontAwesomeIcon icon={faCircleInfo} /></>}</button>
         <button aria-label='help-card' className='help-card-button' onClick={() => setHelpCardActive(true)}>{<><FontAwesomeIcon icon={faCircleQuestion} /></>}</button>
-        <button aria-label={theme === 'light' ? 'toggle-dark-mode' : 'toggle-light-mode'} className='theme-button active' onClick={() => setTheme((prev) => prev === 'light' ? 'dark' : 'light')}>{theme === 'light' ? <><FontAwesomeIcon icon={faMoon} /></> : <><FontAwesomeIcon icon={faLightbulb} /></>}</button>
+        <button aria-label={theme === 'light' || theme === 'default'  ? 'toggle-dark-mode' : 'toggle-light-mode'} className='theme-button active' onClick={() => setTheme((prev) => prev === 'light' ? 'dark' : 'light')}>{theme === 'light' ? <><FontAwesomeIcon icon={faMoon} /></> : <><FontAwesomeIcon icon={faLightbulb} /></>}</button>
       </div>
       {
         infoCardActive && <InfoCard

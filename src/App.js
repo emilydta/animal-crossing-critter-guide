@@ -10,7 +10,7 @@ import { faCog } from '@fortawesome/free-solid-svg-icons';
 function App() {
   const [theme, setTheme] = useState(() => {
     const savedValue = JSON.parse(localStorage.getItem('theme'));
-    return savedValue || 'light';
+    return savedValue || 'default';
   });
   const [bugsData, setBugsData] = useState();
   const [fishData, setFishData] = useState();
@@ -18,14 +18,32 @@ function App() {
 
   //Light mode/dark mode CSS color variables
   useEffect(() => {
-    if (theme === 'light') {
+    let lightMode = () => {
       document.documentElement.style.setProperty('--bg-primary', '#ffebcd');
       document.documentElement.style.setProperty('--bg-secondary', '#342e2e');
     }
-
-    if (theme === 'dark') {
+    
+    let darkMode = () => {
       document.documentElement.style.setProperty('--bg-primary', '#342e2e');
       document.documentElement.style.setProperty('--bg-secondary', '#e5d4ba');
+    }
+
+    //Check for user's preferred color scheme on first visit and set light/dark mode accordingly
+    if (theme === 'default') {
+      if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+        setTheme('light');
+        lightMode();
+      } else
+        setTheme('dark');
+      darkMode();
+    }
+    //Switch settings
+    if (theme === 'light') {
+      lightMode();
+    }
+
+    if (theme === 'dark') {
+      darkMode();
     }
   }, [theme]);
 
