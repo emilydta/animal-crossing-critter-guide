@@ -22,7 +22,7 @@ function MainContent({
 
   const [hemisphere, setHemisphere] = useState(() => {
     const savedValue = JSON.parse(localStorage.getItem('hemisphere'));
-    return savedValue || 'southern';
+    return savedValue || 'northern';
   })
   const [customMonth, setCustomMonth] = useState(1);
   const [customTime, setCustomTime] = useState(1);
@@ -301,7 +301,7 @@ function MainContent({
           </>}
         </section>
       </main>
-    </div>
+    </div>  
   );
 }
 
