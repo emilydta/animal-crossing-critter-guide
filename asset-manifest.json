@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.3c930f28.css",
+    "main.css": "/static/css/main.4479328a.css",
     "main.js": "/static/js/main.f5ab88fd.js",
     "static/media/flying.png": "/static/media/flying.1dced2f70320f69c6323.png",
     "service-worker.js": "/service-worker.js",
@@ -57,11 +57,11 @@
     "static/media/nunito-vietnamese-400-normal.woff2": "/static/media/nunito-vietnamese-400-normal.6a8bc7acd205391fb71a.woff2",
     "static/media/nunito-vietnamese-700-normal.woff2": "/static/media/nunito-vietnamese-700-normal.8862ea6993677ed0a88f.woff2",
     "index.html": "/index.html",
-    "main.3c930f28.css.map": "/static/css/main.3c930f28.css.map",
+    "main.4479328a.css.map": "/static/css/main.4479328a.css.map",
     "main.f5ab88fd.js.map": "/static/js/main.f5ab88fd.js.map"
   },
   "entrypoints": [
-    "static/css/main.3c930f28.css",
+    "static/css/main.4479328a.css",
     "static/js/main.f5ab88fd.js"
   ]
 }
